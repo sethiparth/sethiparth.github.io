@@ -658,8 +658,18 @@ div.card {
 				</div>
 
 			</div>
-<div class="visitor-count">Number of visitors to this page so far:</div>
-<img alt="Hit counter" src="counter.php" />
+<?php 
+ 
+session_start();
+  
+if(isset($_SESSION['views']))
+    $_SESSION['views'] = $_SESSION['views']+1;
+else
+    $_SESSION['views']=1;
+     
+echo"views = ".$_SESSION['views'];
+ 
+?>
 			
 
 		

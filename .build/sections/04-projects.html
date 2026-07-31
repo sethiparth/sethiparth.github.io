@@ -147,7 +147,7 @@
 <!-- ============================================================
   STYLE: Projects section (scoped, prefix .pj-)
   Shared eyebrow pattern re-declared here per DESIGN_SYSTEM.md
-  spec (mono, uppercase, cyan, letter-spaced) in case no other
+  spec (uppercase, jade green, letter-spaced) in case no other
   fragment defines it — identical rules are harmless if it does.
 ============================================================ -->
 <style>
@@ -155,7 +155,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -183,6 +183,7 @@
   }
 
   .pj-title {
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: clamp(1.8rem, 3.4vw, 2.5rem);
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -191,6 +192,7 @@
   }
 
   .pj-subtitle {
+    font-family: 'Inter', sans-serif;
     max-width: 640px;
     color: var(--text-dim);
     line-height: 1.6;
@@ -226,8 +228,8 @@
   .pj-card:hover,
   .pj-card:focus-visible {
     transform: translateY(-6px);
-    border-color: rgba(34, 211, 238, 0.4);
-    box-shadow: var(--glow-cyan);
+    border-color: var(--accent);
+    box-shadow: 0 8px 18px rgba(45, 42, 32, 0.12);
   }
 
   .pj-card:focus-visible {
@@ -242,7 +244,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    background: var(--grad);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -266,7 +268,7 @@
     transition: opacity 0.4s ease;
     background: radial-gradient(
       320px circle at var(--pj-mx, 50%) var(--pj-my, 50%),
-      rgba(34, 211, 238, 0.16),
+      rgba(47, 158, 120, 0.16),
       transparent 65%
     );
     pointer-events: none;
@@ -294,6 +296,7 @@
   }
 
   .pj-card-title {
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: -0.01em;
@@ -301,18 +304,20 @@
   }
 
   .pj-metric {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
     letter-spacing: 0.03em;
-    color: var(--accent-3);
-    background: rgba(52, 211, 153, 0.1);
-    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: var(--accent);
+    text-shadow: 0 1px 0 rgba(255, 255, 246, 0.6);
+    background: rgba(47, 158, 120, 0.08);
+    border: 1px solid rgba(47, 158, 120, 0.3);
     border-radius: 999px;
     padding: 0.3rem 0.65rem;
     white-space: nowrap;
   }
 
   .pj-desc {
+    font-family: 'Inter', sans-serif;
     color: var(--text-dim);
     line-height: 1.65;
     font-size: 0.95rem;
@@ -324,11 +329,11 @@
     padding: 0.85rem 0.9rem 0.9rem;
     border: 1px solid var(--border);
     border-radius: 0.65rem;
-    background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), rgba(167, 139, 250, 0.04));
+    background: linear-gradient(180deg, rgba(122, 154, 46, 0.08), rgba(47, 158, 120, 0.05));
   }
 
   .pj-flow-caption {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 0.66rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -344,7 +349,7 @@
   }
 
   .pj-flow-node {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
     letter-spacing: 0.02em;
     color: var(--text-dim);
@@ -357,18 +362,18 @@
 
   .pj-flow-node--accent {
     color: var(--accent);
-    border-color: rgba(34, 211, 238, 0.35);
-    background: rgba(34, 211, 238, 0.1);
+    border-color: rgba(47, 158, 120, 0.4);
+    background: rgba(47, 158, 120, 0.1);
   }
 
   .pj-flow-node--accent2 {
     color: var(--accent-2);
-    border-color: rgba(167, 139, 250, 0.35);
-    background: rgba(167, 139, 250, 0.1);
+    border-color: rgba(122, 154, 46, 0.4);
+    background: rgba(122, 154, 46, 0.1);
   }
 
   .pj-flow-arrow {
-    color: var(--text-faint);
+    color: var(--accent-3);
     font-size: 0.8rem;
     line-height: 1;
   }
@@ -393,7 +398,7 @@
   }
 
   .pj-tags li {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     letter-spacing: 0.02em;
     color: var(--text-dim);
@@ -401,6 +406,13 @@
     background: var(--bg-elev-2);
     border-radius: 999px;
     padding: 0.28rem 0.6rem;
+    transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .pj-tags li:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(47, 158, 120, 0.08);
   }
 
   /* ---- Reveal-on-scroll (JS-gated so no-JS users always see content) ---- */

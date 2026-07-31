@@ -1,12 +1,12 @@
 <!-- ============================================================
   SECTION: Academic / College Projects — collapsible archive (id="college")
-  Eyebrow: "04 Academic Projects" — follows shared DESIGN_SYSTEM.md tokens.
+  Eyebrow: "IV Academic Projects" — follows shared DESIGN_SYSTEM.md tokens.
   Prefix: .col- for all section-scoped classes.
 
   Design intent: this is the "things I built while learning" archive —
   intentionally lighter weight than the Projects section and COLLAPSED
   by default so it never competes with professional work. It borrows the
-  violet accent (--accent-2) instead of cyan to read as an earlier,
+  aged-purple accent (--accent-2) instead of oxblood to read as an earlier,
   quieter chapter rather than a second "Projects" section.
 
   The disclosure is a real <button aria-expanded> + a panel toggled via
@@ -163,15 +163,16 @@
 
 <!-- ============================================================
   STYLE: Academic Projects section (scoped, prefix .col-)
-  Uses --accent-2 (violet) instead of --accent (cyan) as the primary
-  highlight color to visually mark this as an earlier, quieter chapter.
+  Uses --accent-2 (aged purple) instead of --accent (oxblood) as the
+  primary highlight color to visually mark this as an earlier, quieter
+  chapter — like a faded codex tucked behind the main scroll.
 ============================================================ -->
 <style>
   .col-eyebrow {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -216,6 +217,7 @@
   }
 
   .col-title {
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: clamp(1.5rem, 2.6vw, 2rem);
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -224,6 +226,7 @@
   }
 
   .col-subtitle {
+    font-family: 'Inter', sans-serif;
     max-width: 560px;
     color: var(--text-dim);
     line-height: 1.6;
@@ -241,18 +244,18 @@
     border-radius: 0.75rem;
     padding: 0.75rem 1.1rem;
     color: var(--text);
-    font-family: inherit;
+    font-family: 'Fraunces', 'Georgia', serif;
     cursor: pointer;
     transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   }
 
   .col-toggle:hover {
-    border-color: rgba(167, 139, 250, 0.45);
-    box-shadow: var(--glow-violet);
+    border-color: rgba(47, 158, 120, 0.45);
+    box-shadow: 0 6px 20px rgba(43, 28, 13, 0.25), 0 0 0 1px rgba(211, 164, 79, 0.2);
   }
 
   .col-toggle:focus-visible {
-    outline: 2px solid var(--accent-2);
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 
@@ -270,7 +273,7 @@
   }
 
   .col-toggle-count {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 0.72rem;
     letter-spacing: 0.03em;
     color: var(--text-faint);
@@ -342,11 +345,12 @@
   .col-card:hover,
   .col-card:focus-within {
     transform: translateY(-4px);
-    border-color: rgba(167, 139, 250, 0.4);
-    box-shadow: var(--glow-violet);
+    border-color: rgba(47, 158, 120, 0.4);
+    box-shadow: 0 10px 26px rgba(43, 28, 13, 0.22), 0 0 0 1px rgba(211, 164, 79, 0.18);
   }
 
   .col-card-title {
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 0.98rem;
     font-weight: 600;
     letter-spacing: -0.005em;
@@ -354,6 +358,7 @@
   }
 
   .col-desc {
+    font-family: 'Inter', sans-serif;
     color: var(--text-dim);
     line-height: 1.55;
     font-size: 0.85rem;
@@ -369,7 +374,7 @@
   }
 
   .col-tags li {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 0.65rem;
     letter-spacing: 0.02em;
     color: var(--text-faint);
@@ -377,6 +382,11 @@
     background: var(--bg-elev-2);
     border-radius: 999px;
     padding: 0.22rem 0.55rem;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  .col-card:hover .col-tags li {
+    border-color: rgba(47, 158, 120, 0.35);
   }
 
   /* ---- Reveal-on-scroll fade-up for cards, only on first panel open ---- */
@@ -465,7 +475,13 @@
         : label.getAttribute('data-col-show');
     }
 
+    // Handle to the pending "hide after close transition" timer, so a rapid
+    // close→open within the transition window can cancel it (otherwise the
+    // stale timer fires and hides the panel the user just reopened).
+    var hideTimer = null;
+
     function openPanel() {
+      if (hideTimer !== null) { clearTimeout(hideTimer); hideTimer = null; }
       panel.hidden = false;
       if (reduceMotion) {
         panel.classList.add('col-is-open');
@@ -486,8 +502,10 @@
       if (reduceMotion) {
         panel.hidden = true;
       } else {
-        setTimeout(function () {
+        if (hideTimer !== null) clearTimeout(hideTimer);
+        hideTimer = setTimeout(function () {
           panel.hidden = true;
+          hideTimer = null;
         }, TRANSITION_MS);
       }
     }

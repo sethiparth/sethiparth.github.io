@@ -1,607 +1,738 @@
 <!-- ============================================================
-     SECTION: Experience — "The Journey" scroll-synced timeline
-     id="experience" · eyebrow "01 The Journey"
-     Scoped class prefix: .tl-  (Timeline)
-     Spine runs REVERSE-chronologically top→bottom: current role
-     (Salesforce) first, ending at the education origin nodes.
+     SECTION: Experience — a woodland "scroll-focus" timeline
+     id="experience" · eyebrow "01 · Experience"
+     Scoped class prefix: .tl-
+
+     Layout: a central spine runs top→bottom in reverse-chronological
+     order (now → where it started). Each era is a circular logo node
+     sitting ON the spine, with a triangle pointing to an info tile
+     that alternates left/right down the page.
+
+     Interaction: purely scroll-linked (never scroll-jacked). As the
+     visitor scrolls, whichever tile is nearest the viewport's vertical
+     center is shown full-size and fully opaque; tiles above and below
+     shrink and go translucent, so the story reads one chapter at a
+     time. Normal page scrolling always works. The spine "lights up"
+     down to the active node. Fully degrades with no JS / reduced motion.
      ============================================================ -->
 <section id="experience" class="tl-section" aria-labelledby="tl-heading">
   <div class="tl-container">
 
-    <p class="eyebrow"><span>01</span> The Journey</p>
-    <h2 id="tl-heading" class="tl-heading">A Decade in Motion</h2>
-    <p class="tl-sub">A decade-long arc — from architecting the systems behind a $1B email channel back to the lecture halls in Solan where it started. Scroll to trace the line.</p>
-
-    <div class="tl-timeline" data-tl-root>
-
-      <!-- Central spine: static track + scroll-driven gradient fill -->
-      <div class="tl-spine" aria-hidden="true">
-        <div class="tl-spine-track"></div>
-        <div class="tl-spine-fill" data-tl-fill></div>
+    <div class="tl-head">
+      <div class="tl-head-text">
+        <p class="eyebrow"><span>01</span> Experience</p>
+        <h2 id="tl-heading" class="tl-heading">A Decade of Building</h2>
+        <p class="tl-sub">From the lecture halls in Solan where it started to the systems behind a $1B email channel. Scroll the trail &mdash; each chapter comes into focus as you go.</p>
       </div>
-
-      <ol class="tl-eras">
-
-        <!-- ================= SALESFORCE (current, most recent) ================= -->
-        <li class="tl-era" data-tl-era data-side="right" data-accent="cyan">
-          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
-          <div class="tl-content">
-            <header class="tl-badge">
-              <p class="tl-company">Salesforce</p>
-              <p class="tl-role">Senior Software Engineer (SMTS)</p>
-              <p class="tl-dates">May 2022 — Present</p>
-            </header>
-
-            <ul class="tl-achievements">
-              <li class="tl-achievement" data-tl-achievement style="--i:0">
-                <p class="tl-tag">Architecture — Lead</p>
-                <p class="tl-line"><span class="tl-metric">$1B+</span> revenue channel — architected the "Sage" rendering engine from scratch, a two-step gRPC core replacing the legacy E360 platform, shipping critical functionality two releases ahead of schedule.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:1">
-                <p class="tl-tag">Migration &amp; Parity</p>
-                <p class="tl-line"><span class="tl-metric">40+</span> scripting helpers built with Product to reach 100% functional parity with the legacy system, backed by a custom Compatibility Testing Framework.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:2">
-                <p class="tl-tag">Performance</p>
-                <p class="tl-line">DynamoDB batch tuning and Redis dedup drove a <span class="tl-metric">10x</span> throughput gain — 10M to 40M emails processed every hour.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:3">
-                <p class="tl-tag">Reliability</p>
-                <p class="tl-line">A validation framework raised availability from 98% to <span class="tl-metric">99.999%</span>, cutting PagerDuty alerts by 10+ a week.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:4">
-                <p class="tl-tag">Scale</p>
-                <p class="tl-line">Rebuilt email processing into <span class="tl-metric">bulk</span> operations with real-time entitlements, enabling quota-aware partial sends under load.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="tl-logo" aria-hidden="true">
-            <div class="tl-logo-tile">
-              <img class="tl-logo-img" src="images/logos/salesforce.png" alt="Salesforce logo" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-        <!-- ================= AWS ================= -->
-        <li class="tl-era" data-tl-era data-side="left" data-accent="violet">
-          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
-          <div class="tl-content">
-            <header class="tl-badge">
-              <p class="tl-company">Amazon Web Services</p>
-              <p class="tl-role">Software Engineer · Seattle, WA</p>
-              <p class="tl-dates">Oct 2019 — May 2022</p>
-            </header>
-
-            <ul class="tl-achievements">
-              <li class="tl-achievement" data-tl-achievement style="--i:0">
-                <p class="tl-tag">Reliability</p>
-                <p class="tl-line">Rearchitected the maintenance service to fire reboot events across 25 public regions, protecting <span class="tl-metric">556K+</span> EC2 customers' instance data on degraded hardware.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:1">
-                <p class="tl-tag">Scheduling</p>
-                <p class="tl-line">Redesigned EC2 maintenance scheduling with a best-fit algorithm, killing manual scripts and cutting "no time slot" errors by <span class="tl-metric">100s</span> every two weeks.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:2">
-                <p class="tl-tag">Automation</p>
-                <p class="tl-line">Automated manual maintenance escalations on internal EC2 instances, removing <span class="tl-metric">4,000</span> escalations and hundreds of engineer-hours a year.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:3">
-                <p class="tl-tag">Customer Choice</p>
-                <p class="tl-line">Designed a scheduling algorithm honoring customer-chosen windows, giving <span class="tl-metric">10,000+</span> customers control over their own maintenance schedule.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="tl-logo" aria-hidden="true">
-            <div class="tl-logo-tile">
-              <img class="tl-logo-img" src="images/logos/aws.png" alt="Amazon Web Services logo" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-        <!-- ================= OM PARTNERS ================= -->
-        <li class="tl-era" data-tl-era data-side="right" data-accent="emerald">
-          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
-          <div class="tl-content">
-            <header class="tl-badge">
-              <p class="tl-company">OM Partners</p>
-              <p class="tl-role">Software Engineer · Atlanta, GA</p>
-              <p class="tl-dates">Feb 2019 — Oct 2019</p>
-            </header>
-
-            <ul class="tl-achievements">
-              <li class="tl-achievement" data-tl-achievement style="--i:0">
-                <p class="tl-tag">Algorithms</p>
-                <p class="tl-line">Designed a scheduling algorithm distributing tasks across time buckets from user input, optimizing work-execution rate.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:1">
-                <p class="tl-tag">Systems</p>
-                <p class="tl-line">Implemented optimization strategies in <span class="tl-metric">C++17</span> for "OPAL," a custom supply-chain inventory and logistics language.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="tl-logo" aria-hidden="true">
-            <div class="tl-logo-tile">
-              <img class="tl-logo-img" src="images/logos/omp.jpeg" alt="OM Partners logo" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-        <!-- ============= UNIVERSITY OF FLORIDA (education) ============= -->
-        <li class="tl-era tl-era--edu" data-tl-era data-side="left" data-accent="mono">
-          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
-          <div class="tl-content">
-            <header class="tl-badge">
-              <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Education</p>
-              <p class="tl-company">University of Florida</p>
-              <p class="tl-role">M.S., Computer Science · Gainesville, FL</p>
-              <p class="tl-dates">Aug 2017 — Dec 2018</p>
-            </header>
-
-            <ul class="tl-achievements">
-              <li class="tl-achievement" data-tl-achievement style="--i:0">
-                <p class="tl-tag">Pivot</p>
-                <p class="tl-line">Traded hardware and signals for distributed systems and software — the turn that set the rest of the map.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:1">
-                <p class="tl-tag">Result</p>
-                <p class="tl-line">Finished with a <span class="tl-metric">3.56/4</span> GPA, then shipped first production code within months.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="tl-logo" aria-hidden="true">
-            <div class="tl-logo-tile">
-              <img class="tl-logo-img" src="images/logos/uf.webp" alt="University of Florida logo" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-        <!-- ============= JAYPEE UNIVERSITY (education, origin) ============= -->
-        <li class="tl-era tl-era--edu" data-tl-era data-side="right" data-accent="mono">
-          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
-          <div class="tl-content">
-            <header class="tl-badge">
-              <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Origin Node — Where it started</p>
-              <p class="tl-company">Jaypee University of Information &amp; Technology</p>
-              <p class="tl-role">B.Tech, Electronics &amp; Communication · Solan, India</p>
-              <p class="tl-dates">Aug 2013 — May 2017</p>
-            </header>
-
-            <ul class="tl-achievements">
-              <li class="tl-achievement" data-tl-achievement style="--i:0">
-                <p class="tl-tag">Foundation</p>
-                <p class="tl-line">Four years of signals, circuits, and systems thinking — the raw material every line of code since has built on.</p>
-              </li>
-              <li class="tl-achievement" data-tl-achievement style="--i:1">
-                <p class="tl-tag">Result</p>
-                <p class="tl-line">Graduated with a <span class="tl-metric">9.1/10</span> GPA, top of a cohort chasing the same handful of engineering seats abroad.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="tl-logo" aria-hidden="true">
-            <div class="tl-logo-tile">
-              <img class="tl-logo-img" src="images/logos/juit.jpg" alt="Jaypee University of Information Technology logo" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-      </ol>
+      <figure class="tl-portrait">
+        <img src="images/portrait/parth.jpg" alt="Parth Sethi" width="1000" height="1500" loading="lazy" />
+      </figure>
     </div>
+
+    <!-- ============ THE TRAIL ============ -->
+    <ol class="tl-track" data-tl-track>
+      <!-- The winding "road": an SVG weave threaded through the node circles.
+           Path geometry is generated in JS from the live node positions, so it
+           stays correct across resizes and reflows. Two layers: a dotted track
+           underneath and a gradient progress fill revealed via stroke-dashoffset. -->
+      <svg class="tl-spine" data-tl-spine aria-hidden="true" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="tlSpineGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop class="g0" offset="0"></stop>
+            <stop class="g1" offset="1"></stop>
+          </linearGradient>
+        </defs>
+        <path class="tl-spine-track" data-tl-track-path fill="none"></path>
+        <path class="tl-spine-fill" data-tl-fill fill="none" stroke="url(#tlSpineGrad)"></path>
+      </svg>
+
+      <!-- SALESFORCE -->
+      <li class="tl-item" data-accent="oxblood">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/salesforce.png" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="Salesforce, Senior Software Engineer, May 2022 to Present">
+          <span class="tl-year" aria-hidden="true">Now</span>
+          <p class="tl-company">Salesforce</p>
+          <p class="tl-role">Senior Software Engineer (SMTS)</p>
+          <p class="tl-dates">May 2022 &mdash; Present</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Architecture — Lead</p><p class="tl-line"><span class="tl-metric">$1B+</span> revenue channel — architected the "Sage" rendering engine from scratch, a two-step gRPC core replacing the legacy E360 platform, shipping critical functionality two releases ahead of schedule.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">AI Orchestration</p><p class="tl-line">Architected an agentic automation pipeline using Claude and AI agents to replace a manual <span class="tl-metric">~4 hrs/org</span> workflow — provisioning a new org, running preview and real email sends, and standing up integration and daily service-health tests. Eliminated repetitive setup toil and reclaimed multiple weeks of aggregate team effort.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Migration &amp; Parity</p><p class="tl-line"><span class="tl-metric">40+</span> scripting helpers built with Product to reach 100% functional parity with the legacy system, backed by a custom Compatibility Testing Framework.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Performance</p><p class="tl-line">DynamoDB batch tuning and Redis dedup drove a <span class="tl-metric">10x</span> throughput gain — 10M to 40M emails processed every hour.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Reliability</p><p class="tl-line">A validation framework raised availability from 98% to <span class="tl-metric">99.999%</span>, cutting PagerDuty alerts by 10+ a week.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Scale</p><p class="tl-line">Rebuilt email processing into <span class="tl-metric">bulk</span> operations with real-time entitlements, enabling quota-aware partial sends under load.</p></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- AWS -->
+      <li class="tl-item" data-accent="purple">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/aws.png" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="Amazon Web Services, Software Engineer, October 2019 to May 2022">
+          <span class="tl-year" aria-hidden="true">2019</span>
+          <p class="tl-company">Amazon Web Services</p>
+          <p class="tl-role">Software Engineer &middot; Seattle, WA</p>
+          <p class="tl-dates">Oct 2019 &mdash; May 2022</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Reliability</p><p class="tl-line">Rearchitected the maintenance service to fire reboot events across 25 public regions, protecting <span class="tl-metric">556K+</span> EC2 customers' instance data on degraded hardware.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Scheduling</p><p class="tl-line">Redesigned EC2 maintenance scheduling with a best-fit algorithm, killing manual scripts and cutting "no time slot" errors by <span class="tl-metric">100s</span> every two weeks.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Automation</p><p class="tl-line">Automated manual maintenance escalations on internal EC2 instances, removing <span class="tl-metric">4,000</span> escalations and hundreds of engineer-hours a year.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Customer Choice</p><p class="tl-line">Designed a scheduling algorithm honoring customer-chosen windows, giving <span class="tl-metric">10,000+</span> customers control over their own maintenance schedule.</p></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- OM PARTNERS -->
+      <li class="tl-item" data-accent="gold">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/omp.jpeg" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="OM Partners, Software Engineer, February 2019 to October 2019">
+          <span class="tl-year" aria-hidden="true">2019</span>
+          <p class="tl-company">OM Partners</p>
+          <p class="tl-role">Software Engineer &middot; Atlanta, GA</p>
+          <p class="tl-dates">Feb 2019 &mdash; Oct 2019</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Algorithms</p><p class="tl-line">Designed a scheduling algorithm distributing tasks across time buckets from user input, optimizing work-execution rate.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Systems</p><p class="tl-line">Implemented optimization strategies in <span class="tl-metric">C++17</span> for "OPAL," a custom supply-chain inventory and logistics language.</p></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- UNIVERSITY OF FLORIDA -->
+      <li class="tl-item" data-accent="mono">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/uf.webp" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="University of Florida, M.S. Computer Science, August 2017 to December 2018">
+          <span class="tl-year" aria-hidden="true">2017</span>
+          <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Education</p>
+          <p class="tl-company">University of Florida</p>
+          <p class="tl-role">M.S., Computer Science &middot; Gainesville, FL</p>
+          <p class="tl-dates">Aug 2017 &mdash; Dec 2018</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Pivot</p><p class="tl-line">Traded hardware and signals for distributed systems and software — the turn that set the rest of the map.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Result</p><p class="tl-line">Finished with a <span class="tl-metric">3.56/4</span> GPA, then shipped first production code within months.</p></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- JAYPEE UNIVERSITY -->
+      <li class="tl-item" data-accent="mono">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/juit.jpg" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="Jaypee University of Information and Technology, B.Tech, August 2013 to May 2017">
+          <span class="tl-year" aria-hidden="true">2013</span>
+          <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Where it started</p>
+          <p class="tl-company">Jaypee University of Information &amp; Technology</p>
+          <p class="tl-role">B.Tech, Electronics &amp; Communication &middot; Solan, India</p>
+          <p class="tl-dates">Aug 2013 &mdash; May 2017</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Foundation</p><p class="tl-line">Four years of signals, circuits, and systems thinking — the raw material every line of code since has built on.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Result</p><p class="tl-line">Graduated with a <span class="tl-metric">9.1/10</span> GPA, top of a cohort chasing the same handful of engineering seats abroad.</p></li>
+          </ul>
+        </article>
+      </li>
+
+    </ol>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION-SCOPED STYLES — Experience / The Journey timeline
-     All selectors prefixed .tl- to avoid collisions with other sections.
+     SECTION-SCOPED STYLES — Experience / scroll-focus timeline
      ============================================================ -->
 <style>
-  .tl-section {
-    padding: 6rem 0; /* py-24 */
-  }
+  .tl-section { padding: 5rem 0 5.5rem; position: relative; }
+  .tl-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  @media (min-width: 768px) { .tl-container { padding: 0 2rem; } }
 
-  .tl-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+  /* Header: intro text on the left, portrait filling the empty right side. */
+  .tl-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    margin-bottom: 1rem;
   }
-  @media (min-width: 768px) {
-    .tl-container { padding: 0 2rem; }
-  }
-
+  .tl-head-text { max-width: 60ch; }
   .tl-heading {
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-weight: 700; letter-spacing: -.01em;
     font-size: clamp(1.9rem, 4.2vw, 2.75rem);
-    color: var(--text);
-    margin: 0.5rem 0 0.75rem;
+    color: var(--text); margin: 0.5rem 0 0.75rem;
+  }
+  .tl-sub { color: var(--text-dim); line-height: 1.7; margin: 0 0 1rem; }
+
+  /* Square floating portrait tile — top-anchored so it crops from the bottom
+     (keeps face + torso, drops the legs). The big soft shadow + idle bob read
+     as "lifted off the page". */
+  .tl-portrait {
+    margin: 0;
+    width: clamp(180px, 24vw, 260px);
+    aspect-ratio: 1 / 1;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background: #243b2f;
+    /* Soft "cameo ring" like the lizard medallions: accent border → cream gap
+       → translucent green halo → drop shadow for float. The stacked rings
+       dissolve the hard edge instead of a single abrupt line. */
+    border: 5px solid var(--accent);
+    box-shadow:
+      0 0 0 4px var(--bg-elev),
+      0 0 0 9px rgba(47,158,120,.28),
+      0 22px 45px -12px rgba(45,42,32,.32);
+    transition: transform .35s ease, box-shadow .35s ease;
+    animation: tl-portrait-float 5s ease-in-out infinite;
+  }
+  .tl-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;    /* top-anchored → crop from the bottom */
+  }
+  /* Hover intensifies the green halo only. (We intentionally don't set a hover
+     transform here: the always-running float animation keyframes `transform`,
+     so a non-!important hover transform would never apply — CSS animations win
+     over normal declarations.) */
+  .tl-portrait:hover {
+    box-shadow:
+      0 0 0 4px var(--bg-elev),
+      0 0 0 9px rgba(47,158,120,.42),
+      0 30px 55px -12px rgba(47,158,120,.3);
+  }
+  @keyframes tl-portrait-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @media (max-width: 720px) {
+    .tl-head { grid-template-columns: 1fr; }
+    .tl-portrait {
+      width: clamp(150px, 46vw, 200px);
+      justify-self: start;
+      order: -1;                /* photo above the text on mobile */
+      margin-bottom: 0.75rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tl-portrait { transition: none; animation: none; }
+    .tl-portrait:hover { transform: none; }
   }
 
-  .tl-sub {
-    color: var(--text-dim);
-    line-height: 1.6;
-    max-width: 46ch;
-    margin: 0 0 3.5rem;
-  }
+  /* Per-era accent (woodland palette) */
+  .tl-item[data-accent="oxblood"] { --tl-era-c: var(--accent); }
+  .tl-item[data-accent="purple"]  { --tl-era-c: var(--accent-2); }
+  .tl-item[data-accent="gold"]    { --tl-era-c: var(--accent-3); }
+  .tl-item[data-accent="mono"]    { --tl-era-c: var(--text-dim); }
 
-  /* ---------- Timeline shell ---------- */
-  .tl-timeline {
+  /* ---------- The trail ---------- */
+  /* The track is a plain vertical stack of wide tiles that alternate sides.
+     Nodes are absolutely positioned onto each tile's inner (spine-facing) edge,
+     so consecutive rows anchor at two different X columns — and the SVG "road"
+     weaves between them. --tl-col-* set the two node columns as % of track width. */
+  .tl-track {
     position: relative;
+    list-style: none;
+    margin: 3rem 0 0;
+    padding: 0;
+    /* Two node columns the vine threads between. Tiles are wide and hang off
+       the vine at these inner edges; the vine clings to each tile's inner edge
+       (running vertically alongside it) and only crosses over in the vertical
+       GAP between tiles — so its body never lies on top of a card. */
+    --tl-col-left: 62%;    /* node X when the tile is on the LEFT (odd rows)  */
+    --tl-col-right: 38%;   /* node X when the tile is on the RIGHT (even rows) */
+    /* clear gap between a tile's inner edge and its node, so the circle sits
+       fully OFF the card (only the little nub bridges them). Must exceed the
+       node radius (30px). */
+    --tl-gap: 46px;
   }
 
+  /* the winding SVG road, stretched over the whole track */
   .tl-spine {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 20px;
-    width: 2px;
-  }
-  .tl-spine-track {
-    position: absolute;
     inset: 0;
-    background: var(--border);
-    border-radius: 2px;
+    width: 100%; height: 100%;
+    overflow: visible;
+    z-index: 0;
+    pointer-events: none;
+  }
+  #tlSpineGrad .g0 { stop-color: var(--accent); }
+  #tlSpineGrad .g1 { stop-color: var(--accent-3); }
+  .tl-spine-track {
+    stroke: var(--border);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 2 12;   /* dotted "unpaved" look */
+    stroke-linejoin: round;
   }
   .tl-spine-fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
-    border-radius: 2px;
-    box-shadow: 0 0 16px rgba(34, 211, 238, 0.45);
-    transition: height 0.12s linear;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 6px rgba(47,158,120,.35));
+    /* pathLength normalized to 1 in JS → dashoffset 1(empty)…0(full) */
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset .25s ease-out;
   }
 
-  .tl-eras {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* ---------- Era row (mobile-first: single left-aligned column) ---------- */
-  .tl-era {
+  /* ---------- Each era row ---------- */
+  .tl-item {
     position: relative;
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    column-gap: 1.25rem;
-    padding-block: 2rem;
+    /* real breathing room between tiles — the vine does its crossing-over
+       inside this empty band, so curves never land on a card. */
+    margin: 0 0 clamp(3rem, 6vw, 5.5rem);
   }
-  .tl-era:first-child { padding-top: 0; }
-  .tl-era:last-child { padding-bottom: 0; }
+  .tl-item:last-child { margin-bottom: 0; }
 
+  /* node = logo circle, absolutely pinned to the tile's inner edge and
+     vertically centered on the card. Its center X = one of the two columns. */
   .tl-node {
-    grid-column: 1;
-    display: flex;
-    justify-content: center;
-    padding-top: 0.3rem;
-  }
-  .tl-dot {
-    width: 14px;
-    height: 14px;
+    position: absolute; z-index: 2;
+    top: 50%; transform: translate(-50%, -50%);
+    width: 60px; height: 60px;
     border-radius: 50%;
-    background: var(--bg-elev);
-    border: 2px solid var(--border);
-    transform: rotate(var(--tl-dot-rotate, 0deg)) scale(var(--tl-dot-scale, 1));
-    transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    background: #fff;
+    border: 3px solid var(--border);
+    display: grid; place-items: center;
+    box-shadow: 0 4px 12px rgba(45,42,32,.16);
+    transition: border-color .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
   }
-  .tl-era.is-active .tl-dot {
-    border-color: transparent;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  /* Each tile's node sits at --tl-node-x (its own column). Default = the side
+     column; heavy tiles override it (below) to sit further out, widening the
+     card so it's shorter. The vine reads live node positions, so it adapts. */
+  .tl-item:nth-of-type(odd)  { --tl-node-x: var(--tl-col-left); }
+  .tl-item:nth-of-type(even) { --tl-node-x: var(--tl-col-right); }
+  /* content-heavy tiles → push the node toward the outer edge so the card runs
+     wide and takes less vertical space. Same specificity as the side rules
+     above, placed later, so these win. */
+  .tl-item:nth-of-type(1) { --tl-node-x: 75%; }   /* Salesforce (left, big)  */
+  .tl-item:nth-of-type(2) { --tl-node-x: 25%; }   /* Amazon (right, big)     */
+  .tl-node { left: var(--tl-node-x); }
+  /* keep the scale-up on the active node without dropping the centering translate */
+  .tl-item.is-active .tl-node { transform: translate(-50%, -50%) scale(1.08); }
+  .tl-node-logo {
+    width: 40px; height: 40px;
+    display: grid; place-items: center; overflow: hidden;
   }
-  .tl-era.is-current .tl-dot {
-    --tl-dot-scale: 1.45;
-    box-shadow: var(--glow-cyan), var(--glow-violet);
-  }
+  .tl-node-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-  /* Education / origin nodes: hollow diamond marker, quieter until lit —
-     distinct from the solid circular career-era nodes on the same spine. */
-  .tl-era--edu .tl-dot {
-    --tl-dot-rotate: 45deg;
-    border-radius: 3px;
-    border-style: dashed;
-  }
-
-  .tl-content {
-    grid-column: 2;
-    position: relative;
-    padding-top: 0.1rem;
-  }
-  .tl-content::before {
-    content: "";
-    position: absolute;
-    top: 0.75rem;
-    left: -1.25rem;
-    width: 1rem;
-    height: 1px;
-    background: linear-gradient(90deg, var(--tl-era-c, var(--accent)), transparent);
-  }
-
-  .tl-origin-tag {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--tl-era-c, var(--text-dim));
-    margin: 0 0 0.4rem;
-  }
-
-  .tl-company {
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    margin: 0 0 0.25rem;
-  }
-  .tl-role {
-    font-size: 0.875rem;
-    color: var(--text-dim);
-    margin: 0 0 0.4rem;
-  }
-  .tl-dates {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--tl-era-c, var(--accent));
-    margin: 0 0 1.25rem;
-  }
-
-  .tl-achievements {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .tl-tag {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-faint);
-    margin: 0 0 0.2rem;
-  }
-  .tl-tag::before {
-    content: "// ";
-    color: var(--text-faint);
-  }
-
-  .tl-line {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--text-dim);
-    margin: 0;
-  }
-
-  .tl-metric {
-    font-family: "JetBrains Mono", monospace;
-    font-weight: 700;
-    color: var(--tl-era-c, var(--accent));
-    background: rgba(34, 211, 238, 0.08); /* fallback for browsers without color-mix() */
-    background: color-mix(in srgb, var(--tl-era-c, var(--accent)) 14%, transparent);
-    padding: 0.05rem 0.4rem;
-    border-radius: 0.3rem;
+  /* year tag — now a footer badge at the bottom of each tile */
+  .tl-year {
+    order: 99;                    /* pushed to the bottom of the flex column */
+    align-self: flex-start;
+    margin-top: 1.1rem; padding-top: 0.8rem;
+    border-top: 1px dashed var(--border);
+    width: 100%;
+    font-family: 'Inter', sans-serif; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--tl-era-c, var(--text-faint));
+    transition: color .35s ease;
     white-space: nowrap;
   }
 
-  /* Per-era accent color used by dates / connector / metric chips.
-     "mono" = education/origin nodes: quieter, graphite tone by design —
-     the neon only arrives once the career eras begin. */
-  .tl-era[data-accent="cyan"]    { --tl-era-c: var(--accent); }
-  .tl-era[data-accent="violet"]  { --tl-era-c: var(--accent-2); }
-  .tl-era[data-accent="emerald"] { --tl-era-c: var(--accent-3); }
-  .tl-era[data-accent="mono"]    { --tl-era-c: var(--text-dim); }
-
-  /* ---------- Brand mark tile (fills the empty half opposite the content card) ----------
-     Mobile: rendered small, above the card, in the content column (order:-1 reorders it
-     ahead of .tl-content in source/auto-placement without touching markup order).
-     Desktop: repositioned into the empty grid cell on the side opposite data-side. */
-  .tl-logo {
-    grid-column: 2;
-    order: -1;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 0.75rem;
-  }
-
-  .tl-logo-tile {
-    width: 48px;
-    height: 48px;
-    border-radius: 0.9rem;
-    background: #fff;
+  /* info tile — wide (spans most of the track), alternating sides.
+     The node sits just inside the inner edge, so the card reserves a small
+     inset (padding via margin) to make room for the circle + nub. */
+  .tl-card {
+    position: relative;
+    display: flex; flex-direction: column;
+    /* width is governed by the alternating margins below (one edge = 0, the
+       other = the node column minus the gap), so the tile fills its side. */
+    width: auto;
+    background: linear-gradient(180deg, #fffdf6 0%, #f6efdd 100%);
     border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 6px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 1.1rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 10px 30px rgba(45,42,32,.10);
+    padding: clamp(1.25rem, 2.4vw, 1.9rem);
+    transform-origin: center center;
+  }
+  /* accent ribbon along the spine-facing edge */
+  .tl-card::before {
+    content: "";
+    position: absolute; top: 14px; bottom: 14px;
+    width: 4px; border-radius: 4px;
+    background: linear-gradient(180deg, var(--tl-era-c, var(--accent)), color-mix(in srgb, var(--tl-era-c, var(--accent)) 35%, transparent));
+  }
+  /* pointer nub emerging FROM the circle node toward its card. It's a small
+     rotated square sharing the circle's white fill + border, with the two
+     card-facing edges outlined and the tip corner rounded (soft point).
+     The back half tucks under the circle so they read as one shape. */
+  .tl-node::after {
+    content: "";
+    position: absolute; top: 50%;
+    width: 15px; height: 15px;
+    background: #fff;
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 1;
+    transition: border-color .35s ease;
   }
 
-  .tl-era:hover .tl-logo-tile {
+  /* odd rows → wide card on the LEFT; its right edge stops --tl-gap short of
+     the node column, so the circle sits fully OFF the card (nub bridges). */
+  .tl-item:nth-of-type(odd) .tl-card {
+    margin-left: 0;
+    margin-right: calc(100% - var(--tl-node-x) + var(--tl-gap));
+  }
+  .tl-item:nth-of-type(odd) .tl-card::before { right: 0; left: auto; }
+  .tl-item:nth-of-type(odd) .tl-node::after {
+    right: 100%; margin-right: -9px;
+    border-left: 3px solid var(--border);
+    border-bottom: 3px solid var(--border);
+    border-bottom-left-radius: 5px;
+  }
+  /* even rows → wide card on the RIGHT; its left edge stops --tl-gap short of
+     the node column, so the circle sits fully OFF the card (nub bridges). */
+  .tl-item:nth-of-type(even) .tl-card {
+    margin-left: calc(var(--tl-node-x) + var(--tl-gap));
+    margin-right: 0;
+  }
+  .tl-item:nth-of-type(even) .tl-card::before { left: 0; }
+  .tl-item:nth-of-type(even) .tl-node::after {
+    left: 100%; margin-left: -9px;
+    border-top: 3px solid var(--border);
+    border-right: 3px solid var(--border);
+    border-top-right-radius: 5px;
+  }
+
+  /* active node → the nub picks up the same accent border as the circle */
+  .tl-item.is-active .tl-node::after { border-color: var(--tl-era-c, var(--accent)); }
+
+  .tl-origin-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--tl-era-c, var(--text-dim)); font-weight: 700; margin: 0 0 0.4rem;
+  }
+  .tl-company {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: clamp(1.2rem, 2.4vw, 1.5rem); font-weight: 700;
+    color: var(--text); margin: 0 0 0.2rem; line-height: 1.15;
+  }
+  .tl-role { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text-dim); margin: 0 0 0.3rem; }
+  .tl-dates {
+    font-family: 'Inter', sans-serif; font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
+    color: var(--tl-era-c, var(--accent)); margin: 0 0 1.1rem;
+  }
+
+  .tl-achievements {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .tl-tag {
+    font-family: 'Inter', sans-serif; font-size: 0.64rem;
+    text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700;
+    color: var(--text-faint); margin: 0 0 0.2rem;
+  }
+  .tl-tag::before { content: "❦ "; color: var(--tl-era-c, var(--accent-3)); }
+  .tl-line { font-family: 'Inter', sans-serif; font-size: 0.92rem; line-height: 1.6; color: var(--text-dim); margin: 0; }
+  .tl-metric {
+    font-family: 'Fraunces', 'Georgia', serif; font-weight: 700;
+    color: var(--tl-era-c, var(--accent));
+    background: color-mix(in srgb, var(--tl-era-c, var(--accent)) 14%, transparent);
+    padding: 0.05rem 0.4rem; border-radius: 0.3rem; white-space: nowrap;
+  }
+
+  /* ---------- Scroll-focus effect (only when JS is active) ---------- */
+  /* --f is a 0→1 "in focus" value set per item by the scroll handler.
+     Nearest the viewport center → 1 (full size, opaque); far → 0. */
+  .tl-js .tl-item { --f: 1; }
+  .tl-js .tl-card {
+    transform: scale(calc(0.9 + 0.1 * var(--f)));
+    opacity: calc(0.4 + 0.6 * var(--f));
+  }
+  .tl-js .tl-item:nth-of-type(odd) .tl-card  { transform-origin: right center; }
+  .tl-js .tl-item:nth-of-type(even) .tl-card { transform-origin: left center; }
+  .tl-js .tl-node { opacity: calc(0.55 + 0.45 * var(--f)); }
+  .tl-js .tl-year { opacity: calc(0.35 + 0.65 * var(--f)); }
+
+  /* the focused era's node + year lifts and takes its accent color */
+  .tl-item.is-active .tl-node {
     border-color: var(--tl-era-c, var(--accent));
-    transform: translateY(-2px);
-    box-shadow: 0 0 22px rgba(34, 211, 238, 0.3); /* fallback for browsers without color-mix() */
-    box-shadow: 0 0 22px color-mix(in srgb, var(--tl-era-c, var(--accent)) 45%, transparent);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--tl-era-c, var(--accent)) 20%, transparent), 0 10px 22px rgba(45,42,32,.22);
+    /* transform (translate -50% -50% scale 1.08) is set in the node block above */
+  }
+  .tl-item.is-active .tl-year { color: var(--tl-era-c, var(--accent)); }
+
+  /* ---------- Mobile: single left rail, all tiles to the right ---------- */
+  /* The weaving road collapses to a straight left rail: both node columns snap
+     to a fixed 26px, tiles go full-width to the right, all nubs point right. */
+  @media (max-width: 720px) {
+    .tl-track {
+      margin-top: 2rem;
+      --tl-col-left: 26px;
+      --tl-col-right: 26px;
+    }
+    /* override the per-tile desktop columns (incl. the heavy-tile ones) back to
+       the single rail — (0,2,0) specificity, later in source, so it wins. */
+    .tl-track .tl-item { --tl-node-x: 26px; }
+    .tl-item {
+      padding-top: 0;
+      margin-bottom: 2.5rem;
+    }
+    .tl-node { top: 26px; transform: translate(-50%, 0); width: 50px; height: 50px; }
+    .tl-item.is-active .tl-node { transform: translate(-50%, 0) scale(1.08); }
+    .tl-node-logo { width: 32px; height: 32px; }
+    /* every card full-width on the right, pointing left */
+    .tl-item:nth-of-type(odd) .tl-card,
+    .tl-item:nth-of-type(even) .tl-card {
+      width: auto;
+      margin-left: 58px; margin-right: 0;
+    }
+    .tl-item:nth-of-type(odd) .tl-card::before,
+    .tl-item:nth-of-type(even) .tl-card::before { left: 0; right: auto; }
+    /* every node points RIGHT toward its card */
+    .tl-item:nth-of-type(odd) .tl-node::after,
+    .tl-item:nth-of-type(even) .tl-node::after {
+      left: 100%; right: auto; margin-left: -9px; margin-right: 0;
+      top: 50%;
+      border: 0;
+      border-top: 3px solid var(--border);
+      border-right: 3px solid var(--border);
+      border-top-right-radius: 5px; border-bottom-left-radius: 0;
+    }
+    .tl-js .tl-item:nth-of-type(odd) .tl-card,
+    .tl-js .tl-item:nth-of-type(even) .tl-card { transform-origin: left center; }
   }
 
-  .tl-logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
-  /* ---------- Desktop: alternating spine layout ---------- */
-  @media (min-width: 768px) {
-    .tl-spine {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .tl-era {
-      grid-template-columns: 1fr 56px 1fr;
-      column-gap: 2.5rem;
-    }
-
-    .tl-node { grid-column: 2; }
-
-    .tl-era[data-side="right"] .tl-content {
-      grid-column: 3;
-    }
-    .tl-era[data-side="left"] .tl-content {
-      grid-column: 1;
-    }
-    .tl-era[data-side="right"] .tl-content::before {
-      left: -1.75rem;
-      width: 1.5rem;
-      background: linear-gradient(90deg, var(--tl-era-c, var(--accent)), transparent);
-    }
-    .tl-era[data-side="left"] .tl-content::before {
-      left: auto;
-      right: -1.75rem;
-      width: 1.5rem;
-      background: linear-gradient(270deg, var(--tl-era-c, var(--accent)), transparent);
-    }
-
-    /* Logo tile fills the grid cell OPPOSITE the content card — mirrors data-side. */
-    .tl-logo {
-      order: 0;
-      margin-bottom: 0;
-      align-items: center;
-    }
-    .tl-era[data-side="right"] .tl-logo {
-      grid-column: 1;
-      justify-content: flex-end;
-    }
-    .tl-era[data-side="left"] .tl-logo {
-      grid-column: 3;
-      justify-content: flex-start;
-    }
-
-    .tl-logo-tile {
-      width: 68px;
-      height: 68px;
-      border-radius: 1.1rem;
-      padding: 9px;
-    }
-  }
-
-  /* ---------- Scroll-reveal state (JS-enhanced only) ---------- */
-  .tl-js .tl-achievement {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transition-delay: calc(var(--i, 0) * 60ms);
-  }
-  .tl-js .tl-achievement.in-view {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* ---------- Reduced motion: everything static, no scroll-driven transforms ---------- */
+  /* ---------- No focus dimming when motion is reduced ---------- */
   @media (prefers-reduced-motion: reduce) {
-    .tl-spine-fill { transition: none; }
-    .tl-dot { transition: none; }
-    .tl-logo-tile,
-    .tl-logo-img { transition: none; }
-    .tl-js .tl-achievement {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
+    .tl-js .tl-card { transform: none; opacity: 1; }
+    .tl-js .tl-node, .tl-js .tl-year { opacity: 1; }
+    .tl-node, .tl-spine-fill { transition: none; }
+    .tl-item.is-active .tl-node { transform: none; }
   }
 </style>
 
 <!-- ============================================================
-     SECTION-SCOPED SCRIPT — scroll-synced spine fill, active-node
-     lighting, and staggered achievement reveal.
-     Guards for prefers-reduced-motion; no heavy library, rAF only.
+     SECTION-SCOPED SCRIPT — scroll-linked focus.
+     For each era row, measures how close its center is to the
+     viewport's vertical center and writes a 0→1 --f value that CSS
+     maps to scale + opacity. The closest row gets .is-active (accent
+     node) and the spine fills down to it. rAF-throttled; no scroll
+     hijacking — the page scrolls normally at all times.
      ============================================================ -->
 <script>
   (function () {
-    var root = document.querySelector('[data-tl-root]');
-    if (!root) return;
+    var section = document.getElementById('experience');
+    if (!section) return;
+    var track = section.querySelector('[data-tl-track]');
+    var items = Array.prototype.slice.call(section.querySelectorAll('.tl-item'));
+    var svg = section.querySelector('[data-tl-spine]');
+    var trackPath = section.querySelector('[data-tl-track-path]');
+    var fill = section.querySelector('[data-tl-fill]');
+    if (!track || !items.length) return;
 
-    var fill = root.querySelector('[data-tl-fill]');
-    var eras = Array.prototype.slice.call(root.querySelectorAll('[data-tl-era]'));
-    var achievements = Array.prototype.slice.call(root.querySelectorAll('[data-tl-achievement]'));
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (reduceMotion) {
-      // Static, fully-visible fallback: no scroll listeners, no transforms.
-      if (fill) fill.style.height = '100%';
-      eras.forEach(function (era) {
-        era.classList.add('is-active');
-      });
-      return;
+    /* Enable the focus CSS (cards start full-size for no-JS users). */
+    section.classList.add('tl-js');
+
+    /* nodeCenters[i] = {x, y} of each node, in track-local px. cumLen[i] =
+       normalized path length (0…1) at node i, so we can map "active node"
+       → how much of the road to pave. Rebuilt by layout(). */
+    var nodeCenters = [];
+    var cumLen = [];
+    var totalLen = 1;
+
+    /* Stable pseudo-random in [0,1) from an integer seed — so the vine's
+       wander is irregular but identical across every resize/relayout. */
+    function hash(n) {
+      var x = Math.sin(n * 12.9898) * 43758.5453;
+      return x - Math.floor(x);
     }
 
-    // Enable scroll-reveal CSS hooks only when JS + motion are both available.
-    root.classList.add('tl-js');
+    /* Build the vine by ROUTING THROUGH THE GAPS, never across a card.
+       Every node sits on the outer edge of its own card, so a node's vertical
+       column is clear within its own row, and the horizontal band between two
+       stacked cards is fully clear. So for each pair of nodes the vine:
+         drops vertically in node i's clear gutter → crosses horizontally inside
+         the empty gap band between the two cards → drops into node i+1.
+       Corners are rounded (which cut INSIDE the angle, so the curve can never
+       bulge onto a tile), and the crossing height wanders per-segment via hash
+       so the weave reads organic and asymmetric rather than mechanical. */
+    function buildPath(nodes, cards) {
+      if (nodes.length < 2) return '';
+      function fmt(x, y) { return x.toFixed(2) + ' ' + y.toFixed(2); }
 
-    function clamp(v, min, max) {
-      return Math.max(min, Math.min(max, v));
+      var d = 'M ' + fmt(nodes[0].x, nodes[0].y);
+      for (var i = 0; i < nodes.length - 1; i++) {
+        var a = nodes[i], b = nodes[i + 1];
+        var cA = cards[i], cB = cards[i + 1];
+
+        /* crossing height: somewhere in the clear band between the two cards,
+           nudged asymmetrically per segment (0.30–0.70 into the gap). */
+        var gapTop = cA.bottom, gapBot = cB.top;
+        if (gapBot < gapTop) { gapTop = a.y; gapBot = b.y; }   /* safety */
+        var r1 = hash(i + 1);
+        var gm = gapTop + (gapBot - gapTop) * (0.30 + r1 * 0.40);
+        gm = Math.max(gapTop + 6, Math.min(gapBot - 6, gm));
+
+        var sgn = (b.x - a.x) >= 0 ? 1 : -1;
+        var v1 = gm - a.y;                 /* first vertical drop length */
+        var hlen = Math.abs(b.x - a.x);    /* horizontal crossing length */
+        var v2 = b.y - gm;                 /* second vertical drop length */
+
+        /* When nodes share an X column (e.g. the mobile rail), there's no gap to
+           cross — draw a clean straight vertical instead of a tiny corner jog. */
+        if (hlen < 2) {
+          d += ' L ' + fmt(b.x, b.y);
+          continue;
+        }
+
+        var r = Math.min(v1, v2, hlen) * 0.5;
+        r = Math.max(2, Math.min(r, 54));  /* generous, soft corners */
+
+        /* vertical down node i's gutter, round into the crossing, run across
+           the gap, round into node i+1's gutter, drop to the node. */
+        d += ' L ' + fmt(a.x, gm - r);
+        d += ' Q ' + fmt(a.x, gm) + ' ' + fmt(a.x + sgn * r, gm);
+        d += ' L ' + fmt(b.x - sgn * r, gm);
+        d += ' Q ' + fmt(b.x, gm) + ' ' + fmt(b.x, gm + r);
+        d += ' L ' + fmt(b.x, b.y);
+      }
+      return d;
+    }
+
+    function layout() {
+      var tr = track.getBoundingClientRect();
+      if (!tr.width || !tr.height) return;
+
+      /* SVG uses a 1:1 px user space matching the track box. */
+      svg.setAttribute('viewBox', '0 0 ' + tr.width + ' ' + tr.height);
+
+      nodeCenters = items.map(function (it) {
+        var n = it.querySelector('.tl-node');
+        var nr = n.getBoundingClientRect();
+        return { x: nr.left - tr.left + nr.width / 2, y: nr.top - tr.top + nr.height / 2 };
+      });
+
+      /* card top/bottom (track-local) per row — the vine's crossing must land
+         in the clear band between one card's bottom and the next card's top. */
+      var cardRects = items.map(function (it) {
+        var c = it.querySelector('.tl-card');
+        var cr = (c || it).getBoundingClientRect();
+        return { top: cr.top - tr.top, bottom: cr.bottom - tr.top };
+      });
+
+      var d = buildPath(nodeCenters, cardRects);
+      trackPath.setAttribute('d', d);
+      fill.setAttribute('d', d);
+
+      /* Normalize both dash geometries to a 0…1 pathLength so stroke math is
+         resolution-independent. Track shows a dotted pattern (its own dasharray
+         from CSS wins because we don't set pathLength there). */
+      totalLen = fill.getTotalLength() || 1;
+      fill.setAttribute('pathLength', '1');
+      fill.style.strokeDasharray = '1';
+
+      /* cumulative normalized length at each node center */
+      cumLen = [];
+      var acc = 0;
+      cumLen.push(0);
+      for (var i = 1; i < nodeCenters.length; i++) {
+        var a = nodeCenters[i - 1], b = nodeCenters[i];
+        /* chord approximation is plenty for a monotone-y weave */
+        acc += Math.hypot(b.x - a.x, b.y - a.y);
+        cumLen.push(acc);
+      }
+      var last = acc || 1;
+      cumLen = cumLen.map(function (v) { return v / last; });
+    }
+
+    if (reduceMotion) {
+      /* Static: everything visible, road fully paved, first era active. */
+      function relayoutStatic() {
+        layout();
+        if (fill) fill.style.strokeDashoffset = '0';
+      }
+      relayoutStatic();
+      items[0].classList.add('is-active');
+      /* Fonts / lazy images can reflow the cards after this first measurement,
+         so re-measure the road on those events (mirrors the animated branch). */
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(relayoutStatic);
+      }
+      window.addEventListener('load', relayoutStatic);
+      var rmResizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(rmResizeTimer);
+        rmResizeTimer = setTimeout(relayoutStatic, 120);
+      });
+      return;
     }
 
     var ticking = false;
 
     function update() {
       ticking = false;
-      var rect = root.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
-      var total = rect.height;
-      var scrolled = clamp(vh * 0.5 - rect.top, 0, total);
-      var pct = total > 0 ? (scrolled / total) * 100 : 0;
+      var vc = vh / 2;
+      var falloff = Math.min(vh * 0.62, 520);
+      var best = 0, bestF = -1;
 
-      if (fill) fill.style.height = pct + '%';
-
-      var activeIdx = -1;
-      eras.forEach(function (era, i) {
-        var erect = era.getBoundingClientRect();
-        var passed = erect.top < vh * 0.55;
-        era.classList.toggle('is-active', passed);
-        if (passed) activeIdx = i;
+      items.forEach(function (it, idx) {
+        var r = it.getBoundingClientRect();
+        var center = r.top + r.height / 2;
+        var f = Math.max(0, 1 - Math.abs(center - vc) / falloff);
+        it.style.setProperty('--f', f.toFixed(3));
+        if (f > bestF) { bestF = f; best = idx; }
       });
-      eras.forEach(function (era, i) {
-        era.classList.toggle('is-current', i === activeIdx);
-      });
-    }
 
-    function onScroll() {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(update);
+      items.forEach(function (it, idx) {
+        it.classList.toggle('is-active', idx === best);
+      });
+
+      /* Pave the road smoothly from the first node to a point that tracks the
+         viewport center as it travels between the active node and its neighbor,
+         so the fill glides rather than snapping node-to-node. */
+      if (fill && cumLen.length) {
+        var tr = track.getBoundingClientRect();
+        var progressPx = vc - tr.top;                     /* viewport center in track space */
+        var paved = 0;
+        if (nodeCenters.length) {
+          if (progressPx <= nodeCenters[0].y) {
+            paved = 0;
+          } else if (progressPx >= nodeCenters[nodeCenters.length - 1].y) {
+            paved = 1;
+          } else {
+            for (var i = 1; i < nodeCenters.length; i++) {
+              if (progressPx <= nodeCenters[i].y) {
+                var y0 = nodeCenters[i - 1].y, y1 = nodeCenters[i].y;
+                var t = (y1 === y0) ? 0 : (progressPx - y0) / (y1 - y0);
+                paved = cumLen[i - 1] + (cumLen[i] - cumLen[i - 1]) * t;
+                break;
+              }
+            }
+          }
+        }
+        fill.style.strokeDashoffset = String(1 - Math.max(0, Math.min(1, paved)));
       }
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    update();
-
-    // Staggered fade/slide-in for achievement lines as each era enters view.
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.3, rootMargin: '0px 0px -10% 0px' }
-      );
-      achievements.forEach(function (item) {
-        io.observe(item);
-      });
-    } else {
-      // No IntersectionObserver support: reveal everything immediately.
-      achievements.forEach(function (item) {
-        item.classList.add('in-view');
-      });
+    function onScroll() {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
     }
+
+    var resizeTimer;
+    function onResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () { layout(); update(); }, 120);
+    }
+
+    layout();
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    /* Fonts can reflow the cards after first paint → re-measure the road. */
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { layout(); update(); });
+    }
+    window.addEventListener('load', function () { layout(); update(); });
   })();
 </script>

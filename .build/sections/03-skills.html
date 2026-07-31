@@ -26,7 +26,7 @@
               <span class="sk-bar-label">Java</span>
               <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
             </div>
-            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+            <div class="sk-bar-track" aria-hidden="true">
               <div class="sk-bar-fill"></div>
             </div>
           </li>
@@ -35,7 +35,7 @@
               <span class="sk-bar-label">C++</span>
               <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
             </div>
-            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+            <div class="sk-bar-track" aria-hidden="true">
               <div class="sk-bar-fill"></div>
             </div>
           </li>
@@ -44,7 +44,7 @@
               <span class="sk-bar-label">SQL</span>
               <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
             </div>
-            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+            <div class="sk-bar-track" aria-hidden="true">
               <div class="sk-bar-fill"></div>
             </div>
           </li>
@@ -53,34 +53,7 @@
               <span class="sk-bar-label">NoSQL</span>
               <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
             </div>
-            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
-              <div class="sk-bar-fill"></div>
-            </div>
-          </li>
-          <li class="sk-bar-item" data-level="familiar" style="--pct:60%">
-            <div class="sk-bar-row">
-              <span class="sk-bar-label">Scala</span>
-              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
-            </div>
-            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
-              <div class="sk-bar-fill"></div>
-            </div>
-          </li>
-          <li class="sk-bar-item" data-level="familiar" style="--pct:58%">
-            <div class="sk-bar-row">
-              <span class="sk-bar-label">Python</span>
-              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
-            </div>
-            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
-              <div class="sk-bar-fill"></div>
-            </div>
-          </li>
-          <li class="sk-bar-item" data-level="familiar" style="--pct:52%">
-            <div class="sk-bar-row">
-              <span class="sk-bar-label">Ruby</span>
-              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
-            </div>
-            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+            <div class="sk-bar-track" aria-hidden="true">
               <div class="sk-bar-fill"></div>
             </div>
           </li>
@@ -89,7 +62,34 @@
               <span class="sk-bar-label">C#</span>
               <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
             </div>
-            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:15%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Scala</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:15%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Python</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:15%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Ruby</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
               <div class="sk-bar-fill"></div>
             </div>
           </li>
@@ -169,11 +169,11 @@
 <style>
   /* Reused eyebrow pattern per shared design system (idempotent if repeated by other sections) */
   .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--accent);
+    color: var(--accent-ink);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -201,6 +201,7 @@
   }
 
   .sk-heading {
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: clamp(1.9rem, 4vw, 2.6rem);
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -247,7 +248,7 @@
 
   .sk-card:hover {
     border-color: var(--accent);
-    box-shadow: var(--glow-cyan);
+    box-shadow: 0 0 24px rgba(47, 158, 120, 0.25), inset 0 1px 0 rgba(255, 248, 227, 0.4);
   }
 
   .sk-card-head {
@@ -260,6 +261,7 @@
   }
 
   .sk-card-title {
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--text);
@@ -271,7 +273,7 @@
   .sk-legend {
     display: flex;
     gap: 0.9rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 0.7rem;
     color: var(--text-faint);
     text-transform: uppercase;
@@ -293,7 +295,7 @@
 
   .sk-legend-dot--proficient {
     background: var(--accent);
-    box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+    box-shadow: 0 0 8px rgba(211, 164, 79, 0.6);
   }
 
   .sk-legend-dot--familiar {
@@ -318,21 +320,21 @@
   }
 
   .sk-bar-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     color: var(--text);
     font-weight: 500;
   }
 
   .sk-bar-tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
 
   .sk-bar-tag--proficient {
-    color: var(--accent);
+    color: var(--accent-ink);
   }
 
   .sk-bar-tag--familiar {
@@ -358,8 +360,8 @@
   }
 
   .sk-bar-item[data-level="proficient"] .sk-bar-fill {
-    background: linear-gradient(90deg, #22d3ee 0%, #a78bfa 100%);
-    box-shadow: var(--glow-cyan);
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    box-shadow: 0 0 10px rgba(211, 164, 79, 0.5);
   }
 
   .sk-bar-item[data-level="familiar"] .sk-bar-fill {
@@ -382,7 +384,7 @@
   }
 
   .sk-chip {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Fraunces', 'Georgia', serif;
     font-size: 0.8rem;
     color: var(--text-dim);
     background: var(--bg-elev-2);
@@ -396,14 +398,14 @@
   .sk-chip--aws:hover {
     color: var(--text);
     border-color: var(--accent);
-    box-shadow: var(--glow-cyan);
+    box-shadow: 0 0 20px rgba(47, 158, 120, 0.3);
     transform: translateY(-2px);
   }
 
   .sk-chip--tool:hover {
     color: var(--text);
     border-color: var(--accent-3);
-    box-shadow: 0 0 24px rgba(52, 211, 153, 0.4);
+    box-shadow: 0 0 20px rgba(211, 164, 79, 0.35);
     transform: translateY(-2px);
   }
 
@@ -442,8 +444,9 @@
   }
 
   .sk-edu-gpa {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 0.8rem;
     color: var(--accent-3);
     white-space: nowrap;
   }
@@ -455,8 +458,9 @@
   }
 
   .sk-edu-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 0.8rem;
     color: var(--text-faint);
     margin-top: 0.25rem;
   }

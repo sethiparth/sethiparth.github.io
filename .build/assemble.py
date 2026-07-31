@@ -88,11 +88,11 @@ TOKENS = """
       :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
       /* Sticky nav — bright cream bar with a green underline */
       .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(246,241,228,.86);border-bottom:1px solid var(--border);box-shadow:0 1px 0 rgba(47,158,120,.25);}
-      .nav a.navlink{font-size:.82rem;color:var(--text-dim);transition:color .2s;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.02em;}
-      .nav a.navlink:hover{color:var(--accent);}
+      .nav .navlink{font-size:.82rem;color:var(--text-dim);transition:color .2s;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.02em;}
+      .nav .navlink:hover{color:var(--accent);}
       /* Contact dropdown: a nav item that opens a small panel of contact links. */
       .nav-contact{position:relative;}
-      .nav-contact-btn{display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;cursor:pointer;padding:0;}
+      .nav-contact-btn{display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;cursor:pointer;padding:0;line-height:inherit;}
       .nav-contact-caret{transition:transform .2s ease;color:currentColor;}
       .nav-contact-btn[aria-expanded="true"] .nav-contact-caret{transform:rotate(180deg);}
       .nav-contact-menu{position:absolute;right:0;top:calc(100% + .6rem);min-width:150px;display:flex;flex-direction:column;padding:.35rem;gap:.1rem;background:rgba(246,241,228,.98);border:1px solid var(--border);border-radius:.6rem;box-shadow:0 10px 30px rgba(43,28,13,.22);backdrop-filter:blur(8px);}

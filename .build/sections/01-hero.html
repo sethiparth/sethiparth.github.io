@@ -1,0 +1,785 @@
+<!-- ============================================================
+  SECTION: HERO + IMPACT STATS
+  Design note: subject is a backend/reliability engineer (Sage
+  rendering engine, 10x throughput, five-nines availability, EC2
+  fleet protection). The signature motif is a live NEURAL NETWORK —
+  glowing neurons wired by synapse lines that drift, pulse, and
+  react to the cursor like something actually thinking — standing
+  in for the distributed systems Parth builds. The impact grid
+  reads like a metrics dashboard (mono keys, a live pulse on the
+  uptime stat) rather than a generic stat-card grid.
+============================================================ -->
+
+<section id="home" class="hero-section">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <p class="hero-kicker"><span class="hero-kicker-dot" aria-hidden="true"></span>Systems: operational</p>
+
+    <h1 class="hero-name">Parth Sethi <span class="hero-name-alias">(Seth)</span></h1>
+
+    <p class="hero-subtitle">Senior Software Engineer (SMTS) &middot; Salesforce</p>
+
+    <p class="hero-tagline">I design the infrastructure behind billions of requests &mdash; systems built to scale ten&times; over and fail exactly never.</p>
+
+    <div class="hero-ctas">
+      <a href="#experience" class="hero-btn hero-btn-primary">
+        <span>View Work</span>
+        <svg class="hero-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://github.com/sethiparth" class="hero-btn hero-btn-secondary" target="_blank" rel="noopener noreferrer">
+        <svg class="hero-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.26 5.69.42.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:sethiparth.ps@gmail.com" class="hero-btn hero-btn-ghost">
+        <svg class="hero-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18v12H3V6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 6.5 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Email</span>
+      </a>
+    </div>
+  </div>
+
+  <a href="#impact" class="hero-scroll-cue" aria-label="Scroll to impact stats">
+    <span class="hero-scroll-cue-track"><span class="hero-scroll-cue-dot"></span></span>
+    <span class="hero-scroll-cue-text">Scroll</span>
+  </a>
+</section>
+
+<section id="impact" class="impact-section">
+  <div class="impact-inner">
+    <p class="impact-eyebrow">At a glance</p>
+    <div class="impact-grid">
+
+      <div class="impact-card">
+        <p class="impact-number" data-prefix="$" data-target="1" data-suffix="B+">$0B+</p>
+        <p class="impact-label">Annual revenue enabled</p>
+        <p class="impact-context">Email channel via the Sage rendering engine</p>
+      </div>
+
+      <div class="impact-card">
+        <p class="impact-number" data-target="40" data-suffix="M/hr">0M/hr</p>
+        <p class="impact-label">Email throughput</p>
+        <p class="impact-context">10M &rarr; 40M emails/hour &mdash; a 10&times; gain</p>
+      </div>
+
+      <div class="impact-card">
+        <p class="impact-number" data-target="99.999" data-decimals="3" data-suffix="%">0%</p>
+        <p class="impact-label"><span class="impact-pulse" aria-hidden="true"></span>Availability</p>
+        <p class="impact-context">Raised from 98% to five nines</p>
+      </div>
+
+      <div class="impact-card">
+        <p class="impact-number" data-target="556" data-suffix="K+">0K+</p>
+        <p class="impact-label">EC2 customers protected</p>
+        <p class="impact-context">Reboot-on-degrade across 25 regions</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  SECTION-SCOPED STYLES (prefixed .hero- / .impact- to avoid collisions)
+============================================================ -->
+<style>
+  /* ---------- HERO ---------- */
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6rem 1.5rem 4rem;
+    isolation: isolate;
+  }
+
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  /* Soft radial vignette so text stays legible over the neural mesh.
+     Center keeps a light dark-wash floor (.28) even at rest so the
+     brightest node/pulse frames never threaten text contrast. */
+  .hero-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 52% at 50% 38%, rgba(10,14,26,.28) 0%, rgba(10,14,26,.62) 68%, rgba(10,14,26,.94) 100%),
+      linear-gradient(180deg, rgba(10,14,26,.22) 0%, rgba(10,14,26,0) 20%, rgba(10,14,26,0) 76%, rgba(10,14,26,.88) 100%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: rgba(52, 211, 153, 0.08);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 999px;
+    padding: .4rem .9rem;
+    margin: 0 0 1.75rem;
+  }
+
+  .hero-kicker-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-3);
+    box-shadow: 0 0 8px rgba(52, 211, 153, .8);
+    flex: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-kicker-dot { animation: hero-pulse 2.2s ease-in-out infinite; }
+  }
+
+  .hero-name {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 .9rem;
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 34px rgba(34, 211, 238, .30));
+  }
+  .hero-name-alias{
+    -webkit-background-clip: initial; background-clip: initial;
+    -webkit-text-fill-color: initial; color: var(--text-dim);
+    font-weight: 500; opacity: .85;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 500;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+
+  .hero-tagline {
+    font-size: clamp(.95rem, 1.6vw, 1.1rem);
+    line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 560px;
+    margin: 0 0 2.5rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .9rem;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    font-size: .9rem;
+    font-weight: 600;
+    padding: .7rem 1.4rem;
+    border-radius: .75rem;
+    border: 1px solid transparent;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .hero-btn-icon { flex: none; }
+
+  .hero-btn-primary {
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    color: #0a0e1a;
+  }
+  .hero-btn-primary:hover { transform: translateY(-2px); box-shadow: var(--glow-cyan); }
+
+  .hero-btn-secondary {
+    background: var(--bg-elev);
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .hero-btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .hero-btn-ghost {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-dim);
+  }
+  .hero-btn-ghost:hover {
+    color: var(--accent-2);
+    border-color: var(--accent-2);
+    transform: translateY(-2px);
+    box-shadow: var(--glow-violet);
+  }
+
+  .hero-btn:focus-visible,
+  .hero-scroll-cue:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-btn:hover { transform: none; }
+  }
+
+  .hero-scroll-cue {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    color: var(--text-faint);
+    text-decoration: none;
+  }
+
+  .hero-scroll-cue-track {
+    width: 22px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+  }
+
+  .hero-scroll-cue-dot {
+    width: 4px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 8px rgba(34, 211, 238, .7);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-scroll-cue-dot { animation: hero-scroll-cue-move 1.8s ease-in-out infinite; }
+  }
+
+  .hero-scroll-cue-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  @keyframes hero-scroll-cue-move {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(10px); opacity: .3; }
+  }
+
+  @keyframes hero-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .45; transform: scale(1.4); }
+  }
+
+  /* ---------- IMPACT STATS ---------- */
+  .impact-section {
+    position: relative;
+    padding: 5rem 1.5rem 6rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .impact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .impact-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: center;
+    margin: 0 0 2.5rem;
+  }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .impact-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .impact-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+
+  .impact-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: var(--glow-cyan);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .impact-card:hover { transform: none; }
+  }
+
+  .impact-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0 0 .6rem;
+  }
+
+  .impact-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 .4rem;
+  }
+
+  .impact-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-3);
+    box-shadow: 0 0 8px rgba(52, 211, 153, .8);
+    flex: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .impact-pulse { animation: hero-pulse 2.2s ease-in-out infinite; }
+  }
+
+  .impact-context {
+    font-size: .78rem;
+    line-height: 1.5;
+    color: var(--text-faint);
+    margin: 0;
+  }
+</style>
+
+<!-- ============================================================
+  SECTION-SCOPED SCRIPT: interactive neural-network canvas + count-up
+============================================================ -->
+<script>
+(function () {
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ============================================================
+     NEURAL NETWORK CANVAS
+     Glowing "neurons" drift slowly and wire themselves together
+     with fading synapse lines. Bright signals occasionally travel
+     along a connection. The cursor (or a touch) acts like a live
+     electrode: nearby neurons brighten and are gently pulled
+     toward it, synapses visibly "reach" toward the pointer, and
+     movement emits a soft expanding pulse — like the network is
+     firing in response. Static (no animation, no pointer reaction)
+     under prefers-reduced-motion.
+  ============================================================ */
+  var canvas = document.querySelector('.hero-canvas');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var section = document.getElementById('home');
+
+    var COLOR_RGB = [[34, 211, 238], [167, 139, 250]]; // cyan, violet
+
+    var nodes = [];
+    var signals = [];   // traveling pulses along a synapse
+    var ripples = [];   // expanding rings from pointer movement
+    var mouse = { x: 0, y: 0, active: false, lastX: 0, lastY: 0, lastMoveAt: 0 };
+
+    var w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    var rafId = null;
+    var running = false;
+    var isHidden = document.hidden;
+    var isOutOfView = false;
+    var idleTimer = null;
+
+    function rgba(rgb, a) {
+      return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + a + ')';
+    }
+
+    function mixRgb(a, b, t) {
+      return [
+        a[0] + (b[0] - a[0]) * t,
+        a[1] + (b[1] - a[1]) * t,
+        a[2] + (b[2] - a[2]) * t
+      ];
+    }
+
+    function clamp(v, min, max) { return v < min ? min : (v > max ? max : v); }
+
+    function resize() {
+      w = section.clientWidth;
+      h = section.clientHeight;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      seedNodes();
+    }
+
+    function seedNodes() {
+      var isNarrow = w < 640;
+      var density = isNarrow ? 20000 : 11000;
+      var count = Math.round((w * h) / density);
+      count = clamp(count, isNarrow ? 16 : 34, isNarrow ? 32 : 80);
+
+      nodes = [];
+      for (var i = 0; i < count; i++) {
+        var speed = 0.05 + Math.random() * 0.09;
+        var angle = Math.random() * Math.PI * 2;
+        nodes.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          dvx: Math.cos(angle) * speed,
+          dvy: Math.sin(angle) * speed,
+          ox: 0, oy: 0,
+          r: 1.3 + Math.random() * 1.1,
+          hue: i % 2,
+          glow: 0
+        });
+      }
+      signals = [];
+      ripples = [];
+    }
+
+    function maxLinkDist() {
+      return clamp(w / 6, 70, 165);
+    }
+
+    function mouseRadius() {
+      return w < 640 ? 130 : 200;
+    }
+
+    /* ---------- pointer tracking (section-scoped, canvas stays inert) ---------- */
+    function setPointer(clientX, clientY) {
+      var rect = section.getBoundingClientRect();
+      var nx = clientX - rect.left;
+      var ny = clientY - rect.top;
+      if (nx < 0 || ny < 0 || nx > w || ny > h) return;
+
+      var dx = nx - mouse.lastX, dy = ny - mouse.lastY;
+      var moved = Math.sqrt(dx * dx + dy * dy);
+      mouse.x = nx;
+      mouse.y = ny;
+      mouse.active = true;
+
+      var now = performance.now();
+      if (moved > 26 && now - mouse.lastMoveAt > 90 && ripples.length < 5) {
+        ripples.push({ x: nx, y: ny, start: now, duration: 850, hue: Math.random() < 0.5 ? 0 : 1 });
+        mouse.lastMoveAt = now;
+      }
+      mouse.lastX = nx;
+      mouse.lastY = ny;
+
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(function () { mouse.active = false; }, 2200);
+    }
+
+    function onMouseMove(e) { setPointer(e.clientX, e.clientY); }
+    function onTouchMove(e) {
+      if (e.touches && e.touches.length) setPointer(e.touches[0].clientX, e.touches[0].clientY);
+    }
+    function onPointerLeave() {
+      mouse.active = false;
+      clearTimeout(idleTimer);
+    }
+
+    /* ---------- drawing ---------- */
+    function drawFrame(interactive) {
+      ctx.clearRect(0, 0, w, h);
+      var maxDist = maxLinkDist();
+      var mR = mouseRadius();
+
+      /* connections */
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var a = nodes[i], b = nodes[j];
+          var dx = a.x - b.x, dy = a.y - b.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist >= maxDist) continue;
+
+          var t = 1 - dist / maxDist;
+          var boost = interactive ? Math.max(a.glow, b.glow) : 0;
+          var alpha = t * 0.30 + boost * 0.30;
+          var rgb = a.hue === b.hue ? COLOR_RGB[a.hue] : mixRgb(COLOR_RGB[0], COLOR_RGB[1], 0.5);
+
+          ctx.beginPath();
+          ctx.strokeStyle = rgba(rgb, alpha);
+          ctx.lineWidth = 1 + boost * 0.8;
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+
+      /* synapses reaching toward the pointer */
+      if (interactive && mouse.active) {
+        var reach = [];
+        for (var r = 0; r < nodes.length; r++) {
+          var n = nodes[r];
+          var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
+          var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+          if (mdist < mR) reach.push({ n: n, d: mdist });
+        }
+        reach.sort(function (p, q) { return p.d - q.d; });
+        var reachCount = Math.min(6, reach.length);
+        for (var rc = 0; rc < reachCount; rc++) {
+          var item = reach[rc];
+          var t2 = 1 - item.d / mR;
+          var rgb2 = COLOR_RGB[item.n.hue];
+          ctx.beginPath();
+          ctx.strokeStyle = rgba(rgb2, t2 * 0.5);
+          ctx.lineWidth = 1.1;
+          ctx.moveTo(item.n.x, item.n.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+
+      /* traveling pulses along a synapse */
+      var now = performance.now();
+      for (var s = signals.length - 1; s >= 0; s--) {
+        var sig = signals[s];
+        var p = (now - sig.start) / sig.duration;
+        if (p >= 1) { signals.splice(s, 1); continue; }
+        var na = nodes[sig.i], nb = nodes[sig.j];
+        if (!na || !nb) { signals.splice(s, 1); continue; }
+        var px = na.x + (nb.x - na.x) * p;
+        var py = na.y + (nb.y - na.y) * p;
+        var fade = Math.sin(p * Math.PI);
+        var rgb3 = COLOR_RGB[na.hue];
+        ctx.beginPath();
+        ctx.fillStyle = rgba(rgb3, fade);
+        ctx.shadowColor = rgba(rgb3, 0.9);
+        ctx.shadowBlur = 8;
+        ctx.arc(px, py, 2.1, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      /* pointer-movement ripples */
+      for (var rp = ripples.length - 1; rp >= 0; rp--) {
+        var rip = ripples[rp];
+        var rProg = (now - rip.start) / rip.duration;
+        if (rProg >= 1) { ripples.splice(rp, 1); continue; }
+        var rRadius = rProg * 90;
+        var rAlpha = (1 - rProg) * 0.35;
+        ctx.beginPath();
+        ctx.strokeStyle = rgba(COLOR_RGB[rip.hue], rAlpha);
+        ctx.lineWidth = 1.4;
+        ctx.arc(rip.x, rip.y, rRadius, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      /* nodes */
+      for (var k = 0; k < nodes.length; k++) {
+        var nd = nodes[k];
+        var rgb4 = COLOR_RGB[nd.hue];
+        var g = nd.glow;
+        ctx.beginPath();
+        ctx.fillStyle = rgba(rgb4, 0.9 + g * 0.1);
+        ctx.shadowColor = rgba(rgb4, Math.min(1, 0.55 + g));
+        ctx.shadowBlur = 7 + g * 14;
+        ctx.arc(nd.x, nd.y, nd.r + g * 1.6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    function drawStatic() {
+      // Elegant, non-animated fallback for prefers-reduced-motion:
+      // draw the field once, no pointer reaction, no rAF loop.
+      drawFrame(false);
+    }
+
+    function step() {
+      var maxDist = maxLinkDist();
+      var mR = mouseRadius();
+      var now = performance.now();
+
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+
+        n.ox *= 0.9;
+        n.oy *= 0.9;
+        n.glow *= 0.94;
+
+        if (mouse.active) {
+          var dx = mouse.x - n.x, dy = mouse.y - n.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < mR && dist > 0.01) {
+            var pull = (1 - dist / mR);
+            n.ox += (dx / dist) * pull * 0.018;
+            n.oy += (dy / dist) * pull * 0.018;
+            n.glow = Math.min(1, n.glow + pull * 0.14);
+          }
+        }
+
+        var omag = Math.sqrt(n.ox * n.ox + n.oy * n.oy);
+        if (omag > 0.7) { n.ox = (n.ox / omag) * 0.7; n.oy = (n.oy / omag) * 0.7; }
+
+        n.x += n.dvx + n.ox;
+        n.y += n.dvy + n.oy;
+
+        if (n.x < 0 || n.x > w) n.dvx *= -1;
+        if (n.y < 0 || n.y > h) n.dvy *= -1;
+        n.x = clamp(n.x, 0, w);
+        n.y = clamp(n.y, 0, h);
+      }
+
+      /* occasionally fire a signal along a live synapse */
+      if (signals.length < 5 && Math.random() < 0.035 && nodes.length > 1) {
+        var i0 = Math.floor(Math.random() * nodes.length);
+        var best = -1, bestDist = maxDist;
+        for (var j2 = 0; j2 < nodes.length; j2++) {
+          if (j2 === i0) continue;
+          var ddx = nodes[i0].x - nodes[j2].x, ddy = nodes[i0].y - nodes[j2].y;
+          var dd = Math.sqrt(ddx * ddx + ddy * ddy);
+          if (dd < bestDist) { bestDist = dd; best = j2; }
+        }
+        if (best !== -1) {
+          signals.push({ i: i0, j: best, start: now, duration: 900 + Math.random() * 500 });
+        }
+      }
+
+      drawFrame(true);
+
+      if (running) rafId = requestAnimationFrame(step);
+    }
+
+    function updateRunning() {
+      var shouldRun = !prefersReducedMotion && !isHidden && !isOutOfView;
+      if (shouldRun && !running) {
+        running = true;
+        rafId = requestAnimationFrame(step);
+      } else if (!shouldRun && running) {
+        running = false;
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    if (prefersReducedMotion) {
+      drawStatic();
+    } else {
+      section.addEventListener('mousemove', onMouseMove, { passive: true });
+      section.addEventListener('mouseleave', onPointerLeave, { passive: true });
+      section.addEventListener('touchmove', onTouchMove, { passive: true });
+      section.addEventListener('touchend', onPointerLeave, { passive: true });
+      section.addEventListener('touchcancel', onPointerLeave, { passive: true });
+
+      document.addEventListener('visibilitychange', function () {
+        isHidden = document.hidden;
+        updateRunning();
+      });
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            isOutOfView = !entry.isIntersecting;
+            updateRunning();
+          });
+        }, { threshold: 0.05 });
+        io.observe(section);
+      }
+
+      updateRunning();
+    }
+  }
+
+  /* ---------- Count-up on scroll into view ---------- */
+  var numbers = document.querySelectorAll('.impact-number[data-target]');
+
+  function formatValue(el, value) {
+    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var prefix = el.getAttribute('data-prefix') || '';
+    var suffix = el.getAttribute('data-suffix') || '';
+    return prefix + value.toFixed(decimals) + suffix;
+  }
+
+  function animateCount(el) {
+    var target = parseFloat(el.getAttribute('data-target'));
+    if (prefersReducedMotion) {
+      el.textContent = formatValue(el, target);
+      return;
+    }
+    var duration = 1400;
+    var start = null;
+
+    function tick(ts) {
+      if (start === null) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatValue(el, target * eased);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if ('IntersectionObserver' in window && numbers.length) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    numbers.forEach(function (el) { observer.observe(el); });
+  } else {
+    numbers.forEach(function (el) {
+      el.textContent = formatValue(el, parseFloat(el.getAttribute('data-target')));
+    });
+  }
+})();
+</script>

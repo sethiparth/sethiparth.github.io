@@ -1,0 +1,490 @@
+<!-- ============================================================
+  SECTION: Projects / Case Studies (id="projects")
+  Eyebrow: "03 Projects" — follows shared DESIGN_SYSTEM.md tokens.
+  Prefix: .pj- for all section-scoped classes.
+============================================================ -->
+<section id="projects" class="pj-section" aria-labelledby="pj-heading">
+  <div class="pj-container">
+    <p class="eyebrow"><span>03</span> Projects</p>
+    <h2 id="pj-heading" class="pj-title">Case studies</h2>
+    <p class="pj-subtitle">
+      Systems shipped at scale — a from-scratch rendering engine, a 10x throughput rewrite,
+      a five-nines reliability framework, and a maintenance platform protecting half a million customers.
+    </p>
+
+    <div class="pj-grid">
+
+      <!-- Card 1: Sage Rendering Engine -->
+      <article class="pj-card" data-pj-index="0">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Sage Rendering Engine</h3>
+            <span class="pj-metric">&gt;$1B channel powered</span>
+          </div>
+          <p class="pj-desc">
+            Architected a high-performance Handlebars scripting engine from scratch, taking full
+            ownership of replacing Salesforce's legacy E360 platform end to end. Designed the
+            two-step gRPC API and a generic helper framework — 40+ scripting helpers reaching 100%
+            functional parity with legacy behavior. The engine now powers the email channel
+            generating more than $1B in annual revenue, with critical functionality delivered two
+            releases ahead of schedule.
+          </p>
+          <figure class="pj-flow" role="img" aria-label="System design: two-step gRPC pipeline — client request compiles once, renders per recipient, then delivers to email.">
+            <figcaption class="pj-flow-caption">Design detail — two-step gRPC pipeline</figcaption>
+            <div class="pj-flow-row" aria-hidden="true">
+              <span class="pj-flow-node">Client</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node pj-flow-node--accent">Compile</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node pj-flow-node--accent2">Render</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node">Email</span>
+            </div>
+          </figure>
+          <ul class="pj-tags">
+            <li>Java</li>
+            <li>gRPC</li>
+            <li>Architecture</li>
+            <li>Lead</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 2: Email Service 10x Throughput -->
+      <article class="pj-card" data-pj-index="1">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Email Service 10x Throughput</h3>
+            <span class="pj-metric">10M &rarr; 40M / hr</span>
+          </div>
+          <p class="pj-desc">
+            Led the team through a full redesign of email delivery, taking throughput from 10M to
+            40M emails per hour by optimizing AWS DynamoDB batch loads and streamlining
+            intermediate step execution. Introduced Redis for deduplication to eliminate redundant
+            sends at scale.
+          </p>
+          <ul class="pj-tags">
+            <li>AWS</li>
+            <li>DynamoDB</li>
+            <li>Redis</li>
+            <li>Performance</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 3: Five-Nines Availability Framework -->
+      <article class="pj-card" data-pj-index="2">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Five-Nines Availability Framework</h3>
+            <span class="pj-metric">98% &rarr; 99.999%</span>
+          </div>
+          <p class="pj-desc">
+            Architected a validation framework that raised email service availability from 98% to
+            99.999%. Cut PagerDuty alerts by more than 10 per week and turned future bug fixes into
+            minor, low-risk code changes. Built as the source of truth for on-call reliability.
+          </p>
+          <ul class="pj-tags">
+            <li>Reliability</li>
+            <li>Validation</li>
+            <li>On-call</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 4: EC2 Reboot-on-Degrade -->
+      <article class="pj-card" data-pj-index="3">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">EC2 Reboot-on-Degrade</h3>
+            <span class="pj-metric">556K+ customers protected</span>
+          </div>
+          <p class="pj-desc">
+            Rearchitected the customer maintenance service to let EC2 send "reboot" events across
+            25 public regions when hardware degraded, safeguarding instance data for more than
+            556,000 customers. Part of a broader scheduler overhaul that removed manual daily scripts.
+          </p>
+          <ul class="pj-tags">
+            <li>AWS</li>
+            <li>EC2</li>
+            <li>Distributed Systems</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 5: AI-Orchestrated Org Provisioning & Test Automation -->
+      <article class="pj-card" data-pj-index="4">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">AI-Orchestrated Org Provisioning &amp; Test Automation</h3>
+            <span class="pj-metric">~4 hrs/org &rarr; automated</span>
+          </div>
+          <p class="pj-desc">
+            Architected an agentic automation pipeline using Claude and AI agents to replace a
+            manual ~4-hour-per-org workflow — provisioning a new org, executing preview and real
+            email sends, and standing up integration and daily service-health tests. Eliminated
+            repetitive setup toil and reclaimed multiple weeks of aggregate team effort.
+          </p>
+          <ul class="pj-tags">
+            <li>Claude</li>
+            <li>AI Agents</li>
+            <li>Automation</li>
+            <li>Test Infrastructure</li>
+            <li>Salesforce</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  STYLE: Projects section (scoped, prefix .pj-)
+  Shared eyebrow pattern re-declared here per DESIGN_SYSTEM.md
+  spec (mono, uppercase, cyan, letter-spaced) in case no other
+  fragment defines it — identical rules are harmless if it does.
+============================================================ -->
+<style>
+  #projects .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  #projects .eyebrow span {
+    color: var(--text-faint);
+  }
+
+  .pj-section {
+    padding-block: 6rem;
+  }
+
+  .pj-container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .pj-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  .pj-title {
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .pj-subtitle {
+    max-width: 640px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  .pj-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .pj-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+  }
+
+  /* ---- Card shell ---- */
+  .pj-card {
+    position: relative;
+    isolation: isolate;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--bg-elev);
+    overflow: hidden;
+    outline: none;
+    cursor: default;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  .pj-card:hover,
+  .pj-card:focus-visible {
+    transform: translateY(-6px);
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .pj-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Gradient border glow (mask trick) */
+  .pj-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .pj-card:hover::before,
+  .pj-card:focus-visible::before {
+    opacity: 1;
+  }
+
+  /* Pointer-follow spotlight (decorative, optional, degrades gracefully) */
+  .pj-card-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(
+      320px circle at var(--pj-mx, 50%) var(--pj-my, 50%),
+      rgba(34, 211, 238, 0.16),
+      transparent 65%
+    );
+    pointer-events: none;
+  }
+
+  .pj-card:hover .pj-card-spotlight {
+    opacity: 1;
+  }
+
+  .pj-card-inner {
+    position: relative;
+    z-index: 1;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .pj-card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+
+  .pj-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+
+  .pj-metric {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--accent-3);
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    border-radius: 999px;
+    padding: 0.3rem 0.65rem;
+    white-space: nowrap;
+  }
+
+  .pj-desc {
+    color: var(--text-dim);
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+
+  /* ---- System-design artifact (Sage card only): mini gRPC flow diagram ---- */
+  .pj-flow {
+    margin: 0.15rem 0 0;
+    padding: 0.85rem 0.9rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 0.65rem;
+    background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), rgba(167, 139, 250, 0.04));
+  }
+
+  .pj-flow-caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 0.65rem;
+  }
+
+  .pj-flow-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pj-flow-node {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    background: var(--bg-elev-2);
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .pj-flow-node--accent {
+    color: var(--accent);
+    border-color: rgba(34, 211, 238, 0.35);
+    background: rgba(34, 211, 238, 0.1);
+  }
+
+  .pj-flow-node--accent2 {
+    color: var(--accent-2);
+    border-color: rgba(167, 139, 250, 0.35);
+    background: rgba(167, 139, 250, 0.1);
+  }
+
+  .pj-flow-arrow {
+    color: var(--text-faint);
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 420px) {
+    .pj-flow-row {
+      gap: 0.35rem;
+    }
+    .pj-flow-node {
+      font-size: 0.66rem;
+      padding: 0.26rem 0.5rem;
+    }
+  }
+
+  .pj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin-top: 0.25rem;
+    padding: 0;
+  }
+
+  .pj-tags li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    background: var(--bg-elev-2);
+    border-radius: 999px;
+    padding: 0.28rem 0.6rem;
+  }
+
+  /* ---- Reveal-on-scroll (JS-gated so no-JS users always see content) ---- */
+  .pj-card.pj-pending {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .pj-card.pj-pending.pj-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pj-card,
+    .pj-card.pj-pending,
+    .pj-card.pj-pending.pj-visible {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    .pj-card:hover,
+    .pj-card:focus-visible {
+      transform: none !important;
+    }
+    .pj-card-spotlight {
+      display: none !important;
+    }
+  }
+</style>
+
+<!-- ============================================================
+  SCRIPT: Projects section (scoped to #projects, prefix pj-)
+  - Reveal-on-scroll with 60ms stagger via IntersectionObserver
+  - Pointer-follow spotlight highlight (mouse/pointer only)
+  - Fully guarded by prefers-reduced-motion + feature detection
+============================================================ -->
+<script>
+  (function () {
+    var section = document.getElementById('projects');
+    if (!section) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cards = Array.prototype.slice.call(section.querySelectorAll('.pj-card'));
+
+    // Reveal-on-scroll with stagger (skipped entirely under reduced motion)
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      cards.forEach(function (card) {
+        card.classList.add('pj-pending');
+      });
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var idx = parseInt(entry.target.getAttribute('data-pj-index'), 10) || 0;
+              var delay = idx * 60;
+              setTimeout(function () {
+                entry.target.classList.add('pj-visible');
+              }, delay);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      cards.forEach(function (card) {
+        observer.observe(card);
+      });
+    }
+
+    // Pointer-follow spotlight highlight (progressive enhancement only)
+    if (!reduceMotion && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+      cards.forEach(function (card) {
+        card.addEventListener('pointermove', function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = ((e.clientX - rect.left) / rect.width) * 100;
+          var y = ((e.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty('--pj-mx', x + '%');
+          card.style.setProperty('--pj-my', y + '%');
+        });
+      });
+    }
+  })();
+</script>

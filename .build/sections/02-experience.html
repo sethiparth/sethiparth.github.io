@@ -1,0 +1,607 @@
+<!-- ============================================================
+     SECTION: Experience — "The Journey" scroll-synced timeline
+     id="experience" · eyebrow "01 The Journey"
+     Scoped class prefix: .tl-  (Timeline)
+     Spine runs REVERSE-chronologically top→bottom: current role
+     (Salesforce) first, ending at the education origin nodes.
+     ============================================================ -->
+<section id="experience" class="tl-section" aria-labelledby="tl-heading">
+  <div class="tl-container">
+
+    <p class="eyebrow"><span>01</span> The Journey</p>
+    <h2 id="tl-heading" class="tl-heading">A Decade in Motion</h2>
+    <p class="tl-sub">A decade-long arc — from architecting the systems behind a $1B email channel back to the lecture halls in Solan where it started. Scroll to trace the line.</p>
+
+    <div class="tl-timeline" data-tl-root>
+
+      <!-- Central spine: static track + scroll-driven gradient fill -->
+      <div class="tl-spine" aria-hidden="true">
+        <div class="tl-spine-track"></div>
+        <div class="tl-spine-fill" data-tl-fill></div>
+      </div>
+
+      <ol class="tl-eras">
+
+        <!-- ================= SALESFORCE (current, most recent) ================= -->
+        <li class="tl-era" data-tl-era data-side="right" data-accent="cyan">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-company">Salesforce</p>
+              <p class="tl-role">Senior Software Engineer (SMTS)</p>
+              <p class="tl-dates">May 2022 — Present</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Architecture — Lead</p>
+                <p class="tl-line"><span class="tl-metric">$1B+</span> revenue channel — architected the "Sage" rendering engine from scratch, a two-step gRPC core replacing the legacy E360 platform, shipping critical functionality two releases ahead of schedule.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Migration &amp; Parity</p>
+                <p class="tl-line"><span class="tl-metric">40+</span> scripting helpers built with Product to reach 100% functional parity with the legacy system, backed by a custom Compatibility Testing Framework.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:2">
+                <p class="tl-tag">Performance</p>
+                <p class="tl-line">DynamoDB batch tuning and Redis dedup drove a <span class="tl-metric">10x</span> throughput gain — 10M to 40M emails processed every hour.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:3">
+                <p class="tl-tag">Reliability</p>
+                <p class="tl-line">A validation framework raised availability from 98% to <span class="tl-metric">99.999%</span>, cutting PagerDuty alerts by 10+ a week.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:4">
+                <p class="tl-tag">Scale</p>
+                <p class="tl-line">Rebuilt email processing into <span class="tl-metric">bulk</span> operations with real-time entitlements, enabling quota-aware partial sends under load.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/salesforce.png" alt="Salesforce logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- ================= AWS ================= -->
+        <li class="tl-era" data-tl-era data-side="left" data-accent="violet">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-company">Amazon Web Services</p>
+              <p class="tl-role">Software Engineer · Seattle, WA</p>
+              <p class="tl-dates">Oct 2019 — May 2022</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Reliability</p>
+                <p class="tl-line">Rearchitected the maintenance service to fire reboot events across 25 public regions, protecting <span class="tl-metric">556K+</span> EC2 customers' instance data on degraded hardware.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Scheduling</p>
+                <p class="tl-line">Redesigned EC2 maintenance scheduling with a best-fit algorithm, killing manual scripts and cutting "no time slot" errors by <span class="tl-metric">100s</span> every two weeks.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:2">
+                <p class="tl-tag">Automation</p>
+                <p class="tl-line">Automated manual maintenance escalations on internal EC2 instances, removing <span class="tl-metric">4,000</span> escalations and hundreds of engineer-hours a year.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:3">
+                <p class="tl-tag">Customer Choice</p>
+                <p class="tl-line">Designed a scheduling algorithm honoring customer-chosen windows, giving <span class="tl-metric">10,000+</span> customers control over their own maintenance schedule.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/aws.png" alt="Amazon Web Services logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- ================= OM PARTNERS ================= -->
+        <li class="tl-era" data-tl-era data-side="right" data-accent="emerald">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-company">OM Partners</p>
+              <p class="tl-role">Software Engineer · Atlanta, GA</p>
+              <p class="tl-dates">Feb 2019 — Oct 2019</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Algorithms</p>
+                <p class="tl-line">Designed a scheduling algorithm distributing tasks across time buckets from user input, optimizing work-execution rate.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Systems</p>
+                <p class="tl-line">Implemented optimization strategies in <span class="tl-metric">C++17</span> for "OPAL," a custom supply-chain inventory and logistics language.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/omp.jpeg" alt="OM Partners logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- ============= UNIVERSITY OF FLORIDA (education) ============= -->
+        <li class="tl-era tl-era--edu" data-tl-era data-side="left" data-accent="mono">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Education</p>
+              <p class="tl-company">University of Florida</p>
+              <p class="tl-role">M.S., Computer Science · Gainesville, FL</p>
+              <p class="tl-dates">Aug 2017 — Dec 2018</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Pivot</p>
+                <p class="tl-line">Traded hardware and signals for distributed systems and software — the turn that set the rest of the map.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Result</p>
+                <p class="tl-line">Finished with a <span class="tl-metric">3.56/4</span> GPA, then shipped first production code within months.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/uf.webp" alt="University of Florida logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- ============= JAYPEE UNIVERSITY (education, origin) ============= -->
+        <li class="tl-era tl-era--edu" data-tl-era data-side="right" data-accent="mono">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Origin Node — Where it started</p>
+              <p class="tl-company">Jaypee University of Information &amp; Technology</p>
+              <p class="tl-role">B.Tech, Electronics &amp; Communication · Solan, India</p>
+              <p class="tl-dates">Aug 2013 — May 2017</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Foundation</p>
+                <p class="tl-line">Four years of signals, circuits, and systems thinking — the raw material every line of code since has built on.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Result</p>
+                <p class="tl-line">Graduated with a <span class="tl-metric">9.1/10</span> GPA, top of a cohort chasing the same handful of engineering seats abroad.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/juit.jpg" alt="Jaypee University of Information Technology logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION-SCOPED STYLES — Experience / The Journey timeline
+     All selectors prefixed .tl- to avoid collisions with other sections.
+     ============================================================ -->
+<style>
+  .tl-section {
+    padding: 6rem 0; /* py-24 */
+  }
+
+  .tl-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .tl-container { padding: 0 2rem; }
+  }
+
+  .tl-heading {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: clamp(1.9rem, 4.2vw, 2.75rem);
+    color: var(--text);
+    margin: 0.5rem 0 0.75rem;
+  }
+
+  .tl-sub {
+    color: var(--text-dim);
+    line-height: 1.6;
+    max-width: 46ch;
+    margin: 0 0 3.5rem;
+  }
+
+  /* ---------- Timeline shell ---------- */
+  .tl-timeline {
+    position: relative;
+  }
+
+  .tl-spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+  }
+  .tl-spine-track {
+    position: absolute;
+    inset: 0;
+    background: var(--border);
+    border-radius: 2px;
+  }
+  .tl-spine-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+    border-radius: 2px;
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.45);
+    transition: height 0.12s linear;
+  }
+
+  .tl-eras {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---------- Era row (mobile-first: single left-aligned column) ---------- */
+  .tl-era {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 1.25rem;
+    padding-block: 2rem;
+  }
+  .tl-era:first-child { padding-top: 0; }
+  .tl-era:last-child { padding-bottom: 0; }
+
+  .tl-node {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.3rem;
+  }
+  .tl-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-elev);
+    border: 2px solid var(--border);
+    transform: rotate(var(--tl-dot-rotate, 0deg)) scale(var(--tl-dot-scale, 1));
+    transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+  .tl-era.is-active .tl-dot {
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+  .tl-era.is-current .tl-dot {
+    --tl-dot-scale: 1.45;
+    box-shadow: var(--glow-cyan), var(--glow-violet);
+  }
+
+  /* Education / origin nodes: hollow diamond marker, quieter until lit —
+     distinct from the solid circular career-era nodes on the same spine. */
+  .tl-era--edu .tl-dot {
+    --tl-dot-rotate: 45deg;
+    border-radius: 3px;
+    border-style: dashed;
+  }
+
+  .tl-content {
+    grid-column: 2;
+    position: relative;
+    padding-top: 0.1rem;
+  }
+  .tl-content::before {
+    content: "";
+    position: absolute;
+    top: 0.75rem;
+    left: -1.25rem;
+    width: 1rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--tl-era-c, var(--accent)), transparent);
+  }
+
+  .tl-origin-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--tl-era-c, var(--text-dim));
+    margin: 0 0 0.4rem;
+  }
+
+  .tl-company {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.25rem;
+  }
+  .tl-role {
+    font-size: 0.875rem;
+    color: var(--text-dim);
+    margin: 0 0 0.4rem;
+  }
+  .tl-dates {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--tl-era-c, var(--accent));
+    margin: 0 0 1.25rem;
+  }
+
+  .tl-achievements {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tl-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-faint);
+    margin: 0 0 0.2rem;
+  }
+  .tl-tag::before {
+    content: "// ";
+    color: var(--text-faint);
+  }
+
+  .tl-line {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .tl-metric {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    color: var(--tl-era-c, var(--accent));
+    background: rgba(34, 211, 238, 0.08); /* fallback for browsers without color-mix() */
+    background: color-mix(in srgb, var(--tl-era-c, var(--accent)) 14%, transparent);
+    padding: 0.05rem 0.4rem;
+    border-radius: 0.3rem;
+    white-space: nowrap;
+  }
+
+  /* Per-era accent color used by dates / connector / metric chips.
+     "mono" = education/origin nodes: quieter, graphite tone by design —
+     the neon only arrives once the career eras begin. */
+  .tl-era[data-accent="cyan"]    { --tl-era-c: var(--accent); }
+  .tl-era[data-accent="violet"]  { --tl-era-c: var(--accent-2); }
+  .tl-era[data-accent="emerald"] { --tl-era-c: var(--accent-3); }
+  .tl-era[data-accent="mono"]    { --tl-era-c: var(--text-dim); }
+
+  /* ---------- Brand mark tile (fills the empty half opposite the content card) ----------
+     Mobile: rendered small, above the card, in the content column (order:-1 reorders it
+     ahead of .tl-content in source/auto-placement without touching markup order).
+     Desktop: repositioned into the empty grid cell on the side opposite data-side. */
+  .tl-logo {
+    grid-column: 2;
+    order: -1;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+  .tl-logo-tile {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.9rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .tl-era:hover .tl-logo-tile {
+    border-color: var(--tl-era-c, var(--accent));
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(34, 211, 238, 0.3); /* fallback for browsers without color-mix() */
+    box-shadow: 0 0 22px color-mix(in srgb, var(--tl-era-c, var(--accent)) 45%, transparent);
+  }
+
+  .tl-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* ---------- Desktop: alternating spine layout ---------- */
+  @media (min-width: 768px) {
+    .tl-spine {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tl-era {
+      grid-template-columns: 1fr 56px 1fr;
+      column-gap: 2.5rem;
+    }
+
+    .tl-node { grid-column: 2; }
+
+    .tl-era[data-side="right"] .tl-content {
+      grid-column: 3;
+    }
+    .tl-era[data-side="left"] .tl-content {
+      grid-column: 1;
+    }
+    .tl-era[data-side="right"] .tl-content::before {
+      left: -1.75rem;
+      width: 1.5rem;
+      background: linear-gradient(90deg, var(--tl-era-c, var(--accent)), transparent);
+    }
+    .tl-era[data-side="left"] .tl-content::before {
+      left: auto;
+      right: -1.75rem;
+      width: 1.5rem;
+      background: linear-gradient(270deg, var(--tl-era-c, var(--accent)), transparent);
+    }
+
+    /* Logo tile fills the grid cell OPPOSITE the content card — mirrors data-side. */
+    .tl-logo {
+      order: 0;
+      margin-bottom: 0;
+      align-items: center;
+    }
+    .tl-era[data-side="right"] .tl-logo {
+      grid-column: 1;
+      justify-content: flex-end;
+    }
+    .tl-era[data-side="left"] .tl-logo {
+      grid-column: 3;
+      justify-content: flex-start;
+    }
+
+    .tl-logo-tile {
+      width: 68px;
+      height: 68px;
+      border-radius: 1.1rem;
+      padding: 9px;
+    }
+  }
+
+  /* ---------- Scroll-reveal state (JS-enhanced only) ---------- */
+  .tl-js .tl-achievement {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: calc(var(--i, 0) * 60ms);
+  }
+  .tl-js .tl-achievement.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ---------- Reduced motion: everything static, no scroll-driven transforms ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .tl-spine-fill { transition: none; }
+    .tl-dot { transition: none; }
+    .tl-logo-tile,
+    .tl-logo-img { transition: none; }
+    .tl-js .tl-achievement {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<!-- ============================================================
+     SECTION-SCOPED SCRIPT — scroll-synced spine fill, active-node
+     lighting, and staggered achievement reveal.
+     Guards for prefers-reduced-motion; no heavy library, rAF only.
+     ============================================================ -->
+<script>
+  (function () {
+    var root = document.querySelector('[data-tl-root]');
+    if (!root) return;
+
+    var fill = root.querySelector('[data-tl-fill]');
+    var eras = Array.prototype.slice.call(root.querySelectorAll('[data-tl-era]'));
+    var achievements = Array.prototype.slice.call(root.querySelectorAll('[data-tl-achievement]'));
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion) {
+      // Static, fully-visible fallback: no scroll listeners, no transforms.
+      if (fill) fill.style.height = '100%';
+      eras.forEach(function (era) {
+        era.classList.add('is-active');
+      });
+      return;
+    }
+
+    // Enable scroll-reveal CSS hooks only when JS + motion are both available.
+    root.classList.add('tl-js');
+
+    function clamp(v, min, max) {
+      return Math.max(min, Math.min(max, v));
+    }
+
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var rect = root.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var total = rect.height;
+      var scrolled = clamp(vh * 0.5 - rect.top, 0, total);
+      var pct = total > 0 ? (scrolled / total) * 100 : 0;
+
+      if (fill) fill.style.height = pct + '%';
+
+      var activeIdx = -1;
+      eras.forEach(function (era, i) {
+        var erect = era.getBoundingClientRect();
+        var passed = erect.top < vh * 0.55;
+        era.classList.toggle('is-active', passed);
+        if (passed) activeIdx = i;
+      });
+      eras.forEach(function (era, i) {
+        era.classList.toggle('is-current', i === activeIdx);
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+
+    // Staggered fade/slide-in for achievement lines as each era enters view.
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3, rootMargin: '0px 0px -10% 0px' }
+      );
+      achievements.forEach(function (item) {
+        io.observe(item);
+      });
+    } else {
+      // No IntersectionObserver support: reveal everything immediately.
+      achievements.forEach(function (item) {
+        item.classList.add('in-view');
+      });
+    }
+  })();
+</script>

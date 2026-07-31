@@ -1,0 +1,3634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parth Sethi — Senior Software Engineer | Salesforce, ex-AWS</title>
+    <meta name="description" content="Parth Sethi is a Senior Software Engineer (SMTS) at Salesforce and ex-AWS SDE. Architected systems powering $1B+ annual revenue, 10x email throughput, and five-nines availability. Java, gRPC, AWS, distributed systems." />
+    <meta name="keywords" content="Parth Sethi, Senior Software Engineer, Staff Engineer, Salesforce, AWS, Software Development Engineer, Java, gRPC, distributed systems, DynamoDB, backend engineer" />
+    <meta name="author" content="Parth Sethi" />
+    <link rel="canonical" href="https://sethiparth.github.io/portfolio.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Parth Sethi — Senior Software Engineer | Salesforce, ex-AWS" />
+    <meta property="og:description" content="Senior Software Engineer at Salesforce, ex-AWS. Architected systems powering $1B+ revenue, 10x throughput gains, and five-nines availability." />
+    <meta property="og:image" content="https://sethiparth.github.io/images/og-preview.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Parth Sethi — Senior Software Engineer" />
+    <meta property="og:url" content="https://sethiparth.github.io/portfolio.html" />
+    <meta property="og:site_name" content="Parth Sethi" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Parth Sethi — Senior Software Engineer" />
+    <meta name="twitter:description" content="Senior Software Engineer at Salesforce, ex-AWS. $1B+ revenue systems, 10x throughput, five-nines availability." />
+    <meta name="twitter:image" content="https://sethiparth.github.io/images/og-preview.jpg" />
+
+    <!-- JSON-LD Person schema (AI/search legibility) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Parth Sethi",
+      "alternateName": "Seth",
+      "jobTitle": "Senior Software Engineer (SMTS)",
+      "url": "https://sethiparth.github.io/",
+      "email": "mailto:sethiparth.ps@gmail.com",
+      "telephone": "+1-352-745-9455",
+      "sameAs": ["https://github.com/sethiparth"],
+      "worksFor": { "@type": "Organization", "name": "Salesforce" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of Florida" },
+        { "@type": "CollegeOrUniversity", "name": "Jaypee University of Information & Technology" }
+      ],
+      "description": "Senior Software Engineer (SMTS) at Salesforce and ex-AWS SDE. Architected high-performance distributed systems powering $1B+ in annual revenue, 10x throughput improvements, and five-nines availability.",
+      "knowsAbout": ["Java","C++","SQL","NoSQL","gRPC","Distributed Systems","AWS DynamoDB","AWS Lambda","AWS EC2","System Architecture","Performance Optimization","High Availability Systems"]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Hoisted section CDN deps (Leaflet etc.) -->
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+    <script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+
+    <style>
+      :root{
+        --bg:#0a0e1a; --bg-elev:#111726; --bg-elev-2:#161d30; --border:#1f2a44;
+        --text:#e6edf7; --text-dim:#9fb0cc; --text-faint:#8d9ab6;
+        --accent:#22d3ee; --accent-2:#a78bfa; --accent-3:#34d399;
+        --glow-cyan:0 0 24px rgba(34,211,238,.45); --glow-violet:0 0 24px rgba(167,139,250,.40);
+        --grad:linear-gradient(135deg,#22d3ee 0%,#a78bfa 100%);
+      }
+      html{scroll-behavior:smooth;}
+      @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+      body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden;}
+      h1,h2,h3{letter-spacing:-.02em;font-weight:700;color:var(--text);}
+      a{color:inherit;}
+      ::selection{background:rgba(34,211,238,.3);}
+      .eyebrow{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:var(--accent);display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;}
+      .eyebrow span{color:var(--text-faint);}
+      .wrap{max-width:1100px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;}
+      @media (min-width:768px){ .wrap{padding-left:2rem;padding-right:2rem;} }
+      section{scroll-margin-top:80px;}
+      :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+      /* Sticky nav */
+      .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,14,26,.72);border-bottom:1px solid var(--border);}
+      .nav a.navlink{font-size:.9rem;color:var(--text-dim);transition:color .2s;font-family:'JetBrains Mono',monospace;}
+      .nav a.navlink:hover{color:var(--accent);}
+      .brand{font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+      footer{border-top:1px solid var(--border);color:var(--text-dim);}
+      footer a:hover{color:var(--accent);}
+</style>
+</head>
+<body>
+  <nav class="nav" aria-label="Primary">
+    <div class="wrap flex items-center justify-between h-16">
+      <a href="#home" class="brand text-lg">Parth Sethi</a>
+      <div class="hidden md:flex items-center gap-7">
+        <a class="navlink" href="#experience">Experience</a>
+        <a class="navlink" href="#skills">Skills</a>
+        <a class="navlink" href="#projects">Projects</a>
+        <a class="navlink" href="#college">Academic</a>
+        <a class="navlink" href="https://github.com/sethiparth" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
+        <a class="navlink" href="mailto:sethiparth.ps@gmail.com" aria-label="Email Parth">Email</a>
+      </div>
+      <button id="navToggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg" style="border:1px solid var(--border);color:var(--text-dim);" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t" style="border-color:var(--border);background:rgba(10,14,26,.96);">
+      <div class="wrap flex flex-col py-3">
+        <a class="navlink py-2" href="#experience">Experience</a>
+        <a class="navlink py-2" href="#skills">Skills</a>
+        <a class="navlink py-2" href="#projects">Projects</a>
+        <a class="navlink py-2" href="#college">Academic</a>
+        <a class="navlink py-2" href="https://github.com/sethiparth" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
+        <a class="navlink py-2" href="mailto:sethiparth.ps@gmail.com" aria-label="Email Parth">Email</a>
+      </div>
+    </div>
+  </nav>
+  <script>
+    (function(){
+      var btn=document.getElementById('navToggle'), menu=document.getElementById('mobileMenu');
+      if(!btn||!menu) return;
+      function closeMenu(){ menu.classList.add('hidden'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','Open menu'); }
+      btn.addEventListener('click', function(){
+        var open=menu.classList.toggle('hidden')===false;
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open?'Close menu':'Open menu');
+      });
+      menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    })();
+  </script>
+  <main>
+
+<!-- ===== 01-hero.html ===== -->
+<!-- ============================================================
+  SECTION: HERO + IMPACT STATS
+  Design note: subject is a backend/reliability engineer (Sage
+  rendering engine, 10x throughput, five-nines availability, EC2
+  fleet protection). The signature motif is a live NEURAL NETWORK —
+  glowing neurons wired by synapse lines that drift, pulse, and
+  react to the cursor like something actually thinking — standing
+  in for the distributed systems Parth builds. The impact grid
+  reads like a metrics dashboard (mono keys, a live pulse on the
+  uptime stat) rather than a generic stat-card grid.
+============================================================ -->
+
+<section id="home" class="hero-section">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <p class="hero-kicker"><span class="hero-kicker-dot" aria-hidden="true"></span>Systems: operational</p>
+
+    <h1 class="hero-name">Parth Sethi <span class="hero-name-alias">(Seth)</span></h1>
+
+    <p class="hero-subtitle">Senior Software Engineer (SMTS) &middot; Salesforce</p>
+
+    <p class="hero-tagline">I design the infrastructure behind billions of requests &mdash; systems built to scale ten&times; over and fail exactly never.</p>
+
+    <div class="hero-ctas">
+      <a href="#experience" class="hero-btn hero-btn-primary">
+        <span>View Work</span>
+        <svg class="hero-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://github.com/sethiparth" class="hero-btn hero-btn-secondary" target="_blank" rel="noopener noreferrer">
+        <svg class="hero-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.26 5.69.42.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:sethiparth.ps@gmail.com" class="hero-btn hero-btn-ghost">
+        <svg class="hero-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18v12H3V6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 6.5 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Email</span>
+      </a>
+    </div>
+  </div>
+
+  <a href="#impact" class="hero-scroll-cue" aria-label="Scroll to impact stats">
+    <span class="hero-scroll-cue-track"><span class="hero-scroll-cue-dot"></span></span>
+    <span class="hero-scroll-cue-text">Scroll</span>
+  </a>
+</section>
+
+<section id="impact" class="impact-section">
+  <div class="impact-inner">
+    <p class="impact-eyebrow">At a glance</p>
+    <div class="impact-grid">
+
+      <div class="impact-card">
+        <p class="impact-number" data-prefix="$" data-target="1" data-suffix="B+">$0B+</p>
+        <p class="impact-label">Annual revenue enabled</p>
+        <p class="impact-context">Email channel via the Sage rendering engine</p>
+      </div>
+
+      <div class="impact-card">
+        <p class="impact-number" data-target="40" data-suffix="M/hr">0M/hr</p>
+        <p class="impact-label">Email throughput</p>
+        <p class="impact-context">10M &rarr; 40M emails/hour &mdash; a 10&times; gain</p>
+      </div>
+
+      <div class="impact-card">
+        <p class="impact-number" data-target="99.999" data-decimals="3" data-suffix="%">0%</p>
+        <p class="impact-label"><span class="impact-pulse" aria-hidden="true"></span>Availability</p>
+        <p class="impact-context">Raised from 98% to five nines</p>
+      </div>
+
+      <div class="impact-card">
+        <p class="impact-number" data-target="556" data-suffix="K+">0K+</p>
+        <p class="impact-label">EC2 customers protected</p>
+        <p class="impact-context">Reboot-on-degrade across 25 regions</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  SECTION-SCOPED STYLES (prefixed .hero- / .impact- to avoid collisions)
+============================================================ -->
+<style>
+  /* ---------- HERO ---------- */
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6rem 1.5rem 4rem;
+    isolation: isolate;
+  }
+
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  /* Soft radial vignette so text stays legible over the neural mesh.
+     Center keeps a light dark-wash floor (.28) even at rest so the
+     brightest node/pulse frames never threaten text contrast. */
+  .hero-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 52% at 50% 38%, rgba(10,14,26,.28) 0%, rgba(10,14,26,.62) 68%, rgba(10,14,26,.94) 100%),
+      linear-gradient(180deg, rgba(10,14,26,.22) 0%, rgba(10,14,26,0) 20%, rgba(10,14,26,0) 76%, rgba(10,14,26,.88) 100%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: rgba(52, 211, 153, 0.08);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 999px;
+    padding: .4rem .9rem;
+    margin: 0 0 1.75rem;
+  }
+
+  .hero-kicker-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-3);
+    box-shadow: 0 0 8px rgba(52, 211, 153, .8);
+    flex: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-kicker-dot { animation: hero-pulse 2.2s ease-in-out infinite; }
+  }
+
+  .hero-name {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 .9rem;
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 34px rgba(34, 211, 238, .30));
+  }
+  .hero-name-alias{
+    -webkit-background-clip: initial; background-clip: initial;
+    -webkit-text-fill-color: initial; color: var(--text-dim);
+    font-weight: 500; opacity: .85;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 500;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+
+  .hero-tagline {
+    font-size: clamp(.95rem, 1.6vw, 1.1rem);
+    line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 560px;
+    margin: 0 0 2.5rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .9rem;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    font-size: .9rem;
+    font-weight: 600;
+    padding: .7rem 1.4rem;
+    border-radius: .75rem;
+    border: 1px solid transparent;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .hero-btn-icon { flex: none; }
+
+  .hero-btn-primary {
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    color: #0a0e1a;
+  }
+  .hero-btn-primary:hover { transform: translateY(-2px); box-shadow: var(--glow-cyan); }
+
+  .hero-btn-secondary {
+    background: var(--bg-elev);
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .hero-btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .hero-btn-ghost {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-dim);
+  }
+  .hero-btn-ghost:hover {
+    color: var(--accent-2);
+    border-color: var(--accent-2);
+    transform: translateY(-2px);
+    box-shadow: var(--glow-violet);
+  }
+
+  .hero-btn:focus-visible,
+  .hero-scroll-cue:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-btn:hover { transform: none; }
+  }
+
+  .hero-scroll-cue {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    color: var(--text-faint);
+    text-decoration: none;
+  }
+
+  .hero-scroll-cue-track {
+    width: 22px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+  }
+
+  .hero-scroll-cue-dot {
+    width: 4px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 8px rgba(34, 211, 238, .7);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-scroll-cue-dot { animation: hero-scroll-cue-move 1.8s ease-in-out infinite; }
+  }
+
+  .hero-scroll-cue-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  @keyframes hero-scroll-cue-move {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(10px); opacity: .3; }
+  }
+
+  @keyframes hero-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .45; transform: scale(1.4); }
+  }
+
+  /* ---------- IMPACT STATS ---------- */
+  .impact-section {
+    position: relative;
+    padding: 5rem 1.5rem 6rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .impact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .impact-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: center;
+    margin: 0 0 2.5rem;
+  }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .impact-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .impact-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+
+  .impact-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: var(--glow-cyan);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .impact-card:hover { transform: none; }
+  }
+
+  .impact-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0 0 .6rem;
+  }
+
+  .impact-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 .4rem;
+  }
+
+  .impact-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-3);
+    box-shadow: 0 0 8px rgba(52, 211, 153, .8);
+    flex: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .impact-pulse { animation: hero-pulse 2.2s ease-in-out infinite; }
+  }
+
+  .impact-context {
+    font-size: .78rem;
+    line-height: 1.5;
+    color: var(--text-faint);
+    margin: 0;
+  }
+</style>
+
+<!-- ============================================================
+  SECTION-SCOPED SCRIPT: interactive neural-network canvas + count-up
+============================================================ -->
+<script>
+(function () {
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ============================================================
+     NEURAL NETWORK CANVAS
+     Glowing "neurons" drift slowly and wire themselves together
+     with fading synapse lines. Bright signals occasionally travel
+     along a connection. The cursor (or a touch) acts like a live
+     electrode: nearby neurons brighten and are gently pulled
+     toward it, synapses visibly "reach" toward the pointer, and
+     movement emits a soft expanding pulse — like the network is
+     firing in response. Static (no animation, no pointer reaction)
+     under prefers-reduced-motion.
+  ============================================================ */
+  var canvas = document.querySelector('.hero-canvas');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var section = document.getElementById('home');
+
+    var COLOR_RGB = [[34, 211, 238], [167, 139, 250]]; // cyan, violet
+
+    var nodes = [];
+    var signals = [];   // traveling pulses along a synapse
+    var ripples = [];   // expanding rings from pointer movement
+    var mouse = { x: 0, y: 0, active: false, lastX: 0, lastY: 0, lastMoveAt: 0 };
+
+    var w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    var rafId = null;
+    var running = false;
+    var isHidden = document.hidden;
+    var isOutOfView = false;
+    var idleTimer = null;
+
+    function rgba(rgb, a) {
+      return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + a + ')';
+    }
+
+    function mixRgb(a, b, t) {
+      return [
+        a[0] + (b[0] - a[0]) * t,
+        a[1] + (b[1] - a[1]) * t,
+        a[2] + (b[2] - a[2]) * t
+      ];
+    }
+
+    function clamp(v, min, max) { return v < min ? min : (v > max ? max : v); }
+
+    function resize() {
+      w = section.clientWidth;
+      h = section.clientHeight;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      seedNodes();
+    }
+
+    function seedNodes() {
+      var isNarrow = w < 640;
+      var density = isNarrow ? 20000 : 11000;
+      var count = Math.round((w * h) / density);
+      count = clamp(count, isNarrow ? 16 : 34, isNarrow ? 32 : 80);
+
+      nodes = [];
+      for (var i = 0; i < count; i++) {
+        var speed = 0.05 + Math.random() * 0.09;
+        var angle = Math.random() * Math.PI * 2;
+        nodes.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          dvx: Math.cos(angle) * speed,
+          dvy: Math.sin(angle) * speed,
+          ox: 0, oy: 0,
+          r: 1.3 + Math.random() * 1.1,
+          hue: i % 2,
+          glow: 0
+        });
+      }
+      signals = [];
+      ripples = [];
+    }
+
+    function maxLinkDist() {
+      return clamp(w / 6, 70, 165);
+    }
+
+    function mouseRadius() {
+      return w < 640 ? 130 : 200;
+    }
+
+    /* ---------- pointer tracking (section-scoped, canvas stays inert) ---------- */
+    function setPointer(clientX, clientY) {
+      var rect = section.getBoundingClientRect();
+      var nx = clientX - rect.left;
+      var ny = clientY - rect.top;
+      if (nx < 0 || ny < 0 || nx > w || ny > h) return;
+
+      var dx = nx - mouse.lastX, dy = ny - mouse.lastY;
+      var moved = Math.sqrt(dx * dx + dy * dy);
+      mouse.x = nx;
+      mouse.y = ny;
+      mouse.active = true;
+
+      var now = performance.now();
+      if (moved > 26 && now - mouse.lastMoveAt > 90 && ripples.length < 5) {
+        ripples.push({ x: nx, y: ny, start: now, duration: 850, hue: Math.random() < 0.5 ? 0 : 1 });
+        mouse.lastMoveAt = now;
+      }
+      mouse.lastX = nx;
+      mouse.lastY = ny;
+
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(function () { mouse.active = false; }, 2200);
+    }
+
+    function onMouseMove(e) { setPointer(e.clientX, e.clientY); }
+    function onTouchMove(e) {
+      if (e.touches && e.touches.length) setPointer(e.touches[0].clientX, e.touches[0].clientY);
+    }
+    function onPointerLeave() {
+      mouse.active = false;
+      clearTimeout(idleTimer);
+    }
+
+    /* ---------- drawing ---------- */
+    function drawFrame(interactive) {
+      ctx.clearRect(0, 0, w, h);
+      var maxDist = maxLinkDist();
+      var mR = mouseRadius();
+
+      /* connections */
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var a = nodes[i], b = nodes[j];
+          var dx = a.x - b.x, dy = a.y - b.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist >= maxDist) continue;
+
+          var t = 1 - dist / maxDist;
+          var boost = interactive ? Math.max(a.glow, b.glow) : 0;
+          var alpha = t * 0.30 + boost * 0.30;
+          var rgb = a.hue === b.hue ? COLOR_RGB[a.hue] : mixRgb(COLOR_RGB[0], COLOR_RGB[1], 0.5);
+
+          ctx.beginPath();
+          ctx.strokeStyle = rgba(rgb, alpha);
+          ctx.lineWidth = 1 + boost * 0.8;
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+
+      /* synapses reaching toward the pointer */
+      if (interactive && mouse.active) {
+        var reach = [];
+        for (var r = 0; r < nodes.length; r++) {
+          var n = nodes[r];
+          var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
+          var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+          if (mdist < mR) reach.push({ n: n, d: mdist });
+        }
+        reach.sort(function (p, q) { return p.d - q.d; });
+        var reachCount = Math.min(6, reach.length);
+        for (var rc = 0; rc < reachCount; rc++) {
+          var item = reach[rc];
+          var t2 = 1 - item.d / mR;
+          var rgb2 = COLOR_RGB[item.n.hue];
+          ctx.beginPath();
+          ctx.strokeStyle = rgba(rgb2, t2 * 0.5);
+          ctx.lineWidth = 1.1;
+          ctx.moveTo(item.n.x, item.n.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+
+      /* traveling pulses along a synapse */
+      var now = performance.now();
+      for (var s = signals.length - 1; s >= 0; s--) {
+        var sig = signals[s];
+        var p = (now - sig.start) / sig.duration;
+        if (p >= 1) { signals.splice(s, 1); continue; }
+        var na = nodes[sig.i], nb = nodes[sig.j];
+        if (!na || !nb) { signals.splice(s, 1); continue; }
+        var px = na.x + (nb.x - na.x) * p;
+        var py = na.y + (nb.y - na.y) * p;
+        var fade = Math.sin(p * Math.PI);
+        var rgb3 = COLOR_RGB[na.hue];
+        ctx.beginPath();
+        ctx.fillStyle = rgba(rgb3, fade);
+        ctx.shadowColor = rgba(rgb3, 0.9);
+        ctx.shadowBlur = 8;
+        ctx.arc(px, py, 2.1, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      /* pointer-movement ripples */
+      for (var rp = ripples.length - 1; rp >= 0; rp--) {
+        var rip = ripples[rp];
+        var rProg = (now - rip.start) / rip.duration;
+        if (rProg >= 1) { ripples.splice(rp, 1); continue; }
+        var rRadius = rProg * 90;
+        var rAlpha = (1 - rProg) * 0.35;
+        ctx.beginPath();
+        ctx.strokeStyle = rgba(COLOR_RGB[rip.hue], rAlpha);
+        ctx.lineWidth = 1.4;
+        ctx.arc(rip.x, rip.y, rRadius, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      /* nodes */
+      for (var k = 0; k < nodes.length; k++) {
+        var nd = nodes[k];
+        var rgb4 = COLOR_RGB[nd.hue];
+        var g = nd.glow;
+        ctx.beginPath();
+        ctx.fillStyle = rgba(rgb4, 0.9 + g * 0.1);
+        ctx.shadowColor = rgba(rgb4, Math.min(1, 0.55 + g));
+        ctx.shadowBlur = 7 + g * 14;
+        ctx.arc(nd.x, nd.y, nd.r + g * 1.6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    function drawStatic() {
+      // Elegant, non-animated fallback for prefers-reduced-motion:
+      // draw the field once, no pointer reaction, no rAF loop.
+      drawFrame(false);
+    }
+
+    function step() {
+      var maxDist = maxLinkDist();
+      var mR = mouseRadius();
+      var now = performance.now();
+
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+
+        n.ox *= 0.9;
+        n.oy *= 0.9;
+        n.glow *= 0.94;
+
+        if (mouse.active) {
+          var dx = mouse.x - n.x, dy = mouse.y - n.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < mR && dist > 0.01) {
+            var pull = (1 - dist / mR);
+            n.ox += (dx / dist) * pull * 0.018;
+            n.oy += (dy / dist) * pull * 0.018;
+            n.glow = Math.min(1, n.glow + pull * 0.14);
+          }
+        }
+
+        var omag = Math.sqrt(n.ox * n.ox + n.oy * n.oy);
+        if (omag > 0.7) { n.ox = (n.ox / omag) * 0.7; n.oy = (n.oy / omag) * 0.7; }
+
+        n.x += n.dvx + n.ox;
+        n.y += n.dvy + n.oy;
+
+        if (n.x < 0 || n.x > w) n.dvx *= -1;
+        if (n.y < 0 || n.y > h) n.dvy *= -1;
+        n.x = clamp(n.x, 0, w);
+        n.y = clamp(n.y, 0, h);
+      }
+
+      /* occasionally fire a signal along a live synapse */
+      if (signals.length < 5 && Math.random() < 0.035 && nodes.length > 1) {
+        var i0 = Math.floor(Math.random() * nodes.length);
+        var best = -1, bestDist = maxDist;
+        for (var j2 = 0; j2 < nodes.length; j2++) {
+          if (j2 === i0) continue;
+          var ddx = nodes[i0].x - nodes[j2].x, ddy = nodes[i0].y - nodes[j2].y;
+          var dd = Math.sqrt(ddx * ddx + ddy * ddy);
+          if (dd < bestDist) { bestDist = dd; best = j2; }
+        }
+        if (best !== -1) {
+          signals.push({ i: i0, j: best, start: now, duration: 900 + Math.random() * 500 });
+        }
+      }
+
+      drawFrame(true);
+
+      if (running) rafId = requestAnimationFrame(step);
+    }
+
+    function updateRunning() {
+      var shouldRun = !prefersReducedMotion && !isHidden && !isOutOfView;
+      if (shouldRun && !running) {
+        running = true;
+        rafId = requestAnimationFrame(step);
+      } else if (!shouldRun && running) {
+        running = false;
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    if (prefersReducedMotion) {
+      drawStatic();
+    } else {
+      section.addEventListener('mousemove', onMouseMove, { passive: true });
+      section.addEventListener('mouseleave', onPointerLeave, { passive: true });
+      section.addEventListener('touchmove', onTouchMove, { passive: true });
+      section.addEventListener('touchend', onPointerLeave, { passive: true });
+      section.addEventListener('touchcancel', onPointerLeave, { passive: true });
+
+      document.addEventListener('visibilitychange', function () {
+        isHidden = document.hidden;
+        updateRunning();
+      });
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            isOutOfView = !entry.isIntersecting;
+            updateRunning();
+          });
+        }, { threshold: 0.05 });
+        io.observe(section);
+      }
+
+      updateRunning();
+    }
+  }
+
+  /* ---------- Count-up on scroll into view ---------- */
+  var numbers = document.querySelectorAll('.impact-number[data-target]');
+
+  function formatValue(el, value) {
+    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var prefix = el.getAttribute('data-prefix') || '';
+    var suffix = el.getAttribute('data-suffix') || '';
+    return prefix + value.toFixed(decimals) + suffix;
+  }
+
+  function animateCount(el) {
+    var target = parseFloat(el.getAttribute('data-target'));
+    if (prefersReducedMotion) {
+      el.textContent = formatValue(el, target);
+      return;
+    }
+    var duration = 1400;
+    var start = null;
+
+    function tick(ts) {
+      if (start === null) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatValue(el, target * eased);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if ('IntersectionObserver' in window && numbers.length) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    numbers.forEach(function (el) { observer.observe(el); });
+  } else {
+    numbers.forEach(function (el) {
+      el.textContent = formatValue(el, parseFloat(el.getAttribute('data-target')));
+    });
+  }
+})();
+</script>
+
+
+<!-- ===== 02-experience.html ===== -->
+<!-- ============================================================
+     SECTION: Experience — "The Journey" scroll-synced timeline
+     id="experience" · eyebrow "01 The Journey"
+     Scoped class prefix: .tl-  (Timeline)
+     Spine runs REVERSE-chronologically top→bottom: current role
+     (Salesforce) first, ending at the education origin nodes.
+     ============================================================ -->
+<section id="experience" class="tl-section" aria-labelledby="tl-heading">
+  <div class="tl-container">
+
+    <p class="eyebrow"><span>01</span> The Journey</p>
+    <h2 id="tl-heading" class="tl-heading">A Decade in Motion</h2>
+    <p class="tl-sub">A decade-long arc — from architecting the systems behind a $1B email channel back to the lecture halls in Solan where it started. Scroll to trace the line.</p>
+
+    <div class="tl-timeline" data-tl-root>
+
+      <!-- Central spine: static track + scroll-driven gradient fill -->
+      <div class="tl-spine" aria-hidden="true">
+        <div class="tl-spine-track"></div>
+        <div class="tl-spine-fill" data-tl-fill></div>
+      </div>
+
+      <ol class="tl-eras">
+
+        <!-- ================= SALESFORCE (current, most recent) ================= -->
+        <li class="tl-era" data-tl-era data-side="right" data-accent="cyan">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-company">Salesforce</p>
+              <p class="tl-role">Senior Software Engineer (SMTS)</p>
+              <p class="tl-dates">May 2022 — Present</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Architecture — Lead</p>
+                <p class="tl-line"><span class="tl-metric">$1B+</span> revenue channel — architected the "Sage" rendering engine from scratch, a two-step gRPC core replacing the legacy E360 platform, shipping critical functionality two releases ahead of schedule.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Migration &amp; Parity</p>
+                <p class="tl-line"><span class="tl-metric">40+</span> scripting helpers built with Product to reach 100% functional parity with the legacy system, backed by a custom Compatibility Testing Framework.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:2">
+                <p class="tl-tag">Performance</p>
+                <p class="tl-line">DynamoDB batch tuning and Redis dedup drove a <span class="tl-metric">10x</span> throughput gain — 10M to 40M emails processed every hour.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:3">
+                <p class="tl-tag">Reliability</p>
+                <p class="tl-line">A validation framework raised availability from 98% to <span class="tl-metric">99.999%</span>, cutting PagerDuty alerts by 10+ a week.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:4">
+                <p class="tl-tag">Scale</p>
+                <p class="tl-line">Rebuilt email processing into <span class="tl-metric">bulk</span> operations with real-time entitlements, enabling quota-aware partial sends under load.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/salesforce.png" alt="Salesforce logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- ================= AWS ================= -->
+        <li class="tl-era" data-tl-era data-side="left" data-accent="violet">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-company">Amazon Web Services</p>
+              <p class="tl-role">Software Engineer · Seattle, WA</p>
+              <p class="tl-dates">Oct 2019 — May 2022</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Reliability</p>
+                <p class="tl-line">Rearchitected the maintenance service to fire reboot events across 25 public regions, protecting <span class="tl-metric">556K+</span> EC2 customers' instance data on degraded hardware.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Scheduling</p>
+                <p class="tl-line">Redesigned EC2 maintenance scheduling with a best-fit algorithm, killing manual scripts and cutting "no time slot" errors by <span class="tl-metric">100s</span> every two weeks.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:2">
+                <p class="tl-tag">Automation</p>
+                <p class="tl-line">Automated manual maintenance escalations on internal EC2 instances, removing <span class="tl-metric">4,000</span> escalations and hundreds of engineer-hours a year.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:3">
+                <p class="tl-tag">Customer Choice</p>
+                <p class="tl-line">Designed a scheduling algorithm honoring customer-chosen windows, giving <span class="tl-metric">10,000+</span> customers control over their own maintenance schedule.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/aws.png" alt="Amazon Web Services logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- ================= OM PARTNERS ================= -->
+        <li class="tl-era" data-tl-era data-side="right" data-accent="emerald">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-company">OM Partners</p>
+              <p class="tl-role">Software Engineer · Atlanta, GA</p>
+              <p class="tl-dates">Feb 2019 — Oct 2019</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Algorithms</p>
+                <p class="tl-line">Designed a scheduling algorithm distributing tasks across time buckets from user input, optimizing work-execution rate.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Systems</p>
+                <p class="tl-line">Implemented optimization strategies in <span class="tl-metric">C++17</span> for "OPAL," a custom supply-chain inventory and logistics language.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/omp.jpeg" alt="OM Partners logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- ============= UNIVERSITY OF FLORIDA (education) ============= -->
+        <li class="tl-era tl-era--edu" data-tl-era data-side="left" data-accent="mono">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Education</p>
+              <p class="tl-company">University of Florida</p>
+              <p class="tl-role">M.S., Computer Science · Gainesville, FL</p>
+              <p class="tl-dates">Aug 2017 — Dec 2018</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Pivot</p>
+                <p class="tl-line">Traded hardware and signals for distributed systems and software — the turn that set the rest of the map.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Result</p>
+                <p class="tl-line">Finished with a <span class="tl-metric">3.56/4</span> GPA, then shipped first production code within months.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/uf.webp" alt="University of Florida logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- ============= JAYPEE UNIVERSITY (education, origin) ============= -->
+        <li class="tl-era tl-era--edu" data-tl-era data-side="right" data-accent="mono">
+          <div class="tl-node" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <header class="tl-badge">
+              <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Origin Node — Where it started</p>
+              <p class="tl-company">Jaypee University of Information &amp; Technology</p>
+              <p class="tl-role">B.Tech, Electronics &amp; Communication · Solan, India</p>
+              <p class="tl-dates">Aug 2013 — May 2017</p>
+            </header>
+
+            <ul class="tl-achievements">
+              <li class="tl-achievement" data-tl-achievement style="--i:0">
+                <p class="tl-tag">Foundation</p>
+                <p class="tl-line">Four years of signals, circuits, and systems thinking — the raw material every line of code since has built on.</p>
+              </li>
+              <li class="tl-achievement" data-tl-achievement style="--i:1">
+                <p class="tl-tag">Result</p>
+                <p class="tl-line">Graduated with a <span class="tl-metric">9.1/10</span> GPA, top of a cohort chasing the same handful of engineering seats abroad.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tl-logo" aria-hidden="true">
+            <div class="tl-logo-tile">
+              <img class="tl-logo-img" src="images/logos/juit.jpg" alt="Jaypee University of Information Technology logo" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION-SCOPED STYLES — Experience / The Journey timeline
+     All selectors prefixed .tl- to avoid collisions with other sections.
+     ============================================================ -->
+<style>
+  .tl-section {
+    padding: 6rem 0; /* py-24 */
+  }
+
+  .tl-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .tl-container { padding: 0 2rem; }
+  }
+
+  .tl-heading {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: clamp(1.9rem, 4.2vw, 2.75rem);
+    color: var(--text);
+    margin: 0.5rem 0 0.75rem;
+  }
+
+  .tl-sub {
+    color: var(--text-dim);
+    line-height: 1.6;
+    max-width: 46ch;
+    margin: 0 0 3.5rem;
+  }
+
+  /* ---------- Timeline shell ---------- */
+  .tl-timeline {
+    position: relative;
+  }
+
+  .tl-spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+  }
+  .tl-spine-track {
+    position: absolute;
+    inset: 0;
+    background: var(--border);
+    border-radius: 2px;
+  }
+  .tl-spine-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+    border-radius: 2px;
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.45);
+    transition: height 0.12s linear;
+  }
+
+  .tl-eras {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---------- Era row (mobile-first: single left-aligned column) ---------- */
+  .tl-era {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 1.25rem;
+    padding-block: 2rem;
+  }
+  .tl-era:first-child { padding-top: 0; }
+  .tl-era:last-child { padding-bottom: 0; }
+
+  .tl-node {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.3rem;
+  }
+  .tl-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-elev);
+    border: 2px solid var(--border);
+    transform: rotate(var(--tl-dot-rotate, 0deg)) scale(var(--tl-dot-scale, 1));
+    transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+  .tl-era.is-active .tl-dot {
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+  .tl-era.is-current .tl-dot {
+    --tl-dot-scale: 1.45;
+    box-shadow: var(--glow-cyan), var(--glow-violet);
+  }
+
+  /* Education / origin nodes: hollow diamond marker, quieter until lit —
+     distinct from the solid circular career-era nodes on the same spine. */
+  .tl-era--edu .tl-dot {
+    --tl-dot-rotate: 45deg;
+    border-radius: 3px;
+    border-style: dashed;
+  }
+
+  .tl-content {
+    grid-column: 2;
+    position: relative;
+    padding-top: 0.1rem;
+  }
+  .tl-content::before {
+    content: "";
+    position: absolute;
+    top: 0.75rem;
+    left: -1.25rem;
+    width: 1rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--tl-era-c, var(--accent)), transparent);
+  }
+
+  .tl-origin-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--tl-era-c, var(--text-dim));
+    margin: 0 0 0.4rem;
+  }
+
+  .tl-company {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.25rem;
+  }
+  .tl-role {
+    font-size: 0.875rem;
+    color: var(--text-dim);
+    margin: 0 0 0.4rem;
+  }
+  .tl-dates {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--tl-era-c, var(--accent));
+    margin: 0 0 1.25rem;
+  }
+
+  .tl-achievements {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tl-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-faint);
+    margin: 0 0 0.2rem;
+  }
+  .tl-tag::before {
+    content: "// ";
+    color: var(--text-faint);
+  }
+
+  .tl-line {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .tl-metric {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    color: var(--tl-era-c, var(--accent));
+    background: rgba(34, 211, 238, 0.08); /* fallback for browsers without color-mix() */
+    background: color-mix(in srgb, var(--tl-era-c, var(--accent)) 14%, transparent);
+    padding: 0.05rem 0.4rem;
+    border-radius: 0.3rem;
+    white-space: nowrap;
+  }
+
+  /* Per-era accent color used by dates / connector / metric chips.
+     "mono" = education/origin nodes: quieter, graphite tone by design —
+     the neon only arrives once the career eras begin. */
+  .tl-era[data-accent="cyan"]    { --tl-era-c: var(--accent); }
+  .tl-era[data-accent="violet"]  { --tl-era-c: var(--accent-2); }
+  .tl-era[data-accent="emerald"] { --tl-era-c: var(--accent-3); }
+  .tl-era[data-accent="mono"]    { --tl-era-c: var(--text-dim); }
+
+  /* ---------- Brand mark tile (fills the empty half opposite the content card) ----------
+     Mobile: rendered small, above the card, in the content column (order:-1 reorders it
+     ahead of .tl-content in source/auto-placement without touching markup order).
+     Desktop: repositioned into the empty grid cell on the side opposite data-side. */
+  .tl-logo {
+    grid-column: 2;
+    order: -1;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+  .tl-logo-tile {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.9rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .tl-era:hover .tl-logo-tile {
+    border-color: var(--tl-era-c, var(--accent));
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(34, 211, 238, 0.3); /* fallback for browsers without color-mix() */
+    box-shadow: 0 0 22px color-mix(in srgb, var(--tl-era-c, var(--accent)) 45%, transparent);
+  }
+
+  .tl-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* ---------- Desktop: alternating spine layout ---------- */
+  @media (min-width: 768px) {
+    .tl-spine {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tl-era {
+      grid-template-columns: 1fr 56px 1fr;
+      column-gap: 2.5rem;
+    }
+
+    .tl-node { grid-column: 2; }
+
+    .tl-era[data-side="right"] .tl-content {
+      grid-column: 3;
+    }
+    .tl-era[data-side="left"] .tl-content {
+      grid-column: 1;
+    }
+    .tl-era[data-side="right"] .tl-content::before {
+      left: -1.75rem;
+      width: 1.5rem;
+      background: linear-gradient(90deg, var(--tl-era-c, var(--accent)), transparent);
+    }
+    .tl-era[data-side="left"] .tl-content::before {
+      left: auto;
+      right: -1.75rem;
+      width: 1.5rem;
+      background: linear-gradient(270deg, var(--tl-era-c, var(--accent)), transparent);
+    }
+
+    /* Logo tile fills the grid cell OPPOSITE the content card — mirrors data-side. */
+    .tl-logo {
+      order: 0;
+      margin-bottom: 0;
+      align-items: center;
+    }
+    .tl-era[data-side="right"] .tl-logo {
+      grid-column: 1;
+      justify-content: flex-end;
+    }
+    .tl-era[data-side="left"] .tl-logo {
+      grid-column: 3;
+      justify-content: flex-start;
+    }
+
+    .tl-logo-tile {
+      width: 68px;
+      height: 68px;
+      border-radius: 1.1rem;
+      padding: 9px;
+    }
+  }
+
+  /* ---------- Scroll-reveal state (JS-enhanced only) ---------- */
+  .tl-js .tl-achievement {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: calc(var(--i, 0) * 60ms);
+  }
+  .tl-js .tl-achievement.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ---------- Reduced motion: everything static, no scroll-driven transforms ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .tl-spine-fill { transition: none; }
+    .tl-dot { transition: none; }
+    .tl-logo-tile,
+    .tl-logo-img { transition: none; }
+    .tl-js .tl-achievement {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<!-- ============================================================
+     SECTION-SCOPED SCRIPT — scroll-synced spine fill, active-node
+     lighting, and staggered achievement reveal.
+     Guards for prefers-reduced-motion; no heavy library, rAF only.
+     ============================================================ -->
+<script>
+  (function () {
+    var root = document.querySelector('[data-tl-root]');
+    if (!root) return;
+
+    var fill = root.querySelector('[data-tl-fill]');
+    var eras = Array.prototype.slice.call(root.querySelectorAll('[data-tl-era]'));
+    var achievements = Array.prototype.slice.call(root.querySelectorAll('[data-tl-achievement]'));
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion) {
+      // Static, fully-visible fallback: no scroll listeners, no transforms.
+      if (fill) fill.style.height = '100%';
+      eras.forEach(function (era) {
+        era.classList.add('is-active');
+      });
+      return;
+    }
+
+    // Enable scroll-reveal CSS hooks only when JS + motion are both available.
+    root.classList.add('tl-js');
+
+    function clamp(v, min, max) {
+      return Math.max(min, Math.min(max, v));
+    }
+
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var rect = root.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var total = rect.height;
+      var scrolled = clamp(vh * 0.5 - rect.top, 0, total);
+      var pct = total > 0 ? (scrolled / total) * 100 : 0;
+
+      if (fill) fill.style.height = pct + '%';
+
+      var activeIdx = -1;
+      eras.forEach(function (era, i) {
+        var erect = era.getBoundingClientRect();
+        var passed = erect.top < vh * 0.55;
+        era.classList.toggle('is-active', passed);
+        if (passed) activeIdx = i;
+      });
+      eras.forEach(function (era, i) {
+        era.classList.toggle('is-current', i === activeIdx);
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+
+    // Staggered fade/slide-in for achievement lines as each era enters view.
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3, rootMargin: '0px 0px -10% 0px' }
+      );
+      achievements.forEach(function (item) {
+        io.observe(item);
+      });
+    } else {
+      // No IntersectionObserver support: reveal everything immediately.
+      achievements.forEach(function (item) {
+        item.classList.add('in-view');
+      });
+    }
+  })();
+</script>
+
+
+<!-- ===== 03-skills.html ===== -->
+<!-- ============================================================
+     SECTION: Skills Matrix (id="skills")
+     Prefix: sk-
+     Depends on global tokens defined in :root by the assembler
+     (--bg, --bg-elev, --border, --text, --accent, --accent-2, --accent-3, etc.)
+     ============================================================ -->
+<section id="skills" class="sk-section" aria-labelledby="sk-heading">
+  <div class="sk-container">
+    <p class="eyebrow"><span>02</span> Skills</p>
+    <h2 id="sk-heading" class="sk-heading">Skills Matrix</h2>
+    <p class="sk-sub">Languages I ship in daily, the AWS stack that runs my services, and how I work.</p>
+
+    <div class="sk-grid-main">
+      <!-- Languages: proficiency bars -->
+      <article class="sk-card sk-observe" data-sk-stagger="0">
+        <div class="sk-card-head">
+          <h3 class="sk-card-title">Languages</h3>
+          <div class="sk-legend" aria-hidden="true">
+            <span class="sk-legend-item"><span class="sk-legend-dot sk-legend-dot--proficient"></span>Proficient</span>
+            <span class="sk-legend-item"><span class="sk-legend-dot sk-legend-dot--familiar"></span>Familiar</span>
+          </div>
+        </div>
+        <ul class="sk-bar-list">
+          <li class="sk-bar-item" data-level="proficient" style="--pct:95%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Java</span>
+              <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
+            </div>
+            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="proficient" style="--pct:88%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">C++</span>
+              <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
+            </div>
+            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="proficient" style="--pct:90%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">SQL</span>
+              <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
+            </div>
+            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="proficient" style="--pct:85%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">NoSQL</span>
+              <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
+            </div>
+            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:60%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Scala</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:58%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Python</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:52%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Ruby</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:55%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">C#</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- AWS Tech Stack: tag cloud -->
+      <article class="sk-card sk-observe" data-sk-stagger="1">
+        <div class="sk-card-head">
+          <h3 class="sk-card-title">AWS Tech Stack</h3>
+        </div>
+        <ul class="sk-chip-cloud" aria-label="AWS services used">
+          <li class="sk-chip sk-chip--aws">DynamoDB</li>
+          <li class="sk-chip sk-chip--aws">Redshift</li>
+          <li class="sk-chip sk-chip--aws">RDS</li>
+          <li class="sk-chip sk-chip--aws">S3</li>
+          <li class="sk-chip sk-chip--aws">Lambda</li>
+          <li class="sk-chip sk-chip--aws">Kinesis</li>
+          <li class="sk-chip sk-chip--aws">QuickSight</li>
+          <li class="sk-chip sk-chip--aws">EC2</li>
+          <li class="sk-chip sk-chip--aws">CloudWatch</li>
+          <li class="sk-chip sk-chip--aws">CloudFormation</li>
+          <li class="sk-chip sk-chip--aws">IAM</li>
+          <li class="sk-chip sk-chip--aws">KMS</li>
+          <li class="sk-chip sk-chip--aws">SNS</li>
+          <li class="sk-chip sk-chip--aws">SQS</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="sk-grid-sub">
+      <!-- Tools & Processes -->
+      <article class="sk-card sk-observe" data-sk-stagger="2">
+        <div class="sk-card-head">
+          <h3 class="sk-card-title">Tools &amp; Process</h3>
+        </div>
+        <ul class="sk-chip-cloud" aria-label="Tools and processes used">
+          <li class="sk-chip sk-chip--tool">Agile</li>
+          <li class="sk-chip sk-chip--tool">Kanban</li>
+          <li class="sk-chip sk-chip--tool">Git</li>
+          <li class="sk-chip sk-chip--tool">Claude</li>
+          <li class="sk-chip sk-chip--tool">Cursor</li>
+        </ul>
+      </article>
+
+      <!-- Education -->
+      <article class="sk-card sk-observe" data-sk-stagger="3">
+        <div class="sk-card-head">
+          <h3 class="sk-card-title">Education</h3>
+        </div>
+        <ul class="sk-edu-list">
+          <li class="sk-edu-item">
+            <div class="sk-edu-top">
+              <span class="sk-edu-degree">M.S. Computer Science</span>
+              <span class="sk-edu-gpa">GPA 3.56/4</span>
+            </div>
+            <div class="sk-edu-school">University of Florida, Gainesville FL</div>
+            <div class="sk-edu-date">Aug 2017 – Dec 2018</div>
+          </li>
+          <li class="sk-edu-item">
+            <div class="sk-edu-top">
+              <span class="sk-edu-degree">B.Tech Electronics &amp; Communication</span>
+              <span class="sk-edu-gpa">GPA 9.1/10</span>
+            </div>
+            <div class="sk-edu-school">Jaypee University of Information &amp; Technology, Solan, India</div>
+            <div class="sk-edu-date">Aug 2013 – May 2017</div>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Section-specific styles for #skills (prefix: sk-)
+     ============================================================ -->
+<style>
+  /* Reused eyebrow pattern per shared design system (idempotent if repeated by other sections) */
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .eyebrow span {
+    color: var(--text-faint);
+  }
+
+  .sk-section {
+    padding: 6rem 0;
+    position: relative;
+  }
+
+  .sk-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .sk-container {
+      padding: 0 2rem;
+    }
+  }
+
+  .sk-heading {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 0.75rem;
+  }
+
+  .sk-sub {
+    color: var(--text-dim);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 0 2.5rem;
+  }
+
+  /* Main grid: Languages + AWS stack, reflow via auto-fit (no horizontal scroll) */
+  .sk-grid-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sk-grid-sub {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 1.5rem;
+  }
+
+  .sk-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .sk-card.sk-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .sk-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .sk-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .sk-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  /* Legend */
+  .sk-legend {
+    display: flex;
+    gap: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .sk-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .sk-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .sk-legend-dot--proficient {
+    background: var(--accent);
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+  }
+
+  .sk-legend-dot--familiar {
+    background: var(--text-faint);
+  }
+
+  /* Proficiency bars */
+  .sk-bar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sk-bar-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+  }
+
+  .sk-bar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .sk-bar-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .sk-bar-tag--proficient {
+    color: var(--accent);
+  }
+
+  .sk-bar-tag--familiar {
+    color: var(--text-faint);
+  }
+
+  .sk-bar-track {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--bg-elev-2);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .sk-bar-fill {
+    position: absolute;
+    inset: 0;
+    width: 0%;
+    border-radius: 999px;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .sk-bar-item[data-level="proficient"] .sk-bar-fill {
+    background: linear-gradient(90deg, #22d3ee 0%, #a78bfa 100%);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .sk-bar-item[data-level="familiar"] .sk-bar-fill {
+    background: var(--text-faint);
+    opacity: 0.75;
+  }
+
+  .sk-bar-item.sk-bar-fill-active .sk-bar-fill {
+    width: var(--pct);
+  }
+
+  /* Chip / tag cloud */
+  .sk-chip-cloud {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .sk-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    background: var(--bg-elev-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.45rem 0.95rem;
+    line-height: 1;
+    transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .sk-chip--aws:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    box-shadow: var(--glow-cyan);
+    transform: translateY(-2px);
+  }
+
+  .sk-chip--tool:hover {
+    color: var(--text);
+    border-color: var(--accent-3);
+    box-shadow: 0 0 24px rgba(52, 211, 153, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Education */
+  .sk-edu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .sk-edu-item {
+    border-left: 2px solid var(--border);
+    padding-left: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .sk-edu-item:hover {
+    border-color: var(--accent-2);
+  }
+
+  .sk-edu-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .sk-edu-degree {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+
+  .sk-edu-gpa {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent-3);
+    white-space: nowrap;
+  }
+
+  .sk-edu-school {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+  }
+
+  .sk-edu-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    margin-top: 0.25rem;
+  }
+
+  /* Focus visibility (keyboard nav) for any focusable descendants */
+  .sk-section :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Reduced motion: disable transforms/transitions, show final state immediately */
+  @media (prefers-reduced-motion: reduce) {
+    .sk-card {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .sk-bar-fill {
+      transition: none;
+    }
+    .sk-chip:hover,
+    .sk-edu-item:hover {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-card {
+      padding: 1.35rem;
+    }
+  }
+</style>
+
+<!-- ============================================================
+     Section-specific script for #skills (prefix: sk-)
+     Scroll-triggered fade-up for cards (staggered) + bar fill animation.
+     Honors prefers-reduced-motion.
+     ============================================================ -->
+<script>
+  (function () {
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cards = document.querySelectorAll('#skills .sk-observe');
+    var barItems = document.querySelectorAll('#skills .sk-bar-item');
+
+    if (prefersReducedMotion) {
+      cards.forEach(function (card) {
+        card.classList.add('sk-visible');
+      });
+      barItems.forEach(function (item) {
+        item.classList.add('sk-bar-fill-active');
+      });
+      return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach(function (card) {
+        card.classList.add('sk-visible');
+      });
+      barItems.forEach(function (item) {
+        item.classList.add('sk-bar-fill-active');
+      });
+      return;
+    }
+
+    var cardObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var stagger = parseInt(el.getAttribute('data-sk-stagger'), 10) || 0;
+            setTimeout(function () {
+              el.classList.add('sk-visible');
+            }, stagger * 60);
+            cardObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    cards.forEach(function (card) {
+      cardObserver.observe(card);
+    });
+
+    var barObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('sk-bar-fill-active');
+            barObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    barItems.forEach(function (item) {
+      barObserver.observe(item);
+    });
+  })();
+</script>
+
+
+<!-- ===== 04-projects.html ===== -->
+<!-- ============================================================
+  SECTION: Projects / Case Studies (id="projects")
+  Eyebrow: "03 Projects" — follows shared DESIGN_SYSTEM.md tokens.
+  Prefix: .pj- for all section-scoped classes.
+============================================================ -->
+<section id="projects" class="pj-section" aria-labelledby="pj-heading">
+  <div class="pj-container">
+    <p class="eyebrow"><span>03</span> Projects</p>
+    <h2 id="pj-heading" class="pj-title">Case studies</h2>
+    <p class="pj-subtitle">
+      Systems shipped at scale — a from-scratch rendering engine, a 10x throughput rewrite,
+      a five-nines reliability framework, and a maintenance platform protecting half a million customers.
+    </p>
+
+    <div class="pj-grid">
+
+      <!-- Card 1: Sage Rendering Engine -->
+      <article class="pj-card" data-pj-index="0">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Sage Rendering Engine</h3>
+            <span class="pj-metric">&gt;$1B channel powered</span>
+          </div>
+          <p class="pj-desc">
+            Architected a high-performance Handlebars scripting engine from scratch, taking full
+            ownership of replacing Salesforce's legacy E360 platform end to end. Designed the
+            two-step gRPC API and a generic helper framework — 40+ scripting helpers reaching 100%
+            functional parity with legacy behavior. The engine now powers the email channel
+            generating more than $1B in annual revenue, with critical functionality delivered two
+            releases ahead of schedule.
+          </p>
+          <figure class="pj-flow" role="img" aria-label="System design: two-step gRPC pipeline — client request compiles once, renders per recipient, then delivers to email.">
+            <figcaption class="pj-flow-caption">Design detail — two-step gRPC pipeline</figcaption>
+            <div class="pj-flow-row" aria-hidden="true">
+              <span class="pj-flow-node">Client</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node pj-flow-node--accent">Compile</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node pj-flow-node--accent2">Render</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node">Email</span>
+            </div>
+          </figure>
+          <ul class="pj-tags">
+            <li>Java</li>
+            <li>gRPC</li>
+            <li>Architecture</li>
+            <li>Lead</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 2: Email Service 10x Throughput -->
+      <article class="pj-card" data-pj-index="1">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Email Service 10x Throughput</h3>
+            <span class="pj-metric">10M &rarr; 40M / hr</span>
+          </div>
+          <p class="pj-desc">
+            Led the team through a full redesign of email delivery, taking throughput from 10M to
+            40M emails per hour by optimizing AWS DynamoDB batch loads and streamlining
+            intermediate step execution. Introduced Redis for deduplication to eliminate redundant
+            sends at scale.
+          </p>
+          <ul class="pj-tags">
+            <li>AWS</li>
+            <li>DynamoDB</li>
+            <li>Redis</li>
+            <li>Performance</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 3: Five-Nines Availability Framework -->
+      <article class="pj-card" data-pj-index="2">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Five-Nines Availability Framework</h3>
+            <span class="pj-metric">98% &rarr; 99.999%</span>
+          </div>
+          <p class="pj-desc">
+            Architected a validation framework that raised email service availability from 98% to
+            99.999%. Cut PagerDuty alerts by more than 10 per week and turned future bug fixes into
+            minor, low-risk code changes. Built as the source of truth for on-call reliability.
+          </p>
+          <ul class="pj-tags">
+            <li>Reliability</li>
+            <li>Validation</li>
+            <li>On-call</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 4: EC2 Reboot-on-Degrade -->
+      <article class="pj-card" data-pj-index="3">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">EC2 Reboot-on-Degrade</h3>
+            <span class="pj-metric">556K+ customers protected</span>
+          </div>
+          <p class="pj-desc">
+            Rearchitected the customer maintenance service to let EC2 send "reboot" events across
+            25 public regions when hardware degraded, safeguarding instance data for more than
+            556,000 customers. Part of a broader scheduler overhaul that removed manual daily scripts.
+          </p>
+          <ul class="pj-tags">
+            <li>AWS</li>
+            <li>EC2</li>
+            <li>Distributed Systems</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 5: AI-Orchestrated Org Provisioning & Test Automation -->
+      <article class="pj-card" data-pj-index="4">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">AI-Orchestrated Org Provisioning &amp; Test Automation</h3>
+            <span class="pj-metric">~4 hrs/org &rarr; automated</span>
+          </div>
+          <p class="pj-desc">
+            Architected an agentic automation pipeline using Claude and AI agents to replace a
+            manual ~4-hour-per-org workflow — provisioning a new org, executing preview and real
+            email sends, and standing up integration and daily service-health tests. Eliminated
+            repetitive setup toil and reclaimed multiple weeks of aggregate team effort.
+          </p>
+          <ul class="pj-tags">
+            <li>Claude</li>
+            <li>AI Agents</li>
+            <li>Automation</li>
+            <li>Test Infrastructure</li>
+            <li>Salesforce</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  STYLE: Projects section (scoped, prefix .pj-)
+  Shared eyebrow pattern re-declared here per DESIGN_SYSTEM.md
+  spec (mono, uppercase, cyan, letter-spaced) in case no other
+  fragment defines it — identical rules are harmless if it does.
+============================================================ -->
+<style>
+  #projects .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  #projects .eyebrow span {
+    color: var(--text-faint);
+  }
+
+  .pj-section {
+    padding-block: 6rem;
+  }
+
+  .pj-container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .pj-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  .pj-title {
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .pj-subtitle {
+    max-width: 640px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  .pj-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .pj-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+  }
+
+  /* ---- Card shell ---- */
+  .pj-card {
+    position: relative;
+    isolation: isolate;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--bg-elev);
+    overflow: hidden;
+    outline: none;
+    cursor: default;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  .pj-card:hover,
+  .pj-card:focus-visible {
+    transform: translateY(-6px);
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .pj-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Gradient border glow (mask trick) */
+  .pj-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .pj-card:hover::before,
+  .pj-card:focus-visible::before {
+    opacity: 1;
+  }
+
+  /* Pointer-follow spotlight (decorative, optional, degrades gracefully) */
+  .pj-card-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(
+      320px circle at var(--pj-mx, 50%) var(--pj-my, 50%),
+      rgba(34, 211, 238, 0.16),
+      transparent 65%
+    );
+    pointer-events: none;
+  }
+
+  .pj-card:hover .pj-card-spotlight {
+    opacity: 1;
+  }
+
+  .pj-card-inner {
+    position: relative;
+    z-index: 1;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .pj-card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+
+  .pj-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+
+  .pj-metric {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--accent-3);
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    border-radius: 999px;
+    padding: 0.3rem 0.65rem;
+    white-space: nowrap;
+  }
+
+  .pj-desc {
+    color: var(--text-dim);
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+
+  /* ---- System-design artifact (Sage card only): mini gRPC flow diagram ---- */
+  .pj-flow {
+    margin: 0.15rem 0 0;
+    padding: 0.85rem 0.9rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 0.65rem;
+    background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), rgba(167, 139, 250, 0.04));
+  }
+
+  .pj-flow-caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 0.65rem;
+  }
+
+  .pj-flow-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pj-flow-node {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    background: var(--bg-elev-2);
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .pj-flow-node--accent {
+    color: var(--accent);
+    border-color: rgba(34, 211, 238, 0.35);
+    background: rgba(34, 211, 238, 0.1);
+  }
+
+  .pj-flow-node--accent2 {
+    color: var(--accent-2);
+    border-color: rgba(167, 139, 250, 0.35);
+    background: rgba(167, 139, 250, 0.1);
+  }
+
+  .pj-flow-arrow {
+    color: var(--text-faint);
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 420px) {
+    .pj-flow-row {
+      gap: 0.35rem;
+    }
+    .pj-flow-node {
+      font-size: 0.66rem;
+      padding: 0.26rem 0.5rem;
+    }
+  }
+
+  .pj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin-top: 0.25rem;
+    padding: 0;
+  }
+
+  .pj-tags li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    background: var(--bg-elev-2);
+    border-radius: 999px;
+    padding: 0.28rem 0.6rem;
+  }
+
+  /* ---- Reveal-on-scroll (JS-gated so no-JS users always see content) ---- */
+  .pj-card.pj-pending {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .pj-card.pj-pending.pj-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pj-card,
+    .pj-card.pj-pending,
+    .pj-card.pj-pending.pj-visible {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    .pj-card:hover,
+    .pj-card:focus-visible {
+      transform: none !important;
+    }
+    .pj-card-spotlight {
+      display: none !important;
+    }
+  }
+</style>
+
+<!-- ============================================================
+  SCRIPT: Projects section (scoped to #projects, prefix pj-)
+  - Reveal-on-scroll with 60ms stagger via IntersectionObserver
+  - Pointer-follow spotlight highlight (mouse/pointer only)
+  - Fully guarded by prefers-reduced-motion + feature detection
+============================================================ -->
+<script>
+  (function () {
+    var section = document.getElementById('projects');
+    if (!section) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cards = Array.prototype.slice.call(section.querySelectorAll('.pj-card'));
+
+    // Reveal-on-scroll with stagger (skipped entirely under reduced motion)
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      cards.forEach(function (card) {
+        card.classList.add('pj-pending');
+      });
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var idx = parseInt(entry.target.getAttribute('data-pj-index'), 10) || 0;
+              var delay = idx * 60;
+              setTimeout(function () {
+                entry.target.classList.add('pj-visible');
+              }, delay);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      cards.forEach(function (card) {
+        observer.observe(card);
+      });
+    }
+
+    // Pointer-follow spotlight highlight (progressive enhancement only)
+    if (!reduceMotion && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+      cards.forEach(function (card) {
+        card.addEventListener('pointermove', function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = ((e.clientX - rect.left) / rect.width) * 100;
+          var y = ((e.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty('--pj-mx', x + '%');
+          card.style.setProperty('--pj-my', y + '%');
+        });
+      });
+    }
+  })();
+</script>
+
+
+<!-- ===== 05-college.html ===== -->
+<!-- ============================================================
+  SECTION: Academic / College Projects — collapsible archive (id="college")
+  Eyebrow: "04 Academic Projects" — follows shared DESIGN_SYSTEM.md tokens.
+  Prefix: .col- for all section-scoped classes.
+
+  Design intent: this is the "things I built while learning" archive —
+  intentionally lighter weight than the Projects section and COLLAPSED
+  by default so it never competes with professional work. It borrows the
+  violet accent (--accent-2) instead of cyan to read as an earlier,
+  quieter chapter rather than a second "Projects" section.
+
+  The disclosure is a real <button aria-expanded> + a panel toggled via
+  a CSS grid-rows animation (no JS height math). Panel ships with the
+  `hidden` attribute in markup so collapsed-by-default holds even before
+  JS runs; opening/closing is JS-driven and fully keyboard operable
+  (native <button> gets Enter/Space for free). Reduced motion removes
+  the transition and swaps straight to the hidden attribute.
+============================================================ -->
+<section id="college" class="col-section" aria-labelledby="col-heading">
+  <div class="col-container">
+    <p class="eyebrow col-eyebrow"><span>04</span> Academic Projects</p>
+    <div class="col-headrow">
+      <div>
+        <h2 id="col-heading" class="col-title">Where it started</h2>
+        <p class="col-subtitle">
+          Things I built while learning — university coursework and side builds, archived
+          here so they don't compete with the professional work above.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        id="col-toggle-btn"
+        class="col-toggle"
+        aria-expanded="false"
+        aria-controls="col-panel"
+      >
+        <span class="col-toggle-text">
+          <span class="col-toggle-label" data-col-show="Show academic projects" data-col-hide="Hide academic projects">Show academic projects</span>
+          <span class="col-toggle-count">8 projects</span>
+        </span>
+        <svg class="col-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <noscript>
+      <style>
+        #col-panel[hidden] {
+          display: block !important;
+        }
+        #col-panel {
+          grid-template-rows: 1fr !important;
+        }
+      </style>
+    </noscript>
+
+    <div id="col-panel" class="col-panel" role="region" aria-labelledby="col-toggle-btn" hidden>
+      <div class="col-panel-inner">
+        <div class="col-grid">
+
+          <!-- 1: MEAN-stack Web App -->
+          <article class="col-card" data-col-index="0">
+            <h3 class="col-card-title">MEAN-stack Web App</h3>
+            <p class="col-desc">
+              Full REST API server with Express, MongoDB, and Mongoose; auth via Passport + JWT,
+              with a Bootstrap + Angular front end.
+            </p>
+            <ul class="col-tags">
+              <li>Node.js</li><li>Express</li><li>MongoDB</li><li>Angular</li>
+            </ul>
+          </article>
+
+          <!-- 2: Java-based Compiler -->
+          <article class="col-card" data-col-index="1">
+            <h3 class="col-card-title">Java-based Compiler</h3>
+            <p class="col-desc">
+              Scanner and top-down parser for a custom grammar on a strongly-typed language;
+              visitor pattern for type checking with token-based lexical analysis.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>ASM</li><li>JVM Bytecode</li><li>JUnit</li>
+            </ul>
+          </article>
+
+          <!-- 3: P2P File-Sharing -->
+          <article class="col-card" data-col-index="2">
+            <h3 class="col-card-title">P2P File-Sharing (BitTorrent-like)</h3>
+            <p class="col-desc">
+              Peer-to-peer file management with choking/unchoking logic, cutting cross-machine
+              download time by roughly 50%.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>TCP/IP</li><li>Sockets</li>
+            </ul>
+          </article>
+
+          <!-- 4: Tomasulo's Algorithm Simulator -->
+          <article class="col-card" data-col-index="3">
+            <h3 class="col-card-title">Tomasulo's Algorithm Simulator</h3>
+            <p class="col-desc">
+              Schedules and executes MIPS instructions at the binary level, with multithreaded
+              modules for parallel execution efficiency.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>Multithreading</li><li>Computer Architecture</li>
+            </ul>
+          </article>
+
+          <!-- 5: Huffman Encoding Compressor -->
+          <article class="col-card" data-col-index="4">
+            <h3 class="col-card-title">Huffman Encoding Compressor</h3>
+            <p class="col-desc">
+              File compression comparing a 4-way min-heap, binary heap, and pairing heap; a
+              cache-optimized 4-way min-heap gave the fastest decoding.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>Data Structures</li><li>Algorithms</li>
+            </ul>
+          </article>
+
+          <!-- 6: VR Medical Diagnosis App -->
+          <article class="col-card" data-col-index="5">
+            <h3 class="col-card-title">VR Medical Diagnosis App (Afridokta)</h3>
+            <p class="col-desc">
+              Select a body part to predict likely illnesses via a decision-tree model and email
+              the doctor directly; built Agile/Scrum.
+            </p>
+            <ul class="col-tags">
+              <li>C#</li><li>Unity</li><li>VR</li><li>SQLite</li>
+            </ul>
+          </article>
+
+          <!-- 7: NRG — VR Energy Simulator -->
+          <article class="col-card" data-col-index="6">
+            <h3 class="col-card-title">NRG — VR Energy Simulator</h3>
+            <p class="col-desc">
+              Install fossil, solar, and wind generators and simulate their short- and long-term
+              effects over time in VR.
+            </p>
+            <ul class="col-tags">
+              <li>C#</li><li>Unity</li><li>VR</li>
+            </ul>
+          </article>
+
+          <!-- 8: Java Banking Application -->
+          <article class="col-card" data-col-index="7">
+            <h3 class="col-card-title">Java Banking Application</h3>
+            <p class="col-desc">
+              Desktop banking app for deposits and withdrawals backed by an Oracle SQL database.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>Oracle</li><li>SQL</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  STYLE: Academic Projects section (scoped, prefix .col-)
+  Uses --accent-2 (violet) instead of --accent (cyan) as the primary
+  highlight color to visually mark this as an earlier, quieter chapter.
+============================================================ -->
+<style>
+  .col-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 0.75rem;
+  }
+  .col-eyebrow span {
+    color: var(--text-faint);
+  }
+
+  .col-section {
+    padding-block: 4.5rem;
+  }
+
+  .col-container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .col-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  .col-headrow {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .col-headrow {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .col-title {
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .col-subtitle {
+    max-width: 560px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* ---- Toggle button ---- */
+  .col-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.1rem;
+    color: var(--text);
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+
+  .col-toggle:hover {
+    border-color: rgba(167, 139, 250, 0.45);
+    box-shadow: var(--glow-violet);
+  }
+
+  .col-toggle:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 2px;
+  }
+
+  .col-toggle-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .col-toggle-label {
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: -0.005em;
+  }
+
+  .col-toggle-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--text-faint);
+  }
+
+  .col-chevron {
+    color: var(--accent-2);
+    flex-shrink: 0;
+    transition: transform 0.35s ease;
+  }
+
+  .col-toggle[aria-expanded="true"] .col-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ---- Collapsible panel (CSS grid-rows animation, no JS height math) ---- */
+  .col-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .col-panel[hidden] {
+    display: none;
+  }
+
+  .col-panel.col-is-open {
+    grid-template-rows: 1fr;
+  }
+
+  .col-panel-inner {
+    overflow: hidden;
+    min-height: 0;
+    padding-top: 2.25rem;
+  }
+
+  /* ---- Card grid: 3-col desktop / 2 / 1 mobile, lighter than .pj-grid ---- */
+  .col-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  @media (min-width: 640px) {
+    .col-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .col-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+  }
+
+  .col-card {
+    border-radius: 0.85rem;
+    border: 1px solid var(--border);
+    background: var(--bg-elev);
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .col-card:hover,
+  .col-card:focus-within {
+    transform: translateY(-4px);
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow: var(--glow-violet);
+  }
+
+  .col-card-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--text);
+  }
+
+  .col-desc {
+    color: var(--text-dim);
+    line-height: 1.55;
+    font-size: 0.85rem;
+  }
+
+  .col-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin-top: 0.15rem;
+    padding: 0;
+  }
+
+  .col-tags li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+    color: var(--text-faint);
+    border: 1px solid var(--border);
+    background: var(--bg-elev-2);
+    border-radius: 999px;
+    padding: 0.22rem 0.55rem;
+  }
+
+  /* ---- Reveal-on-scroll fade-up for cards, only on first panel open ---- */
+  .col-card.col-pending {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  .col-card.col-pending.col-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .col-panel,
+    .col-panel.col-is-open {
+      transition: none !important;
+    }
+    .col-chevron {
+      transition: none !important;
+    }
+    .col-card,
+    .col-card.col-pending,
+    .col-card.col-pending.col-visible {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    .col-card:hover,
+    .col-card:focus-within {
+      transform: none !important;
+    }
+  }
+</style>
+
+<!-- ============================================================
+  SCRIPT: Academic Projects section (scoped to #college, prefix col-)
+  - Real <button aria-expanded> disclosure; panel starts with the
+    `hidden` attribute so it is collapsed even before JS runs.
+  - Expand: remove `hidden`, then (next frame) add .col-is-open so the
+    grid-template-rows transition animates from 0fr -> 1fr.
+  - Collapse: remove .col-is-open to animate back to 0fr, then re-apply
+    `hidden` once the transition finishes so content leaves the a11y
+    tree and tab order while collapsed.
+  - prefers-reduced-motion: skip the transition and toggle `hidden`
+    immediately.
+  - First expand triggers a one-time 60ms-staggered fade-up on cards.
+============================================================ -->
+<script>
+  (function () {
+    var section = document.getElementById('college');
+    if (!section) return;
+
+    var btn = document.getElementById('col-toggle-btn');
+    var panel = document.getElementById('col-panel');
+    if (!btn || !panel) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var TRANSITION_MS = 500;
+    var cards = Array.prototype.slice.call(panel.querySelectorAll('.col-card'));
+    var revealed = false;
+
+    function revealCardsOnce() {
+      if (revealed || reduceMotion || !('IntersectionObserver' in window)) return;
+      revealed = true;
+      cards.forEach(function (card) {
+        card.classList.add('col-pending');
+      });
+      // Allow the panel's own expand transition to settle before staggering cards in.
+      requestAnimationFrame(function () {
+        cards.forEach(function (card) {
+          var idx = parseInt(card.getAttribute('data-col-index'), 10) || 0;
+          setTimeout(function () {
+            card.classList.add('col-visible');
+          }, idx * 60);
+        });
+      });
+    }
+
+    function setLabel(isOpen) {
+      var label = btn.querySelector('.col-toggle-label');
+      if (!label) return;
+      label.textContent = isOpen
+        ? label.getAttribute('data-col-hide')
+        : label.getAttribute('data-col-show');
+    }
+
+    function openPanel() {
+      panel.hidden = false;
+      if (reduceMotion) {
+        panel.classList.add('col-is-open');
+      } else {
+        // Two rAFs ensure the browser paints the 0fr state before we
+        // switch to 1fr, so the grid-template-rows transition actually runs.
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            panel.classList.add('col-is-open');
+          });
+        });
+      }
+      revealCardsOnce();
+    }
+
+    function closePanel() {
+      panel.classList.remove('col-is-open');
+      if (reduceMotion) {
+        panel.hidden = true;
+      } else {
+        setTimeout(function () {
+          panel.hidden = true;
+        }, TRANSITION_MS);
+      }
+    }
+
+    btn.addEventListener('click', function () {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      setLabel(!isOpen);
+      if (isOpen) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    });
+  })();
+</script>
+
+
+<!-- ===== 06-visitors.html ===== -->
+<!-- ============================================================
+  SECTION: Visitor Heatmap — "Where in the world" (id="visitors")
+  Eyebrow: "05 Visitors" — follows shared DESIGN_SYSTEM.md tokens.
+  Prefix: .map- for all section-scoped classes.
+
+  Design intent: a tiny, fun closing touch that sits just above the
+  footer — deliberately compact (not full-height), a single titled
+  card, not a second "Projects"-weight section. Uses the site's
+  cyan->violet gradient as the heat ramp so it reads as part of the
+  same system rather than a bolted-on widget. Zoom controls are
+  click/touch only (scroll-wheel zoom is intentionally OFF so the
+  map never hijacks page scroll while browsing a portfolio).
+
+  TECH: Leaflet (CDN) + Leaflet.heat (CDN) + CartoDB dark tiles.
+  Data layer is a swappable async function — see loadVisitorPoints()
+  in the script block below for the demo dataset + the stubbed real
+  (IP-geo -> Firebase) implementation plan.
+============================================================ -->
+
+
+
+
+<section id="visitors" class="map-section" aria-labelledby="map-heading">
+  <div class="map-container">
+    <p class="eyebrow map-eyebrow"><span>05</span> Visitors</p>
+    <h2 id="map-heading" class="map-title">Where in the world</h2>
+    <p class="map-subtitle">
+      A quiet little instrument tracking where this site has been opened from — zoom
+      and pan like any map.
+    </p>
+
+    <div class="map-card">
+      <div class="map-card-head">
+        <span class="map-card-label">Geo &middot; visitor density</span>
+        <span class="map-card-badge" id="map-count-badge">demo data</span>
+      </div>
+
+      <div id="map-canvas" class="map-canvas" role="group" aria-roledescription="map" aria-label="World map showing a heatmap of approximate visitor locations">
+        <!-- Shown until JS successfully builds the map; replaced with a fallback
+             message on failure. Kept in markup so no-JS visitors see something sane. -->
+        <p class="map-status" id="map-status">Loading visitor map&hellip;</p>
+      </div>
+
+      <noscript>
+        <p class="map-status map-status-static">Enable JavaScript to view the visitor map.</p>
+      </noscript>
+
+      <div class="map-footer">
+        <p class="map-caption">Approximate, city-level — updates as people visit.</p>
+        <p class="map-privacy">
+          <svg class="map-privacy-icon" width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="3.5" y="7" width="9" height="6.5" rx="1.4" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M5.5 7V4.8a2.5 2.5 0 0 1 5 0V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          No personal data stored — only approximate city coordinates.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  STYLE: Visitors section (scoped, prefix .map-)
+  Shared eyebrow pattern re-declared here per DESIGN_SYSTEM.md spec
+  (mono, uppercase, cyan, letter-spaced) — harmless if redefined
+  elsewhere since selectors are scoped to #visitors.
+============================================================ -->
+<style>
+  #visitors .map-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  #visitors .map-eyebrow span {
+    color: var(--text-faint);
+  }
+
+  /* Compact — this is a closing touch, not a full section */
+  .map-section {
+    padding-block: 3.5rem 4.5rem;
+  }
+
+  .map-container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .map-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  .map-title {
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .map-subtitle {
+    max-width: 560px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  /* ---- Card shell ---- */
+  .map-card {
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--bg-elev);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* Signature: thin gradient hairline echoing the site's accent gradient */
+  .map-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    z-index: 2;
+  }
+
+  .map-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1.1rem 1.35rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .map-card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .map-card-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    color: var(--accent-2);
+    background: rgba(167, 139, 250, 0.1);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 999px;
+    padding: 0.25rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  /* ---- Map canvas ---- */
+  .map-canvas {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background: var(--bg);
+  }
+
+  @media (min-width: 768px) {
+    .map-canvas {
+      height: 360px;
+    }
+  }
+
+  /* Loading / fallback status message, centered overlay */
+  .map-status {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    color: var(--text-faint);
+    background: var(--bg);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .map-status-static {
+    position: static;
+    height: 260px;
+  }
+
+  @media (min-width: 768px) {
+    .map-status-static {
+      height: 360px;
+    }
+  }
+
+  /* ---- Footer captions ---- */
+  .map-footer {
+    padding: 1rem 1.35rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .map-caption {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .map-privacy {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    margin: 0;
+  }
+
+  .map-privacy-icon {
+    flex-shrink: 0;
+    color: var(--text-faint);
+  }
+
+  /* ---- Leaflet control theming (dark, matches token system) ---- */
+  #visitors .leaflet-container {
+    background: var(--bg);
+    font-family: inherit;
+  }
+
+  #visitors .leaflet-control-zoom a {
+    background: var(--bg-elev-2);
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+  }
+
+  #visitors .leaflet-control-zoom a:hover {
+    background: var(--bg-elev);
+    color: var(--accent) !important;
+  }
+
+  #visitors .leaflet-control-zoom a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+
+  #visitors .leaflet-control-attribution {
+    background: rgba(10, 14, 26, 0.72) !important;
+    color: var(--text-faint) !important;
+    font-size: 0.65rem !important;
+  }
+
+  #visitors .leaflet-control-attribution a {
+    color: var(--text-dim) !important;
+  }
+
+  /* ---- Reveal-on-scroll for the card (single element, no stagger needed) ---- */
+  .map-card.map-pending {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .map-card.map-pending.map-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .map-card,
+    .map-card.map-pending,
+    .map-card.map-pending.map-visible {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
+
+<!-- ============================================================
+  SCRIPT: Visitors section (scoped to #visitors, prefix map-)
+
+  DATA LAYER
+  ----------
+  loadVisitorPoints() is the single seam between "where the dots
+  come from" and "how they're drawn." Right now it resolves a demo
+  dataset (clustered around real-world cities) so the visual design
+  can be reviewed without any backend. Swapping to real data later
+  means only rewriting the body of this function.
+============================================================ -->
+<script>
+  (function () {
+    var section = document.getElementById('visitors');
+    if (!section) return;
+
+    var canvas = document.getElementById('map-canvas');
+    var status = document.getElementById('map-status');
+    var badge = document.getElementById('map-count-badge');
+    var card = section.querySelector('.map-card');
+    if (!canvas || !status || !card) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ----------------------------------------------------------
+    // DATA LAYER — swappable. Returns Promise<Array<[lat, lng, intensity]>>
+    // ----------------------------------------------------------
+    async function loadVisitorPoints() {
+      // ---- DEMO DATASET (active) ------------------------------------
+      // Realistic-looking spread across ten cities. Each city gets a
+      // small jittered cluster (instead of one pin) so the heatmap
+      // renders as soft organic blobs rather than isolated dots.
+      var cities = [
+        { lat: 37.7749, lng: -122.4194, weight: 1.0, n: 6 },  // San Francisco
+        { lat: 47.6062, lng: -122.3321, weight: 0.7, n: 4 },  // Seattle
+        { lat: 40.7128, lng: -74.006, weight: 0.9, n: 5 },    // New York
+        { lat: 51.5074, lng: -0.1278, weight: 0.8, n: 5 },    // London
+        { lat: 12.9716, lng: 77.5946, weight: 0.85, n: 5 },   // Bangalore
+        { lat: 43.6532, lng: -79.3832, weight: 0.6, n: 4 },   // Toronto
+        { lat: -33.8688, lng: 151.2093, weight: 0.5, n: 3 },  // Sydney
+        { lat: 52.52, lng: 13.405, weight: 0.55, n: 3 },      // Berlin
+        { lat: 1.3521, lng: 103.8198, weight: 0.65, n: 4 },   // Singapore
+        { lat: -23.5505, lng: -46.6333, weight: 0.45, n: 3 }  // Sao Paulo
+      ];
+
+      var points = [];
+      cities.forEach(function (city) {
+        for (var i = 0; i < city.n; i++) {
+          var jitterLat = (Math.random() - 0.5) * 1.4;
+          var jitterLng = (Math.random() - 0.5) * 1.4;
+          var intensity = Math.max(0.15, city.weight * (0.6 + Math.random() * 0.4));
+          points.push([city.lat + jitterLat, city.lng + jitterLng, intensity]);
+        }
+      });
+
+      return points;
+
+      // ---- REAL IMPLEMENTATION PLAN (stubbed, not active) -----------
+      // 1. On page load, resolve the visitor's approximate location
+      //    from a free IP-geo API (city-level only, no consent needed
+      //    for coarse geo lookups of this kind):
+      //
+      //      const res = await fetch('https://ipwho.is/');           // or https://ipapi.co/json/
+      //      const geo = await res.json();
+      //      const point = { lat: geo.latitude, lng: geo.longitude };
+      //
+      // 2. POST that single {lat, lng} point into a Firebase Realtime
+      //    Database / Firestore collection (e.g. "visitorPings"):
+      //
+      //      // TODO: wire Firebase — config goes here
+      //      // const firebaseConfig = {
+      //      //   apiKey: "...",
+      //      //   authDomain: "...",
+      //      //   projectId: "...",
+      //      //   storageBucket: "...",
+      //      //   messagingSenderId: "...",
+      //      //   appId: "..."
+      //      // };
+      //      // const app = firebase.initializeApp(firebaseConfig);
+      //      // const db = firebase.firestore(app);
+      //      // await db.collection('visitorPings').add({
+      //      //   lat: point.lat,
+      //      //   lng: point.lng,
+      //      //   ts: firebase.firestore.FieldValue.serverTimestamp()
+      //      // });
+      //
+      // 3. Read all stored points back out and feed them to the heat
+      //    layer instead of the demo dataset:
+      //
+      //      // const snapshot = await db.collection('visitorPings').get();
+      //      // return snapshot.docs.map(doc => {
+      //      //   const d = doc.data();
+      //      //   return [d.lat, d.lng, 0.6]; // flat intensity per visit
+      //      // });
+    }
+
+    function showFallback(message) {
+      status.textContent = message;
+      status.style.display = 'flex';
+    }
+
+    function revealCard() {
+      if (reduceMotion || !('IntersectionObserver' in window)) return;
+      card.classList.add('map-pending');
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('map-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      observer.observe(card);
+    }
+
+    async function init() {
+      revealCard();
+
+      // Graceful degradation: if either CDN script failed to load,
+      // L (or L.heatLayer) won't exist — show a plain-text fallback
+      // instead of throwing.
+      if (typeof window.L === 'undefined') {
+        showFallback('Visitor map unavailable right now — the map library didn’t load.');
+        return;
+      }
+      if (typeof window.L.heatLayer !== 'function') {
+        showFallback('Visitor map unavailable right now — the heatmap layer didn’t load.');
+        return;
+      }
+
+      var points;
+      try {
+        points = await loadVisitorPoints();
+      } catch (err) {
+        showFallback('Couldn’t load visitor data right now — check back later.');
+        return;
+      }
+
+      if (!points || points.length === 0) {
+        showFallback('No visits recorded yet — be the first!');
+        return;
+      }
+
+      var map;
+      try {
+        map = window.L.map(canvas, {
+          center: [20, 10],
+          zoom: 2,
+          minZoom: 1,
+          maxZoom: 8,
+          worldCopyJump: true,
+          zoomControl: true,
+          // Click/touch zoom only — scroll-wheel zoom stays off so the
+          // map never hijacks page scroll while browsing the portfolio.
+          scrollWheelZoom: false,
+          doubleClickZoom: true,
+          zoomAnimation: !reduceMotion,
+          fadeAnimation: !reduceMotion,
+          markerZoomAnimation: !reduceMotion,
+          attributionControl: true
+        });
+
+        window.L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+          subdomains: 'abcd',
+          maxZoom: 8
+        }).addTo(map);
+
+        // Cyan/violet/emerald ramp matching the site's accent tokens.
+        window.L.heatLayer(points, {
+          radius: 26,
+          blur: 20,
+          maxZoom: 6,
+          minOpacity: 0.28,
+          gradient: {
+            0.1: 'rgba(167, 139, 250, 0.35)',
+            0.35: '#a78bfa',
+            0.6: '#22d3ee',
+            0.85: '#34d399',
+            1.0: '#e6edf7'
+          }
+        }).addTo(map);
+
+        // Status message no longer needed once the map + heat layer exist.
+        status.style.display = 'none';
+
+        // Leaflet's default zoom controls ship without accessible names —
+        // label them now that the control DOM exists in the section.
+        var zoomInBtn = section.querySelector('.leaflet-control-zoom-in');
+        var zoomOutBtn = section.querySelector('.leaflet-control-zoom-out');
+        if (zoomInBtn) {
+          zoomInBtn.setAttribute('aria-label', 'Zoom in');
+        }
+        if (zoomOutBtn) {
+          zoomOutBtn.setAttribute('aria-label', 'Zoom out');
+        }
+
+        if (badge) {
+          badge.textContent = points.length + ' points · demo data';
+        }
+
+        // Keep the map correctly sized if the layout shifts (fonts,
+        // resize, orientation change) after initial paint.
+        window.addEventListener('resize', function () {
+          map.invalidateSize();
+        });
+      } catch (err) {
+        showFallback('Visitor map failed to render — check back later.');
+      }
+    }
+
+    init();
+  })();
+</script>
+
+  </main>
+  <footer>
+    <div class="wrap py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+      <p>© <span id="yr"></span> Parth Sethi — Senior Software Engineer</p>
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2" style="font-family:'JetBrains Mono',monospace;">
+        <a href="https://github.com/sethiparth" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:sethiparth.ps@gmail.com">sethiparth.ps@gmail.com</a>
+        <a href="tel:+13527459455">+1 (352) 745-9455</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

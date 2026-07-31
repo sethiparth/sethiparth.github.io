@@ -1,0 +1,506 @@
+<!-- ============================================================
+  SECTION: Academic / College Projects — collapsible archive (id="college")
+  Eyebrow: "04 Academic Projects" — follows shared DESIGN_SYSTEM.md tokens.
+  Prefix: .col- for all section-scoped classes.
+
+  Design intent: this is the "things I built while learning" archive —
+  intentionally lighter weight than the Projects section and COLLAPSED
+  by default so it never competes with professional work. It borrows the
+  violet accent (--accent-2) instead of cyan to read as an earlier,
+  quieter chapter rather than a second "Projects" section.
+
+  The disclosure is a real <button aria-expanded> + a panel toggled via
+  a CSS grid-rows animation (no JS height math). Panel ships with the
+  `hidden` attribute in markup so collapsed-by-default holds even before
+  JS runs; opening/closing is JS-driven and fully keyboard operable
+  (native <button> gets Enter/Space for free). Reduced motion removes
+  the transition and swaps straight to the hidden attribute.
+============================================================ -->
+<section id="college" class="col-section" aria-labelledby="col-heading">
+  <div class="col-container">
+    <p class="eyebrow col-eyebrow"><span>04</span> Academic Projects</p>
+    <div class="col-headrow">
+      <div>
+        <h2 id="col-heading" class="col-title">Where it started</h2>
+        <p class="col-subtitle">
+          Things I built while learning — university coursework and side builds, archived
+          here so they don't compete with the professional work above.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        id="col-toggle-btn"
+        class="col-toggle"
+        aria-expanded="false"
+        aria-controls="col-panel"
+      >
+        <span class="col-toggle-text">
+          <span class="col-toggle-label" data-col-show="Show academic projects" data-col-hide="Hide academic projects">Show academic projects</span>
+          <span class="col-toggle-count">8 projects</span>
+        </span>
+        <svg class="col-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <noscript>
+      <style>
+        #col-panel[hidden] {
+          display: block !important;
+        }
+        #col-panel {
+          grid-template-rows: 1fr !important;
+        }
+      </style>
+    </noscript>
+
+    <div id="col-panel" class="col-panel" role="region" aria-labelledby="col-toggle-btn" hidden>
+      <div class="col-panel-inner">
+        <div class="col-grid">
+
+          <!-- 1: MEAN-stack Web App -->
+          <article class="col-card" data-col-index="0">
+            <h3 class="col-card-title">MEAN-stack Web App</h3>
+            <p class="col-desc">
+              Full REST API server with Express, MongoDB, and Mongoose; auth via Passport + JWT,
+              with a Bootstrap + Angular front end.
+            </p>
+            <ul class="col-tags">
+              <li>Node.js</li><li>Express</li><li>MongoDB</li><li>Angular</li>
+            </ul>
+          </article>
+
+          <!-- 2: Java-based Compiler -->
+          <article class="col-card" data-col-index="1">
+            <h3 class="col-card-title">Java-based Compiler</h3>
+            <p class="col-desc">
+              Scanner and top-down parser for a custom grammar on a strongly-typed language;
+              visitor pattern for type checking with token-based lexical analysis.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>ASM</li><li>JVM Bytecode</li><li>JUnit</li>
+            </ul>
+          </article>
+
+          <!-- 3: P2P File-Sharing -->
+          <article class="col-card" data-col-index="2">
+            <h3 class="col-card-title">P2P File-Sharing (BitTorrent-like)</h3>
+            <p class="col-desc">
+              Peer-to-peer file management with choking/unchoking logic, cutting cross-machine
+              download time by roughly 50%.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>TCP/IP</li><li>Sockets</li>
+            </ul>
+          </article>
+
+          <!-- 4: Tomasulo's Algorithm Simulator -->
+          <article class="col-card" data-col-index="3">
+            <h3 class="col-card-title">Tomasulo's Algorithm Simulator</h3>
+            <p class="col-desc">
+              Schedules and executes MIPS instructions at the binary level, with multithreaded
+              modules for parallel execution efficiency.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>Multithreading</li><li>Computer Architecture</li>
+            </ul>
+          </article>
+
+          <!-- 5: Huffman Encoding Compressor -->
+          <article class="col-card" data-col-index="4">
+            <h3 class="col-card-title">Huffman Encoding Compressor</h3>
+            <p class="col-desc">
+              File compression comparing a 4-way min-heap, binary heap, and pairing heap; a
+              cache-optimized 4-way min-heap gave the fastest decoding.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>Data Structures</li><li>Algorithms</li>
+            </ul>
+          </article>
+
+          <!-- 6: VR Medical Diagnosis App -->
+          <article class="col-card" data-col-index="5">
+            <h3 class="col-card-title">VR Medical Diagnosis App (Afridokta)</h3>
+            <p class="col-desc">
+              Select a body part to predict likely illnesses via a decision-tree model and email
+              the doctor directly; built Agile/Scrum.
+            </p>
+            <ul class="col-tags">
+              <li>C#</li><li>Unity</li><li>VR</li><li>SQLite</li>
+            </ul>
+          </article>
+
+          <!-- 7: NRG — VR Energy Simulator -->
+          <article class="col-card" data-col-index="6">
+            <h3 class="col-card-title">NRG — VR Energy Simulator</h3>
+            <p class="col-desc">
+              Install fossil, solar, and wind generators and simulate their short- and long-term
+              effects over time in VR.
+            </p>
+            <ul class="col-tags">
+              <li>C#</li><li>Unity</li><li>VR</li>
+            </ul>
+          </article>
+
+          <!-- 8: Java Banking Application -->
+          <article class="col-card" data-col-index="7">
+            <h3 class="col-card-title">Java Banking Application</h3>
+            <p class="col-desc">
+              Desktop banking app for deposits and withdrawals backed by an Oracle SQL database.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>Oracle</li><li>SQL</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  STYLE: Academic Projects section (scoped, prefix .col-)
+  Uses --accent-2 (violet) instead of --accent (cyan) as the primary
+  highlight color to visually mark this as an earlier, quieter chapter.
+============================================================ -->
+<style>
+  .col-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 0.75rem;
+  }
+  .col-eyebrow span {
+    color: var(--text-faint);
+  }
+
+  .col-section {
+    padding-block: 4.5rem;
+  }
+
+  .col-container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .col-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  .col-headrow {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .col-headrow {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .col-title {
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .col-subtitle {
+    max-width: 560px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* ---- Toggle button ---- */
+  .col-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.1rem;
+    color: var(--text);
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+
+  .col-toggle:hover {
+    border-color: rgba(167, 139, 250, 0.45);
+    box-shadow: var(--glow-violet);
+  }
+
+  .col-toggle:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 2px;
+  }
+
+  .col-toggle-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .col-toggle-label {
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: -0.005em;
+  }
+
+  .col-toggle-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--text-faint);
+  }
+
+  .col-chevron {
+    color: var(--accent-2);
+    flex-shrink: 0;
+    transition: transform 0.35s ease;
+  }
+
+  .col-toggle[aria-expanded="true"] .col-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ---- Collapsible panel (CSS grid-rows animation, no JS height math) ---- */
+  .col-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .col-panel[hidden] {
+    display: none;
+  }
+
+  .col-panel.col-is-open {
+    grid-template-rows: 1fr;
+  }
+
+  .col-panel-inner {
+    overflow: hidden;
+    min-height: 0;
+    padding-top: 2.25rem;
+  }
+
+  /* ---- Card grid: 3-col desktop / 2 / 1 mobile, lighter than .pj-grid ---- */
+  .col-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  @media (min-width: 640px) {
+    .col-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .col-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+  }
+
+  .col-card {
+    border-radius: 0.85rem;
+    border: 1px solid var(--border);
+    background: var(--bg-elev);
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .col-card:hover,
+  .col-card:focus-within {
+    transform: translateY(-4px);
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow: var(--glow-violet);
+  }
+
+  .col-card-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--text);
+  }
+
+  .col-desc {
+    color: var(--text-dim);
+    line-height: 1.55;
+    font-size: 0.85rem;
+  }
+
+  .col-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin-top: 0.15rem;
+    padding: 0;
+  }
+
+  .col-tags li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+    color: var(--text-faint);
+    border: 1px solid var(--border);
+    background: var(--bg-elev-2);
+    border-radius: 999px;
+    padding: 0.22rem 0.55rem;
+  }
+
+  /* ---- Reveal-on-scroll fade-up for cards, only on first panel open ---- */
+  .col-card.col-pending {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  .col-card.col-pending.col-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .col-panel,
+    .col-panel.col-is-open {
+      transition: none !important;
+    }
+    .col-chevron {
+      transition: none !important;
+    }
+    .col-card,
+    .col-card.col-pending,
+    .col-card.col-pending.col-visible {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    .col-card:hover,
+    .col-card:focus-within {
+      transform: none !important;
+    }
+  }
+</style>
+
+<!-- ============================================================
+  SCRIPT: Academic Projects section (scoped to #college, prefix col-)
+  - Real <button aria-expanded> disclosure; panel starts with the
+    `hidden` attribute so it is collapsed even before JS runs.
+  - Expand: remove `hidden`, then (next frame) add .col-is-open so the
+    grid-template-rows transition animates from 0fr -> 1fr.
+  - Collapse: remove .col-is-open to animate back to 0fr, then re-apply
+    `hidden` once the transition finishes so content leaves the a11y
+    tree and tab order while collapsed.
+  - prefers-reduced-motion: skip the transition and toggle `hidden`
+    immediately.
+  - First expand triggers a one-time 60ms-staggered fade-up on cards.
+============================================================ -->
+<script>
+  (function () {
+    var section = document.getElementById('college');
+    if (!section) return;
+
+    var btn = document.getElementById('col-toggle-btn');
+    var panel = document.getElementById('col-panel');
+    if (!btn || !panel) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var TRANSITION_MS = 500;
+    var cards = Array.prototype.slice.call(panel.querySelectorAll('.col-card'));
+    var revealed = false;
+
+    function revealCardsOnce() {
+      if (revealed || reduceMotion || !('IntersectionObserver' in window)) return;
+      revealed = true;
+      cards.forEach(function (card) {
+        card.classList.add('col-pending');
+      });
+      // Allow the panel's own expand transition to settle before staggering cards in.
+      requestAnimationFrame(function () {
+        cards.forEach(function (card) {
+          var idx = parseInt(card.getAttribute('data-col-index'), 10) || 0;
+          setTimeout(function () {
+            card.classList.add('col-visible');
+          }, idx * 60);
+        });
+      });
+    }
+
+    function setLabel(isOpen) {
+      var label = btn.querySelector('.col-toggle-label');
+      if (!label) return;
+      label.textContent = isOpen
+        ? label.getAttribute('data-col-hide')
+        : label.getAttribute('data-col-show');
+    }
+
+    function openPanel() {
+      panel.hidden = false;
+      if (reduceMotion) {
+        panel.classList.add('col-is-open');
+      } else {
+        // Two rAFs ensure the browser paints the 0fr state before we
+        // switch to 1fr, so the grid-template-rows transition actually runs.
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            panel.classList.add('col-is-open');
+          });
+        });
+      }
+      revealCardsOnce();
+    }
+
+    function closePanel() {
+      panel.classList.remove('col-is-open');
+      if (reduceMotion) {
+        panel.hidden = true;
+      } else {
+        setTimeout(function () {
+          panel.hidden = true;
+        }, TRANSITION_MS);
+      }
+    }
+
+    btn.addEventListener('click', function () {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      setLabel(!isOpen);
+      if (isOpen) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    });
+  })();
+</script>

@@ -90,6 +90,16 @@ TOKENS = """
       .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(246,241,228,.86);border-bottom:1px solid var(--border);box-shadow:0 1px 0 rgba(47,158,120,.25);}
       .nav a.navlink{font-size:.82rem;color:var(--text-dim);transition:color .2s;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.02em;}
       .nav a.navlink:hover{color:var(--accent);}
+      /* Contact dropdown: a nav item that opens a small panel of contact links. */
+      .nav-contact{position:relative;}
+      .nav-contact-btn{display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;cursor:pointer;padding:0;}
+      .nav-contact-caret{transition:transform .2s ease;color:currentColor;}
+      .nav-contact-btn[aria-expanded="true"] .nav-contact-caret{transform:rotate(180deg);}
+      .nav-contact-menu{position:absolute;right:0;top:calc(100% + .6rem);min-width:150px;display:flex;flex-direction:column;padding:.35rem;gap:.1rem;background:rgba(246,241,228,.98);border:1px solid var(--border);border-radius:.6rem;box-shadow:0 10px 30px rgba(43,28,13,.22);backdrop-filter:blur(8px);}
+      .nav-contact-menu[hidden]{display:none;}
+      .nav-contact-menu a{font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.02em;color:var(--text-dim);text-decoration:none;padding:.5rem .7rem;border-radius:.4rem;transition:color .2s,background .2s;}
+      .nav-contact-menu a:hover{color:var(--accent);background:rgba(47,158,120,.1);}
+      .nav-contact-label{font-family:'Fraunces',serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-faint);margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border);}
       .brand{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-.01em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
       /* Brand hands off from the centered hero name via a scroll-linked
          transform: the big name shrinks and glides into this top-left slot as
@@ -184,10 +194,18 @@ HEAD = f"""<!DOCTYPE html>
         <a class="navlink" href="#experience">Experience</a>
         <a class="navlink" href="#skills">Skills</a>
         <a class="navlink" href="#projects">Projects</a>
-        <a class="navlink" href="#college">Academic</a>
-        <a class="navlink" href="https://www.linkedin.com/in/parth-sethi-a24753b7/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="navlink" href="tel:+13527459455" aria-label="Call Parth">Phone</a>
-        <a class="navlink" href="mailto:sethiparth.ps@gmail.com" aria-label="Email Parth">Email</a>
+        <a class="navlink" href="sethi_resume.pdf" download>Résumé</a>
+        <div class="nav-contact">
+          <button type="button" id="contactBtn" class="navlink nav-contact-btn" aria-haspopup="true" aria-expanded="false" aria-controls="contactMenu">
+            Contact
+            <svg class="nav-contact-caret" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div id="contactMenu" class="nav-contact-menu" role="menu" aria-labelledby="contactBtn" hidden>
+            <a role="menuitem" href="https://www.linkedin.com/in/parth-sethi-a24753b7/" target="_blank" rel="noopener">LinkedIn</a>
+            <a role="menuitem" href="tel:+13527459455">Phone</a>
+            <a role="menuitem" href="mailto:sethiparth.ps@gmail.com">Email</a>
+          </div>
+        </div>
       </div>
       <button id="navToggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg" style="border:1px solid var(--border);color:var(--text-dim);" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -198,10 +216,11 @@ HEAD = f"""<!DOCTYPE html>
         <a class="navlink py-2" href="#experience">Experience</a>
         <a class="navlink py-2" href="#skills">Skills</a>
         <a class="navlink py-2" href="#projects">Projects</a>
-        <a class="navlink py-2" href="#college">Academic</a>
-        <a class="navlink py-2" href="https://www.linkedin.com/in/parth-sethi-a24753b7/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="navlink py-2" href="tel:+13527459455" aria-label="Call Parth">Phone</a>
-        <a class="navlink py-2" href="mailto:sethiparth.ps@gmail.com" aria-label="Email Parth">Email</a>
+        <a class="navlink py-2" href="sethi_resume.pdf" download>Résumé</a>
+        <p class="nav-contact-label">Contact</p>
+        <a class="navlink py-2 pl-3" href="https://www.linkedin.com/in/parth-sethi-a24753b7/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="navlink py-2 pl-3" href="tel:+13527459455" aria-label="Call Parth">Phone</a>
+        <a class="navlink py-2 pl-3" href="mailto:sethiparth.ps@gmail.com" aria-label="Email Parth">Email</a>
       </div>
     </div>
   </nav>
@@ -216,6 +235,27 @@ HEAD = f"""<!DOCTYPE html>
         btn.setAttribute('aria-label', open?'Close menu':'Open menu');
       }});
       menu.querySelectorAll('a').forEach(function(a){{ a.addEventListener('click', closeMenu); }});
+    }})();
+
+    /* Desktop "Contact" dropdown: click toggles the panel; click-outside and
+       Escape close it. Kept tiny and framework-free to match the rest of nav. */
+    (function(){{
+      var cbtn=document.getElementById('contactBtn'), cmenu=document.getElementById('contactMenu');
+      if(!cbtn||!cmenu) return;
+      function openContact(open){{
+        cmenu.hidden=!open;
+        cbtn.setAttribute('aria-expanded', String(open));
+      }}
+      cbtn.addEventListener('click', function(e){{
+        e.stopPropagation();
+        openContact(cmenu.hidden);
+      }});
+      document.addEventListener('click', function(e){{
+        if(!cmenu.hidden && !cmenu.contains(e.target) && e.target!==cbtn) openContact(false);
+      }});
+      document.addEventListener('keydown', function(e){{
+        if(e.key==='Escape' && !cmenu.hidden){{ openContact(false); cbtn.focus(); }}
+      }});
     }})();
 
     /* Scroll-linked name handoff: the big centered hero name shrinks and glides

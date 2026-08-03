@@ -159,11 +159,12 @@ section_heading("Summary")
 summ = doc.add_paragraph()
 set_spacing(summ, before=2, after=1, line=1.05)
 run(summ,
-    "Senior Software Engineer with 6+ years in system design and high-throughput, "
-    "fault-tolerant distributed systems and gRPC microservices. Architected and led "
-    "the rendering engine for a $1B+ revenue channel, coordinated the cross-team "
-    "effort to launch it, drove a 10x throughput gain, and raised its availability "
-    "to 99.999%. Experience spans AWS and Salesforce.", size=10)
+    "Senior Software Engineer, 6+ years designing high-throughput, fault-tolerant "
+    "distributed systems and gRPC microservices at AWS and Salesforce. Operates at "
+    "lead scope — architecting platforms end to end, coordinating cross-team "
+    "launches, and setting the standards other teams build against. Recent work: "
+    "the rendering engine serving a $1B+ revenue channel, a 10x throughput gain, "
+    "and a 99.999% monthly availability SLO.", size=10)
 
 # === EXPERIENCE =============================================================
 section_heading("Professional Experience")
@@ -194,12 +195,11 @@ bullet([("Set the reference architecture", B),
          "standards other teams build against.", N)])
 bullet([("Built an agentic automation pipeline (Claude)", B),
         (" that replaced a manual ", N), ("~4-hour-per-org", B),
-        (" workflow — org provisioning, preview/real email sends, and integration "
-         "+ daily health tests — reclaiming multiple engineer-weeks per quarter.", N)])
+        (" setup — provisioning, test sends, and health checks — reclaiming "
+         "engineer-weeks each quarter.", N)])
 bullet([("Drove a ", N), ("10x throughput gain", B),
-        (" (4M to 40M emails/hour) via DynamoDB batch tuning and Redis caching "
-         "and deduplication, plus bulk operations with quota-aware entitlements "
-         "for partial sends under load.", N)])
+        (", 4M to 40M emails/hour, through DynamoDB batch tuning, Redis caching "
+         "and deduplication, and quota-aware bulk sends.", N)])
 bullet([("Built a pre-deploy validation framework", B),
         (" that caught regressions before rollout, sustaining a ", N), ("99.999%", B),
         (" monthly service-availability SLO; on call, cut incident response load "
@@ -246,7 +246,8 @@ skill_line("Languages", "Java, C++, SQL, NoSQL (proficient); C#, Scala, Python, 
 skill_line("AWS", "DynamoDB, Redshift, RDS, S3, Lambda, Kinesis, QuickSight, EC2, "
                   "CloudWatch, CloudFormation, IAM, KMS, SNS, SQS")
 skill_line("Systems & Tools", "gRPC, Redis, distributed systems, high-availability "
-                              "design, performance optimization, Git, Agile/Kanban, "
+                              "design, API design, SLO/SLA, observability, CI/CD, "
+                              "performance optimization, Git, Agile/Kanban, "
                               "AI-agent orchestration (Claude, Cursor)")
 
 # === EDUCATION ==============================================================

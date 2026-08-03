@@ -160,7 +160,7 @@ summ = doc.add_paragraph()
 set_spacing(summ, before=2, after=1, line=1.05)
 run(summ,
     "Senior Software Engineer, 6+ years designing high-throughput, fault-tolerant "
-    "distributed systems and gRPC microservices at AWS and Salesforce. Operates at "
+    "distributed systems and gRPC/REST API microservices at AWS and Salesforce. Operates at "
     "lead scope — architecting platforms end to end, coordinating cross-team "
     "launches, and setting the standards other teams build against. Recent work: "
     "the rendering engine serving a $1B+ revenue channel, a 10x throughput gain, "
@@ -245,7 +245,7 @@ def skill_line(label, value):
 skill_line("Languages", "Java, C++, SQL, NoSQL (proficient); C#, Scala, Python, Ruby (familiar)")
 skill_line("AWS", "DynamoDB, Redis, Redshift, RDS, S3, Lambda, Kinesis, "
                   "QuickSight, EC2, CloudWatch, CloudFormation, IAM, KMS, SNS, SQS")
-skill_line("Tools & Processes", "Git, GUS, Claude, Cursor, Agile/Kanban")
+skill_line("Tools & Processes", "Git, Docker, Kubernetes, GUS, Claude, Cursor, Agile/Kanban")
 
 # === EDUCATION ==============================================================
 section_heading("Education")

@@ -128,7 +128,7 @@ HEAD = f"""<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Parth Sethi — Senior Software Engineer | Salesforce, ex-AWS</title>
     <meta name="description" content="Parth Sethi is a Senior Software Engineer (SMTS) at Salesforce and ex-AWS SDE. Architected systems powering $1B+ annual revenue, 10x email throughput, and five-nines availability. Java, gRPC, AWS, distributed systems." />
-    <meta name="keywords" content="Parth Sethi, Senior Software Engineer, Staff Engineer, Salesforce, AWS, Software Development Engineer, Java, gRPC, distributed systems, DynamoDB, backend engineer" />
+    <meta name="keywords" content="Parth Sethi, Senior Software Engineer, technical lead, Salesforce, AWS, Software Development Engineer, Java, gRPC, distributed systems, DynamoDB, backend engineer, SLO, SLA, observability, CI/CD, API design, high availability" />
     <meta name="author" content="Parth Sethi" />
     <link rel="canonical" href="https://sethiparth.github.io/" />
 

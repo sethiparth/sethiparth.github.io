@@ -23,12 +23,12 @@
             <span class="pj-metric">&gt;$1B channel powered</span>
           </div>
           <p class="pj-desc">
-            Architected a high-performance Handlebars scripting engine from scratch, taking full
-            ownership of replacing Salesforce's legacy E360 platform end to end. Designed the
+            Architected a high-performance Handlebars scripting engine from scratch, leading the
+            end-to-end replacement of Salesforce's legacy E360 platform. Designed the
             two-step gRPC API and a generic helper framework — 40+ scripting helpers reaching 100%
-            functional parity with legacy behavior. The engine now powers the email channel
-            generating more than $1B in annual revenue, with critical functionality delivered two
-            releases ahead of schedule.
+            functional parity with legacy behavior — and set the reference architecture now shared
+            across SMS, email, and RCS. Critical functionality delivered two releases ahead of
+            schedule.
           </p>
           <figure class="pj-flow" role="img" aria-label="System design: two-step gRPC pipeline — client request compiles once, renders per recipient, then delivers to email.">
             <figcaption class="pj-flow-caption">Design detail — two-step gRPC pipeline</figcaption>
@@ -57,10 +57,10 @@
         <div class="pj-card-inner">
           <div class="pj-card-head">
             <h3 class="pj-card-title">Email Service 10x Throughput</h3>
-            <span class="pj-metric">10M &rarr; 40M / hr</span>
+            <span class="pj-metric">4M &rarr; 40M / hr</span>
           </div>
           <p class="pj-desc">
-            Led the team through a full redesign of email delivery, taking throughput from 10M to
+            Drove a full redesign of email delivery, taking throughput from 4M to
             40M emails per hour by optimizing AWS DynamoDB batch loads and streamlining
             intermediate step execution. Introduced Redis for deduplication to eliminate redundant
             sends at scale.
@@ -80,12 +80,13 @@
         <div class="pj-card-inner">
           <div class="pj-card-head">
             <h3 class="pj-card-title">Five-Nines Availability Framework</h3>
-            <span class="pj-metric">98% &rarr; 99.999%</span>
+            <span class="pj-metric">99.999% SLO</span>
           </div>
           <p class="pj-desc">
-            Architected a validation framework that raised email service availability from 98% to
-            99.999%. Cut PagerDuty alerts by more than 10 per week and turned future bug fixes into
-            minor, low-risk code changes. Built as the source of truth for on-call reliability.
+            Architected a pre-deploy validation framework that sustains a 99.999% monthly
+            service-availability SLO. Cut PagerDuty alerts by more than 10 per week and turned
+            future bug fixes into minor, low-risk code changes. Built as the source of truth for
+            on-call reliability.
           </p>
           <ul class="pj-tags">
             <li>Reliability</li>

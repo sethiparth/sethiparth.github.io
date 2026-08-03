@@ -160,9 +160,10 @@ summ = doc.add_paragraph()
 set_spacing(summ, before=2, after=1, line=1.05)
 run(summ,
     "Senior Software Engineer with 6+ years in system design and high-throughput, "
-    "fault-tolerant distributed systems and gRPC microservices. Built the core "
-    "engine behind a $1B+ revenue channel, drove a 10x throughput gain, and "
-    "raised availability to 99.999% across AWS and Salesforce.", size=10)
+    "fault-tolerant distributed systems and gRPC microservices. Architected and led "
+    "the rendering engine for a $1B+ revenue channel, coordinated the cross-team "
+    "effort to launch it, drove a 10x throughput gain, and raised its availability "
+    "to 99.999%. Experience spans AWS and Salesforce.", size=10)
 
 # === EXPERIENCE =============================================================
 section_heading("Professional Experience")
@@ -175,31 +176,34 @@ run(role, "Senior Software Engineer (SMTS)  ·  Seattle, WA", size=10, italic=Tr
 
 bullet([("Architected “Sage” from scratch", B),
         (", a two-step gRPC microservices rendering engine replacing the legacy "
-         "E360 platform — now the core engine behind a ", N), ("$1B+", B),
-        (" revenue channel; shipped critical functionality two releases ahead of "
-         "schedule.", N)])
-bullet([("Set a reference architecture adopted by ", N),
-        ("multiple teams", B),
-        (" — Sage is now the shared engine parsing scripts across SMS, email, "
-         "and RCS channels.", N)])
+         "E360 platform. Where the legacy library was a thin, low-level wrapper "
+         "over Handlebars.js, Sage is a higher-order engine with deep, composable "
+         "helpers; shipped two releases ahead of schedule.", N)])
+bullet([("Led a cross-org effort across ", N), ("Q3 and Q4", B),
+        (", coordinating ", N), ("4+ teams", B),
+        (" and their dedicated test campaigns to clear Sage for launch — surfacing "
+         "and fixing issues that hardened performance under peak request rates and "
+         "heavy load.", N)])
+bullet([("Led and orchestrated the migration of ", N), ("100% of customers", B),
+        (" onto Sage with no downtime and no customer action required, reaching "
+         "100% functional parity via a custom Compatibility Testing Framework "
+         "built with Product.", N)])
+bullet([("Set the reference architecture", B),
+        (" now shared across ", N), ("3 channels", B),
+        (" (SMS, email, RCS) as one engine — driving the design reviews and "
+         "standards other teams build against.", N)])
 bullet([("Built an agentic automation pipeline (Claude)", B),
         (" that replaced a manual ", N), ("~4-hour-per-org", B),
         (" workflow — org provisioning, preview/real email sends, and integration "
          "+ daily health tests — reclaiming multiple engineer-weeks per quarter.", N)])
 bullet([("Drove a ", N), ("10x throughput gain", B),
-        (" (10M to 40M emails/hour) through DynamoDB batch tuning and Redis "
-         "caching and deduplication.", N)])
+        (" (4M to 40M emails/hour) via DynamoDB batch tuning and Redis caching "
+         "and deduplication, plus bulk operations with quota-aware entitlements "
+         "for partial sends under load.", N)])
 bullet([("Built a pre-deploy validation framework", B),
-        (" that caught regressions before rollout, improving fault tolerance and "
-         "raising availability from 98% to ", N), ("99.999%", B),
-        ("; on call, cut incident response load and PagerDuty alerts by 10+/week.", N)])
-bullet([("Drove ", N), ("100% functional parity", B),
-        (" with the legacy platform via a custom Compatibility Testing Framework, "
-         "in cross-functional collaboration with Product, to de-risk the "
-         "E360-to-Sage migration.", N)])
-bullet([("Rebuilt email processing into ", N), ("bulk operations", B),
-        (" with real-time, quota-aware entitlements, enabling partial sends under "
-         "load.", N)])
+        (" that caught regressions before rollout, sustaining a ", N), ("99.999%", B),
+        (" monthly service-availability SLO; on call, cut incident response load "
+         "and PagerDuty alerts by 10+/week.", N)])
 
 # --- AWS ---
 two_col_line([("Amazon Web Services (AWS)", {"size": 10.5, "bold": True})],

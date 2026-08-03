@@ -243,11 +243,9 @@ def skill_line(label, value):
     run(p, label + ": ", size=10, bold=True)
     run(p, value, size=10)
 skill_line("Languages", "Java, C++, SQL, NoSQL (proficient); C#, Scala, Python, Ruby (familiar)")
-skill_line("AWS", "DynamoDB, Redshift, RDS, S3, Lambda, Kinesis, QuickSight, EC2, "
-                  "CloudWatch, CloudFormation, IAM, KMS, SNS, SQS")
-skill_line("Systems & Tools", "gRPC, Redis, distributed systems, high-availability "
-                              "design, API design, SLO/SLA, observability, CI/CD, "
-                              "performance optimization, Git, Agile/Kanban, "
+skill_line("AWS", "DynamoDB, Redis, Redshift, RDS, S3, Lambda, Kinesis, "
+                  "QuickSight, EC2, CloudWatch, CloudFormation, IAM, KMS, SNS, SQS")
+skill_line("Systems & Tools", "gRPC, Git, CI/CD, Agile/Kanban, "
                               "AI-agent orchestration (Claude, Cursor)")
 
 # === EDUCATION ==============================================================

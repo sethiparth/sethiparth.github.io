@@ -1,0 +1,3140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parth Sethi — Senior Software Engineer | Salesforce, ex-AWS</title>
+    <meta name="description" content="Parth Sethi is a Senior Software Engineer (SMTS) at Salesforce and ex-AWS SDE. Architected systems powering $1B+ annual revenue, 10x email throughput, and five-nines availability. Java, gRPC, AWS, distributed systems." />
+    <meta name="keywords" content="Parth Sethi, Senior Software Engineer, technical lead, Salesforce, AWS, Software Development Engineer, Java, gRPC, distributed systems, DynamoDB, backend engineer, SLO, SLA, observability, CI/CD, API design, high availability" />
+    <meta name="author" content="Parth Sethi" />
+    <link rel="canonical" href="https://sethiparth.github.io/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Parth Sethi — Senior Software Engineer | Salesforce, ex-AWS" />
+    <meta property="og:description" content="Senior Software Engineer at Salesforce, ex-AWS. Architected systems powering $1B+ revenue, 10x throughput gains, and five-nines availability." />
+    <meta property="og:image" content="https://sethiparth.github.io/images/portrait/parth.jpg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1500" />
+    <meta property="og:image:alt" content="Parth Sethi — Senior Software Engineer" />
+    <meta property="og:url" content="https://sethiparth.github.io/" />
+    <meta property="og:site_name" content="Parth Sethi" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Parth Sethi — Senior Software Engineer" />
+    <meta name="twitter:description" content="Senior Software Engineer at Salesforce, ex-AWS. $1B+ revenue systems, 10x throughput, five-nines availability." />
+    <meta name="twitter:image" content="https://sethiparth.github.io/images/portrait/parth.jpg" />
+
+    <!-- JSON-LD Person schema (AI/search legibility) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Parth Sethi",
+      "alternateName": "Seth",
+      "jobTitle": "Senior Software Engineer (SMTS)",
+      "url": "https://sethiparth.github.io/",
+      "email": "mailto:sethiparth.ps@gmail.com",
+      "telephone": "+1-352-745-9455",
+      "sameAs": ["https://www.linkedin.com/in/parth-sethi-a24753b7/"],
+      "worksFor": { "@type": "Organization", "name": "Salesforce" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of Florida" },
+        { "@type": "CollegeOrUniversity", "name": "Jaypee University of Information & Technology" }
+      ],
+      "description": "Senior Software Engineer (SMTS) at Salesforce and ex-AWS SDE. Architected high-performance distributed systems powering $1B+ in annual revenue, 10x throughput improvements, and five-nines availability.",
+      "knowsAbout": ["Java","C++","SQL","NoSQL","gRPC","Distributed Systems","AWS DynamoDB","AWS Lambda","AWS EC2","System Architecture","Performance Optimization","High Availability Systems"]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Hoisted section CDN deps (if any) -->
+    
+
+    <style>
+      :root{
+        /* Woodland surfaces — bright, warm, happy (palette pulled from the lizard gif) */
+        --bg:#f6f1e4; --bg-elev:#fffdf6; --bg-elev-2:#ece5d1; --border:#d8cdb0;
+        /* Warm bark-brown ink */
+        /* --text-faint darkened from #8a8368 → #6b6549 so it clears WCAG AA 4.5:1
+           on all cream surfaces (incl. the darker --bg-elev-2 tag chips). */
+        --text:#2d2a20; --text-dim:#5c5744; --text-faint:#6b6549;
+        /* Nature accents: jade lizard green, moss yellow-green, wood amber, honey gold */
+        --accent:#2f9e78; --accent-2:#7a9a2e; --accent-3:#b07d47; --gold:#d3a44f;
+        /* Darker jade for SMALL text on cream — bright --accent (#2f9e78) only
+           hits ~3.3:1 there and fails WCAG AA; --accent-ink clears 4.5:1 on all
+           cream surfaces. Use --accent for borders/large text, --accent-ink for
+           small labels (eyebrows, tags, dates). */
+        --accent-ink:#1f6e54;
+        --glow-cyan:0 0 22px rgba(47,158,120,.28); --glow-violet:0 0 22px rgba(122,154,46,.26);
+        --grad:linear-gradient(135deg,#2f9e78 0%,#7a9a2e 100%);
+        /* Deep bark behind bright surfaces */
+        --wood:#5a3f22; --wood-2:#6b4f2e;
+        --parch-line:rgba(45,42,32,.08);
+      }
+      html{scroll-behavior:smooth;}
+      @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+      body{
+        background:var(--bg);color:var(--text);
+        font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+        font-size:1.02rem;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden;
+        background-image:
+          radial-gradient(120% 80% at 50% -10%, rgba(255,255,246,.7), transparent 60%),
+          radial-gradient(90% 70% at 85% 8%, rgba(47,158,120,.10), transparent 55%),
+          radial-gradient(90% 70% at 10% 20%, rgba(122,154,46,.10), transparent 55%),
+          radial-gradient(140% 120% at 50% 120%, rgba(176,125,71,.14), transparent 55%);
+        background-attachment:fixed;
+      }
+      h1,h2,h3{font-family:'Fraunces','Georgia',serif;letter-spacing:-.01em;font-weight:600;color:var(--text);}
+      a{color:inherit;}
+      ::selection{background:rgba(47,158,120,.22);}
+      .eyebrow{font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--accent-ink);display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;font-weight:700;}
+      .eyebrow span{color:var(--text-faint);}
+      .wrap{max-width:1100px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;}
+      @media (min-width:768px){ .wrap{padding-left:2rem;padding-right:2rem;} }
+      section{scroll-margin-top:80px;}
+      :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+      /* Sticky nav — bright cream bar with a green underline */
+      .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(246,241,228,.86);border-bottom:1px solid var(--border);box-shadow:0 1px 0 rgba(47,158,120,.25);}
+      .nav .navlink{font-size:.82rem;color:var(--text-dim);transition:color .2s;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.02em;}
+      .nav .navlink:hover{color:var(--accent);}
+      /* Contact dropdown: a nav item that opens a small panel of contact links. */
+      .nav-contact{position:relative;}
+      .nav-contact-btn{display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;cursor:pointer;padding:0;line-height:inherit;}
+      .nav-contact-caret{transition:transform .2s ease;color:currentColor;}
+      .nav-contact-btn[aria-expanded="true"] .nav-contact-caret{transform:rotate(180deg);}
+      .nav-contact-menu{position:absolute;right:0;top:calc(100% + .6rem);min-width:150px;display:flex;flex-direction:column;padding:.35rem;gap:.1rem;background:rgba(246,241,228,.98);border:1px solid var(--border);border-radius:.6rem;box-shadow:0 10px 30px rgba(43,28,13,.22);backdrop-filter:blur(8px);}
+      .nav-contact-menu[hidden]{display:none;}
+      .nav-contact-menu a{font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.02em;color:var(--text-dim);text-decoration:none;padding:.5rem .7rem;border-radius:.4rem;transition:color .2s,background .2s;}
+      .nav-contact-menu a:hover{color:var(--accent);background:rgba(47,158,120,.1);}
+      .nav-contact-label{font-family:'Fraunces',serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-faint);margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border);}
+      .brand{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-.01em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+      /* Brand hands off from the centered hero name via a scroll-linked
+         transform: the big name shrinks and glides into this top-left slot as
+         you scroll, crossfading into the real (sticky) brand. JS drives it. */
+      /* navBrand mirrors the hero name EXACTLY (same text, font, solid colour)
+         so the morph lands seamlessly — no text/colour change at the corner. */
+      #navBrand{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-.01em;color:var(--text);background:none;-webkit-text-fill-color:currentColor;opacity:0;pointer-events:none;transform-origin:left center;white-space:nowrap;}
+      #navBrand .hero-name-alias{font-style:italic;font-weight:500;color:var(--accent);letter-spacing:0;}
+      #navBrand.is-visible{opacity:1;pointer-events:auto;}   /* reduced-motion fallback */
+      .hero-name{will-change:transform,opacity;transform-origin:center center;}
+      .hero-scholar{will-change:transform,opacity;}
+      @media (prefers-reduced-motion: reduce){ #navBrand{transition:opacity .3s ease;} .hero-name,.hero-scholar{will-change:auto;} }
+      footer{border-top:1px solid var(--border);color:var(--text-dim);background:linear-gradient(180deg,transparent,rgba(122,154,46,.10));}
+      footer a:hover{color:var(--accent);}
+      /* Skip link: visually hidden until focused, then pinned top-left so keyboard
+         users can jump straight past the nav to the main content. */
+      .skip-link{position:absolute;left:-999px;top:0;z-index:100;background:var(--bg-elev);color:var(--accent);border:1px solid var(--accent);border-radius:0 0 .5rem 0;padding:.6rem 1rem;font-family:'Inter',sans-serif;font-weight:600;}
+      .skip-link:focus{left:0;}
+      #main:focus{outline:none;}
+</style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="nav" aria-label="Primary">
+    <div class="wrap flex items-center justify-between h-16">
+      <a href="#home" id="navBrand" class="brand text-lg">Parth Sethi <span class="hero-name-alias">(Seth)</span></a>
+      <div class="hidden md:flex items-center gap-7">
+        <a class="navlink" href="#experience">Experience</a>
+        <a class="navlink" href="#skills">Skills</a>
+        <a class="navlink" href="#projects">Projects</a>
+        <a class="navlink" href="sethi_resume.pdf" download>Résumé</a>
+        <div class="nav-contact">
+          <button type="button" id="contactBtn" class="navlink nav-contact-btn" aria-haspopup="true" aria-expanded="false" aria-controls="contactMenu">
+            Contact
+            <svg class="nav-contact-caret" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div id="contactMenu" class="nav-contact-menu" role="menu" aria-labelledby="contactBtn" hidden>
+            <a role="menuitem" href="https://www.linkedin.com/in/parth-sethi-a24753b7/" target="_blank" rel="noopener">LinkedIn</a>
+            <a role="menuitem" href="tel:+13527459455">Phone</a>
+            <a role="menuitem" href="mailto:sethiparth.ps@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+      <button id="navToggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg" style="border:1px solid var(--border);color:var(--text-dim);" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t" style="border-color:var(--border);background:rgba(231,211,168,.98);">
+      <div class="wrap flex flex-col py-3">
+        <a class="navlink py-2" href="#experience">Experience</a>
+        <a class="navlink py-2" href="#skills">Skills</a>
+        <a class="navlink py-2" href="#projects">Projects</a>
+        <a class="navlink py-2" href="sethi_resume.pdf" download>Résumé</a>
+        <p class="nav-contact-label">Contact</p>
+        <a class="navlink py-2 pl-3" href="https://www.linkedin.com/in/parth-sethi-a24753b7/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="navlink py-2 pl-3" href="tel:+13527459455" aria-label="Call Parth">Phone</a>
+        <a class="navlink py-2 pl-3" href="mailto:sethiparth.ps@gmail.com" aria-label="Email Parth">Email</a>
+      </div>
+    </div>
+  </nav>
+  <script>
+    (function(){
+      var btn=document.getElementById('navToggle'), menu=document.getElementById('mobileMenu');
+      if(!btn||!menu) return;
+      function closeMenu(){ menu.classList.add('hidden'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','Open menu'); }
+      btn.addEventListener('click', function(){
+        var open=menu.classList.toggle('hidden')===false;
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open?'Close menu':'Open menu');
+      });
+      menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    })();
+
+    /* Desktop "Contact" dropdown: click toggles the panel; click-outside and
+       Escape close it. Kept tiny and framework-free to match the rest of nav. */
+    (function(){
+      var cbtn=document.getElementById('contactBtn'), cmenu=document.getElementById('contactMenu');
+      if(!cbtn||!cmenu) return;
+      function openContact(open){
+        cmenu.hidden=!open;
+        cbtn.setAttribute('aria-expanded', String(open));
+      }
+      cbtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        openContact(cmenu.hidden);
+      });
+      document.addEventListener('click', function(e){
+        if(!cmenu.hidden && !cmenu.contains(e.target) && e.target!==cbtn) openContact(false);
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key==='Escape' && !cmenu.hidden){ openContact(false); cbtn.focus(); }
+      });
+    })();
+
+    /* Scroll-linked name handoff: the big centered hero name shrinks and glides
+       up into the top-left nav slot as you scroll, crossfading into the real
+       (sticky) brand — a hand-rolled shared-element transition. Deferred to
+       DOMContentLoaded because this script runs before <main>. */
+    function initBrandHandoff(){
+      var brand=document.getElementById('navBrand');
+      var heroName=document.querySelector('.hero-name');
+      var scholar=document.querySelector('.hero-scholar');
+      if(!brand||!heroName) return;
+
+      var reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* Reduced motion: skip the scroll morph, keep a simple binary reveal. */
+      if(reduceMotion){
+        if('IntersectionObserver' in window){
+          var io=new IntersectionObserver(function(entries){
+            entries.forEach(function(e){ brand.classList.toggle('is-visible', !e.isIntersecting); });
+          }, { rootMargin: '-56px 0px 0px 0px', threshold: 0 });
+          io.observe(heroName);
+        } else { brand.classList.add('is-visible'); }
+        return;
+      }
+
+      function clamp(v,lo,hi){ return v<lo?lo:(v>hi?hi:v); }
+
+      /* Base geometry, measured transform-free so the math never feeds back on
+         itself. Recomputed on resize. */
+      var docTop, nameCenterX, nameH, brandCX, brandCY, targetScale, travel;
+      function measure(){
+        heroName.style.transform='none';
+        heroName.style.opacity='';
+        var n=heroName.getBoundingClientRect();
+        var b=brand.getBoundingClientRect();
+        docTop=n.top+window.pageYOffset;
+        nameCenterX=n.left+n.width/2;
+        nameH=n.height||1;
+        brandCX=b.left+b.width/2;
+        brandCY=b.top+b.height/2;                 /* sticky nav → fixed in viewport */
+        targetScale=Math.max(0.18, b.height/nameH);
+        travel=(docTop+nameH/2)-brandCY;          /* scroll needed for centers to meet */
+      }
+
+      function update(){
+        ticking=false;
+        if(travel<=0) return;
+        var p=clamp(window.pageYOffset/travel, 0, 1);
+        var naturalCenterY=(docTop+nameH/2)-window.pageYOffset;
+        var s=1+(targetScale-1)*p;
+        var tx=(brandCX-nameCenterX)*p;
+        var ty=(brandCY-naturalCenterY)*p;
+        heroName.style.transform='translate('+tx+'px,'+ty+'px) scale('+s+')';
+        heroName.style.opacity=String(1-clamp((p-0.72)/0.24, 0, 1));   /* fade out late */
+        heroName.style.pointerEvents=p>0.1?'none':'';
+        brand.style.opacity=String(clamp((p-0.78)/0.22, 0, 1));         /* fade in to meet it */
+        brand.style.pointerEvents=p>0.9?'auto':'none';
+        /* Gif rides up with the name but shrinks + fades out early, so it's gone
+           long before the name reaches the corner (no overlap with the nav). */
+        if(scholar){
+          var gp=clamp(p/0.45, 0, 1);
+          scholar.style.transform='translateY('+(-40*gp)+'px) scale('+(1-0.55*gp)+')';
+          scholar.style.opacity=String(1-gp);
+        }
+      }
+
+      var ticking=false;
+      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+      var resizeTimer;
+      function onResize(){ clearTimeout(resizeTimer); resizeTimer=setTimeout(function(){ measure(); update(); }, 150); }
+
+      measure();
+      update();
+      window.addEventListener('scroll', onScroll, { passive:true });
+      window.addEventListener('resize', onResize);
+      /* The hero name uses a web font (Fraunces); if it swaps in after this
+         first measure, nameH/docTop/travel are stale and the shrink misses the
+         nav brand. Re-measure once fonts are ready and on full load. */
+      if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ measure(); update(); }); }
+      window.addEventListener('load', function(){ measure(); update(); });
+    }
+    if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', initBrandHandoff); }
+    else { initBrandHandoff(); }
+  </script>
+  <main id="main" tabindex="-1">
+
+<!-- ===== 01-hero.html ===== -->
+<!-- ============================================================
+  SECTION: HERO — Woodland theme
+  A friendly little lizard peeks out of a round cameo and says "Hi!"
+  on load. Compact layout: the medallion sits right on top of the
+  name so there's no dead space. Impact stats are wood "log slices".
+============================================================ -->
+
+<section id="home" class="hero-section">
+  <div class="hero-rays" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <!-- ---------- The critter cameo ---------- -->
+    <figure class="hero-scholar" aria-label="A curious little lizard looking up to say hello">
+      <div class="hero-bubble" aria-hidden="true"><span>Hi there!</span></div>
+      <div class="hero-medallion">
+        <picture>
+          <source srcset="images/gif/lizard.webp" type="image/webp" />
+          <img class="hero-critter" src="images/gif/lizard.gif" alt="A curious lizard looking up" width="498" height="498" loading="eager" decoding="async" fetchpriority="low" />
+        </picture>
+      </div>
+    </figure>
+
+    <h1 class="hero-name">Parth Sethi <span class="hero-name-alias">(Seth)</span></h1>
+
+    <p class="hero-subtitle">Senior Software Engineer (SMTS) &middot; Salesforce</p>
+
+    <p class="hero-tagline">I architect and lead high-throughput distributed systems &mdash; engines built to scale ten&times; over and hold five-nines under load.</p>
+
+    <div class="hero-ctas">
+      <a href="#experience" class="hero-btn hero-btn-primary">
+        <span>See my work</span>
+        <svg class="hero-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="tel:+13527459455" class="hero-btn hero-btn-secondary">
+        <svg class="hero-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8Z" fill="currentColor"/></svg>
+        <span>Phone</span>
+      </a>
+      <a href="mailto:sethiparth.ps@gmail.com" class="hero-btn hero-btn-ghost">
+        <svg class="hero-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18v12H3V6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 6.5 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Email</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="impact" class="impact-section">
+  <div class="impact-inner">
+    <p class="impact-eyebrow">Impact at a glance</p>
+    <div class="impact-grid">
+
+      <div class="impact-card">
+        <p class="impact-number" data-prefix="$" data-target="1" data-suffix="B+">$0B+</p>
+        <p class="impact-label">Annual revenue enabled</p>
+        <p class="impact-context">Email channel via the Sage rendering engine</p>
+      </div>
+
+      <div class="impact-card">
+        <p class="impact-number" data-target="40" data-suffix="M/hr">0M/hr</p>
+        <p class="impact-label">Email throughput</p>
+        <p class="impact-context">4M &rarr; 40M emails/hour &mdash; a 10&times; gain</p>
+      </div>
+
+      <div class="impact-card">
+        <p class="impact-number" data-target="99.999" data-decimals="3" data-suffix="%">0%</p>
+        <p class="impact-label"><span class="impact-pulse" aria-hidden="true"></span>Availability</p>
+        <p class="impact-context">Monthly service-availability SLO</p>
+      </div>
+
+      <div class="impact-card">
+        <p class="impact-number" data-target="556" data-suffix="K+">0K+</p>
+        <p class="impact-label">EC2 customers protected</p>
+        <p class="impact-context">Reboot-on-degrade across 25 regions</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  SECTION-SCOPED STYLES (.hero- / .impact-)
+============================================================ -->
+<style>
+  .hero-section {
+    position: relative;
+    /* Compact — sized to content, not a full empty viewport. */
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem 1.5rem 2rem;
+    isolation: isolate;
+  }
+  @media (min-width: 768px) {
+    .hero-section { padding: 2.5rem 1.5rem 2rem; }
+  }
+
+  /* soft dappled light, like sun through leaves */
+  .hero-rays {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(40% 50% at 20% 0%, rgba(122,154,46,.14), transparent 70%),
+      radial-gradient(40% 50% at 80% 10%, rgba(47,158,120,.14), transparent 70%);
+    opacity: .9;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ---------- Critter cameo ---------- */
+  .hero-scholar {
+    position: relative;
+    margin: 0 0 -0.5rem;         /* pull the name up snug under the cameo */
+    width: clamp(128px, 20vw, 172px);
+  }
+
+  /* Round green cameo around the gif so its forest background reads
+     as an intentional woodland vignette on the theme. */
+  .hero-medallion {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #243b2f;
+    border: 5px solid var(--accent);
+    box-shadow:
+      0 0 0 4px var(--bg-elev),
+      0 0 0 9px rgba(47,158,120,.28),
+      0 14px 30px rgba(45,42,32,.22),
+      inset 0 2px 8px rgba(0,0,0,.35);
+    animation: hero-bob 4.5s ease-in-out infinite;
+  }
+  .hero-critter {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.02);
+  }
+
+  /* speech bubble */
+  .hero-bubble {
+    position: absolute;
+    top: -8%;
+    right: -14%;
+    z-index: 3;
+    background: var(--bg-elev);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(.85rem, 2.2vw, 1.05rem);
+    letter-spacing: .01em;
+    padding: .4rem .85rem;
+    border-radius: .9rem;
+    box-shadow: 0 6px 18px rgba(45,42,32,.16);
+    opacity: 0;
+    transform: scale(.6) translateY(8px);
+    transform-origin: bottom left;
+    white-space: nowrap;
+  }
+  .hero-bubble::after {
+    content: '';
+    position: absolute;
+    left: 16px; bottom: -9px;
+    border: 8px solid transparent;
+    border-top-color: var(--bg-elev);
+    filter: drop-shadow(0 2px 0 var(--accent));
+  }
+  .hero-anim .hero-bubble { animation: hero-bubble-pop .5s cubic-bezier(.34,1.56,.64,1) 1s forwards; }
+
+  @keyframes hero-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes hero-bubble-pop {
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .hero-name {
+    font-size: clamp(2.4rem, 6.5vw, 4.6rem);
+    font-weight: 600;
+    letter-spacing: -.02em;
+    line-height: 1.02;
+    margin: 0 0 .6rem;
+    color: var(--text);
+  }
+  .hero-name-alias {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0;
+  }
+
+  .hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 600;
+    color: var(--accent-3);
+    letter-spacing: .01em;
+    margin: 0 0 1rem;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1rem, 1.6vw, 1.12rem);
+    line-height: 1.65;
+    color: var(--text-dim);
+    max-width: 560px;
+    margin: 0 0 1.9rem;
+  }
+
+  .hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .01em;
+    padding: .72rem 1.4rem;
+    border-radius: .7rem;
+    border: 1px solid transparent;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .hero-btn-icon { flex: none; }
+
+  .hero-btn-primary {
+    background: linear-gradient(135deg, #2f9e78 0%, #278a68 100%);
+    color: #f4fbf7;
+    box-shadow: 0 2px 0 #1f6e52, 0 6px 16px rgba(47,158,120,.3);
+  }
+  .hero-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 0 #1f6e52, 0 10px 22px rgba(47,158,120,.4); }
+
+  .hero-btn-secondary {
+    background: var(--bg-elev);
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .hero-btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .hero-btn-ghost {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-dim);
+  }
+  .hero-btn-ghost:hover {
+    color: var(--accent-3);
+    border-color: var(--accent-3);
+    transform: translateY(-2px);
+  }
+
+  .hero-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @keyframes hero-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .45; transform: scale(1.4); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-btn:hover { transform: none; }
+    .hero-medallion { animation: none; }
+    .hero-bubble { opacity: 1; transform: scale(1); }
+    .hero-anim .hero-bubble { animation: none; }
+  }
+
+  /* ---------- IMPACT: wood log slices ---------- */
+  .impact-section {
+    position: relative;
+    padding: 2rem 1.5rem 3.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .impact-inner { max-width: 1100px; margin: 0 auto; }
+
+  .impact-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: .74rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: center;
+    margin: 0 0 1.5rem;
+    font-weight: 700;
+  }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .impact-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .impact-card {
+    background: linear-gradient(180deg, #fffdf6 0%, #f1ead7 100%);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 4px 12px rgba(45,42,32,.08);
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .impact-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 22px rgba(47,158,120,.18);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .impact-card:hover { transform: none; }
+  }
+
+  .impact-number {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+    letter-spacing: -.01em;
+    color: var(--accent);
+    margin: 0 0 .6rem;
+  }
+
+  .impact-label {
+    display: flex; align-items: center; justify-content: center; gap: .4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: .84rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 .4rem;
+  }
+  .impact-pulse {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px rgba(47,158,120,.8);
+    flex: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .impact-pulse { animation: hero-pulse 2.4s ease-in-out infinite; }
+  }
+  .impact-context {
+    font-size: .82rem;
+    line-height: 1.5;
+    color: var(--text-dim);
+    margin: 0;
+  }
+</style>
+
+<!-- ============================================================
+  SECTION-SCOPED SCRIPT: trigger critter "hi" + count-up
+============================================================ -->
+<script>
+(function () {
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Pop the "Hi there!" bubble shortly after load. */
+  var scholar = document.querySelector('.hero-scholar');
+  if (scholar && !prefersReducedMotion) {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { scholar.classList.add('hero-anim'); });
+    });
+  }
+
+  /* Count-up on scroll into view. */
+  var numbers = document.querySelectorAll('.impact-number[data-target]');
+
+  function formatValue(el, value) {
+    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var prefix = el.getAttribute('data-prefix') || '';
+    var suffix = el.getAttribute('data-suffix') || '';
+    return prefix + value.toFixed(decimals) + suffix;
+  }
+
+  function animateCount(el) {
+    var target = parseFloat(el.getAttribute('data-target'));
+    if (prefersReducedMotion) { el.textContent = formatValue(el, target); return; }
+    var duration = 1400, start = null;
+    function tick(ts) {
+      if (start === null) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatValue(el, target * eased);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if ('IntersectionObserver' in window && numbers.length) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { animateCount(entry.target); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 });
+    numbers.forEach(function (el) { observer.observe(el); });
+  } else {
+    numbers.forEach(function (el) { el.textContent = formatValue(el, parseFloat(el.getAttribute('data-target'))); });
+  }
+})();
+</script>
+
+
+<!-- ===== 02-experience.html ===== -->
+<!-- ============================================================
+     SECTION: Experience — a woodland "scroll-focus" timeline
+     id="experience" · eyebrow "01 · Experience"
+     Scoped class prefix: .tl-
+
+     Layout: a central spine runs top→bottom in reverse-chronological
+     order (now → where it started). Each era is a circular logo node
+     sitting ON the spine, with a triangle pointing to an info tile
+     that alternates left/right down the page.
+
+     Interaction: purely scroll-linked (never scroll-jacked). As the
+     visitor scrolls, whichever tile is nearest the viewport's vertical
+     center is shown full-size and fully opaque; tiles above and below
+     shrink and go translucent, so the story reads one chapter at a
+     time. Normal page scrolling always works. The spine "lights up"
+     down to the active node. Fully degrades with no JS / reduced motion.
+     ============================================================ -->
+<section id="experience" class="tl-section" aria-labelledby="tl-heading">
+  <div class="tl-container">
+
+    <div class="tl-head">
+      <div class="tl-head-text">
+        <p class="eyebrow"><span>01</span> Experience</p>
+        <h2 id="tl-heading" class="tl-heading">A Decade of Building</h2>
+        <p class="tl-sub">From the lecture halls in Solan where it started to leading the engine behind a high-scale messaging channel. Scroll the trail &mdash; each chapter comes into focus as you go.</p>
+      </div>
+      <figure class="tl-portrait">
+        <img src="images/portrait/parth.jpg" alt="Parth Sethi" width="1000" height="1500" loading="lazy" />
+      </figure>
+    </div>
+
+    <!-- ============ THE TRAIL ============ -->
+    <ol class="tl-track" data-tl-track>
+      <!-- The winding "road": an SVG weave threaded through the node circles.
+           Path geometry is generated in JS from the live node positions, so it
+           stays correct across resizes and reflows. Two layers: a dotted track
+           underneath and a gradient progress fill revealed via stroke-dashoffset. -->
+      <svg class="tl-spine" data-tl-spine aria-hidden="true" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="tlSpineGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop class="g0" offset="0"></stop>
+            <stop class="g1" offset="1"></stop>
+          </linearGradient>
+        </defs>
+        <path class="tl-spine-track" data-tl-track-path fill="none"></path>
+        <path class="tl-spine-fill" data-tl-fill fill="none" stroke="url(#tlSpineGrad)"></path>
+      </svg>
+
+      <!-- SALESFORCE -->
+      <li class="tl-item" data-accent="oxblood">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/salesforce.png" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="Salesforce, Senior Software Engineer, May 2022 to Present">
+          <span class="tl-year" aria-hidden="true">Now</span>
+          <p class="tl-company">Salesforce</p>
+          <p class="tl-role">Senior Software Engineer (SMTS)</p>
+          <p class="tl-dates">May 2022 &mdash; Present</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Architecture — Lead</p><p class="tl-line">Architected "Sage" from scratch — the rendering engine for a <span class="tl-metric">$1B+</span> revenue channel — a two-step gRPC engine replacing the legacy E360 platform. Where the old library was a thin, low-level wrapper over Handlebars.js, Sage is a higher-order engine with deep, composable helpers — shipping critical functionality two releases ahead of schedule.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Headless 360 — Lead</p><p class="tl-line">Owned end-to-end — design, development, deployment, and performance testing — of the scripting feature for <span class="tl-metric">Salesforce Headless 360</span>, an API-first, agentic communications platform letting customers orchestrate email &amp; SMS sends programmatically with <span class="tl-metric">no UI</span> — driving the work across <span class="tl-metric">4 partner teams</span> to a clean, rollback-free launch.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Cross-Org Leadership</p><p class="tl-line">Led a cross-org effort across <span class="tl-metric">Q3 &amp; Q4</span>, coordinating <span class="tl-metric">4+ teams</span> and their dedicated test campaigns to clear Sage for launch — surfacing and fixing issues that hardened performance under peak request rates and heavy load.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Migration — Lead</p><p class="tl-line">Led and orchestrated the migration of <span class="tl-metric">100%</span> of customers onto Sage — no downtime, no customer action required.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Reference Architecture — Lead</p><p class="tl-line">Set the reference architecture now shared across <span class="tl-metric">3 channels</span> (SMS, email, RCS) as one engine — driving the design reviews and standards other teams build against.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">AI Orchestration</p><p class="tl-line">Architected an agentic automation pipeline using Claude and AI agents to replace a manual <span class="tl-metric">~4 hrs/org</span> workflow — provisioning a new org, running preview and real email sends, and standing up integration and daily service-health tests. Reclaimed multiple engineer-weeks of aggregate team effort per quarter.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Parity</p><p class="tl-line"><span class="tl-metric">40+</span> scripting helpers built with Product to reach 100% functional parity with the legacy system, backed by a custom Compatibility Testing Framework.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Performance</p><p class="tl-line">DynamoDB batch tuning and Redis dedup drove a <span class="tl-metric">10x</span> throughput gain — 4M to 40M emails an hour — plus bulk operations with quota-aware entitlements for partial sends under load.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Reliability</p><p class="tl-line">A pre-deploy validation framework sustains a <span class="tl-metric">99.999%</span> monthly service-availability SLO, cutting PagerDuty alerts by 10+ a week.</p></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- AWS -->
+      <li class="tl-item" data-accent="purple">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/aws.png" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="Amazon Web Services, Software Engineer, October 2019 to May 2022">
+          <span class="tl-year" aria-hidden="true">2019</span>
+          <p class="tl-company">Amazon Web Services</p>
+          <p class="tl-role">Software Engineer &middot; Seattle, WA</p>
+          <p class="tl-dates">Oct 2019 &mdash; May 2022</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Reliability</p><p class="tl-line">Rearchitected the maintenance service to fire reboot events across 25 public regions, protecting <span class="tl-metric">556K+</span> EC2 customers' instance data on degraded hardware.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Scheduling</p><p class="tl-line">Redesigned EC2 maintenance scheduling with a best-fit algorithm, killing manual scripts and cutting "no time slot" errors by <span class="tl-metric">100s</span> every two weeks.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Automation</p><p class="tl-line">Automated manual maintenance escalations on internal EC2 instances, removing <span class="tl-metric">4,000</span> escalations and hundreds of engineer-hours a year.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Customer Choice</p><p class="tl-line">Designed a scheduling algorithm honoring customer-chosen windows, giving <span class="tl-metric">10,000+</span> customers control over their own maintenance schedule.</p></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- OM PARTNERS -->
+      <li class="tl-item" data-accent="gold">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/omp.jpeg" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="OM Partners, Software Engineer, February 2019 to October 2019">
+          <span class="tl-year" aria-hidden="true">2019</span>
+          <p class="tl-company">OM Partners</p>
+          <p class="tl-role">Software Engineer &middot; Atlanta, GA</p>
+          <p class="tl-dates">Feb 2019 &mdash; Oct 2019</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Algorithms</p><p class="tl-line">Designed a scheduling algorithm distributing tasks across time buckets from user input, optimizing work-execution rate.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Systems</p><p class="tl-line">Implemented optimization strategies in <span class="tl-metric">C++17</span> for "OPAL," a custom supply-chain inventory and logistics language.</p></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- UNIVERSITY OF FLORIDA -->
+      <li class="tl-item" data-accent="mono">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/uf.webp" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="University of Florida, M.S. Computer Science, August 2017 to December 2018">
+          <span class="tl-year" aria-hidden="true">2017</span>
+          <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Education</p>
+          <p class="tl-company">University of Florida</p>
+          <p class="tl-role">M.S., Computer Science &middot; Gainesville, FL</p>
+          <p class="tl-dates">Aug 2017 &mdash; Dec 2018</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Pivot</p><p class="tl-line">Traded hardware and signals for distributed systems and software — the turn that set the rest of the map.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Result</p><p class="tl-line">Finished with a <span class="tl-metric">3.56/4</span> GPA, then shipped first production code within months.</p></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- JAYPEE UNIVERSITY -->
+      <li class="tl-item" data-accent="mono">
+        <span class="tl-node" aria-hidden="true">
+          <span class="tl-node-logo"><img src="images/logos/juit.jpg" alt="" loading="lazy" /></span>
+        </span>
+        <article class="tl-card" aria-label="Jaypee University of Information and Technology, B.Tech, August 2013 to May 2017">
+          <span class="tl-year" aria-hidden="true">2013</span>
+          <p class="tl-origin-tag"><span aria-hidden="true">&#9671;</span> Where it started</p>
+          <p class="tl-company">Jaypee University of Information &amp; Technology</p>
+          <p class="tl-role">B.Tech, Electronics &amp; Communication &middot; Solan, India</p>
+          <p class="tl-dates">Aug 2013 &mdash; May 2017</p>
+          <ul class="tl-achievements">
+            <li class="tl-achievement"><p class="tl-tag">Foundation</p><p class="tl-line">Four years of signals, circuits, and systems thinking — the raw material every line of code since has built on.</p></li>
+            <li class="tl-achievement"><p class="tl-tag">Result</p><p class="tl-line">Graduated with a <span class="tl-metric">9.1/10</span> GPA, top of a cohort chasing the same handful of engineering seats abroad.</p></li>
+          </ul>
+        </article>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION-SCOPED STYLES — Experience / scroll-focus timeline
+     ============================================================ -->
+<style>
+  .tl-section { padding: 5rem 0 5.5rem; position: relative; }
+  .tl-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  @media (min-width: 768px) { .tl-container { padding: 0 2rem; } }
+
+  /* Header: intro text on the left, portrait filling the empty right side. */
+  .tl-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+  .tl-head-text { max-width: 60ch; }
+  .tl-heading {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-weight: 700; letter-spacing: -.01em;
+    font-size: clamp(1.9rem, 4.2vw, 2.75rem);
+    color: var(--text); margin: 0.5rem 0 0.75rem;
+  }
+  .tl-sub { color: var(--text-dim); line-height: 1.7; margin: 0 0 1rem; }
+
+  /* Square floating portrait tile — top-anchored so it crops from the bottom
+     (keeps face + torso, drops the legs). The big soft shadow + idle bob read
+     as "lifted off the page". */
+  .tl-portrait {
+    margin: 0;
+    width: clamp(180px, 24vw, 260px);
+    aspect-ratio: 1 / 1;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background: #243b2f;
+    /* Soft "cameo ring" like the lizard medallions: accent border → cream gap
+       → translucent green halo → drop shadow for float. The stacked rings
+       dissolve the hard edge instead of a single abrupt line. */
+    border: 5px solid var(--accent);
+    box-shadow:
+      0 0 0 4px var(--bg-elev),
+      0 0 0 9px rgba(47,158,120,.28),
+      0 22px 45px -12px rgba(45,42,32,.32);
+    transition: transform .35s ease, box-shadow .35s ease;
+    animation: tl-portrait-float 5s ease-in-out infinite;
+  }
+  .tl-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;    /* top-anchored → crop from the bottom */
+  }
+  /* Hover intensifies the green halo only. (We intentionally don't set a hover
+     transform here: the always-running float animation keyframes `transform`,
+     so a non-!important hover transform would never apply — CSS animations win
+     over normal declarations.) */
+  .tl-portrait:hover {
+    box-shadow:
+      0 0 0 4px var(--bg-elev),
+      0 0 0 9px rgba(47,158,120,.42),
+      0 30px 55px -12px rgba(47,158,120,.3);
+  }
+  @keyframes tl-portrait-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @media (max-width: 720px) {
+    .tl-head { grid-template-columns: 1fr; }
+    .tl-portrait {
+      width: clamp(150px, 46vw, 200px);
+      justify-self: start;
+      order: -1;                /* photo above the text on mobile */
+      margin-bottom: 0.75rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tl-portrait { transition: none; animation: none; }
+    .tl-portrait:hover { transform: none; }
+  }
+
+  /* Per-era accent (woodland palette) */
+  .tl-item[data-accent="oxblood"] { --tl-era-c: var(--accent); }
+  .tl-item[data-accent="purple"]  { --tl-era-c: var(--accent-2); }
+  .tl-item[data-accent="gold"]    { --tl-era-c: var(--accent-3); }
+  .tl-item[data-accent="mono"]    { --tl-era-c: var(--text-dim); }
+
+  /* ---------- The trail ---------- */
+  /* The track is a plain vertical stack of wide tiles that alternate sides.
+     Nodes are absolutely positioned onto each tile's inner (spine-facing) edge,
+     so consecutive rows anchor at two different X columns — and the SVG "road"
+     weaves between them. --tl-col-* set the two node columns as % of track width. */
+  .tl-track {
+    position: relative;
+    list-style: none;
+    margin: 3rem 0 0;
+    padding: 0;
+    /* Two node columns the vine threads between. Tiles are wide and hang off
+       the vine at these inner edges; the vine clings to each tile's inner edge
+       (running vertically alongside it) and only crosses over in the vertical
+       GAP between tiles — so its body never lies on top of a card. */
+    --tl-col-left: 62%;    /* node X when the tile is on the LEFT (odd rows)  */
+    --tl-col-right: 38%;   /* node X when the tile is on the RIGHT (even rows) */
+    /* clear gap between a tile's inner edge and its node, so the circle sits
+       fully OFF the card (only the little nub bridges them). Must exceed the
+       node radius (30px). */
+    --tl-gap: 46px;
+  }
+
+  /* the winding SVG road, stretched over the whole track */
+  .tl-spine {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    overflow: visible;
+    z-index: 0;
+    pointer-events: none;
+  }
+  #tlSpineGrad .g0 { stop-color: var(--accent); }
+  #tlSpineGrad .g1 { stop-color: var(--accent-3); }
+  .tl-spine-track {
+    stroke: var(--border);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 2 12;   /* dotted "unpaved" look */
+    stroke-linejoin: round;
+  }
+  .tl-spine-fill {
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 6px rgba(47,158,120,.35));
+    /* pathLength normalized to 1 in JS → dashoffset 1(empty)…0(full) */
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset .25s ease-out;
+  }
+
+  /* ---------- Each era row ---------- */
+  .tl-item {
+    position: relative;
+    /* real breathing room between tiles — the vine does its crossing-over
+       inside this empty band, so curves never land on a card. */
+    margin: 0 0 clamp(3rem, 6vw, 5.5rem);
+  }
+  .tl-item:last-child { margin-bottom: 0; }
+
+  /* node = logo circle, absolutely pinned to the tile's inner edge and
+     vertically centered on the card. Its center X = one of the two columns. */
+  .tl-node {
+    position: absolute; z-index: 2;
+    top: 50%; transform: translate(-50%, -50%);
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--border);
+    display: grid; place-items: center;
+    box-shadow: 0 4px 12px rgba(45,42,32,.16);
+    transition: border-color .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+  }
+  /* Each tile's node sits at --tl-node-x (its own column). Default = the side
+     column; heavy tiles override it (below) to sit further out, widening the
+     card so it's shorter. The vine reads live node positions, so it adapts. */
+  .tl-item:nth-of-type(odd)  { --tl-node-x: var(--tl-col-left); }
+  .tl-item:nth-of-type(even) { --tl-node-x: var(--tl-col-right); }
+  /* content-heavy tiles → push the node toward the outer edge so the card runs
+     wide and takes less vertical space. Same specificity as the side rules
+     above, placed later, so these win. */
+  .tl-item:nth-of-type(1) { --tl-node-x: 88%; }   /* Salesforce (left, big)  */
+  .tl-item:nth-of-type(2) { --tl-node-x: 25%; }   /* Amazon (right, big)     */
+  .tl-node { left: var(--tl-node-x); }
+  /* keep the scale-up on the active node without dropping the centering translate */
+  .tl-item.is-active .tl-node { transform: translate(-50%, -50%) scale(1.08); }
+  .tl-node-logo {
+    width: 40px; height: 40px;
+    display: grid; place-items: center; overflow: hidden;
+  }
+  .tl-node-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+  /* year tag — now a footer badge at the bottom of each tile */
+  .tl-year {
+    order: 99;                    /* pushed to the bottom of the flex column */
+    align-self: flex-start;
+    margin-top: 1.1rem; padding-top: 0.8rem;
+    border-top: 1px dashed var(--border);
+    width: 100%;
+    font-family: 'Inter', sans-serif; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--tl-era-c, var(--text-faint));
+    transition: color .35s ease;
+    white-space: nowrap;
+  }
+
+  /* info tile — wide (spans most of the track), alternating sides.
+     The node sits just inside the inner edge, so the card reserves a small
+     inset (padding via margin) to make room for the circle + nub. */
+  .tl-card {
+    position: relative;
+    display: flex; flex-direction: column;
+    /* width is governed by the alternating margins below (one edge = 0, the
+       other = the node column minus the gap), so the tile fills its side. */
+    width: auto;
+    background: linear-gradient(180deg, #fffdf6 0%, #f6efdd 100%);
+    border: 1px solid var(--border);
+    border-radius: 1.1rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 10px 30px rgba(45,42,32,.10);
+    padding: clamp(1.25rem, 2.4vw, 1.9rem);
+    transform-origin: center center;
+  }
+  /* accent ribbon along the spine-facing edge */
+  .tl-card::before {
+    content: "";
+    position: absolute; top: 14px; bottom: 14px;
+    width: 4px; border-radius: 4px;
+    background: linear-gradient(180deg, var(--tl-era-c, var(--accent)), color-mix(in srgb, var(--tl-era-c, var(--accent)) 35%, transparent));
+  }
+  /* pointer nub emerging FROM the circle node toward its card. It's a small
+     rotated square sharing the circle's white fill + border, with the two
+     card-facing edges outlined and the tip corner rounded (soft point).
+     The back half tucks under the circle so they read as one shape. */
+  .tl-node::after {
+    content: "";
+    position: absolute; top: 50%;
+    width: 15px; height: 15px;
+    background: #fff;
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 1;
+    transition: border-color .35s ease;
+  }
+
+  /* odd rows → wide card on the LEFT; its right edge stops --tl-gap short of
+     the node column, so the circle sits fully OFF the card (nub bridges). */
+  .tl-item:nth-of-type(odd) .tl-card {
+    margin-left: 0;
+    margin-right: calc(100% - var(--tl-node-x) + var(--tl-gap));
+  }
+  .tl-item:nth-of-type(odd) .tl-card::before { right: 0; left: auto; }
+  .tl-item:nth-of-type(odd) .tl-node::after {
+    right: 100%; margin-right: -9px;
+    border-left: 3px solid var(--border);
+    border-bottom: 3px solid var(--border);
+    border-bottom-left-radius: 5px;
+  }
+  /* even rows → wide card on the RIGHT; its left edge stops --tl-gap short of
+     the node column, so the circle sits fully OFF the card (nub bridges). */
+  .tl-item:nth-of-type(even) .tl-card {
+    margin-left: calc(var(--tl-node-x) + var(--tl-gap));
+    margin-right: 0;
+  }
+  .tl-item:nth-of-type(even) .tl-card::before { left: 0; }
+  .tl-item:nth-of-type(even) .tl-node::after {
+    left: 100%; margin-left: -9px;
+    border-top: 3px solid var(--border);
+    border-right: 3px solid var(--border);
+    border-top-right-radius: 5px;
+  }
+
+  /* active node → the nub picks up the same accent border as the circle */
+  .tl-item.is-active .tl-node::after { border-color: var(--tl-era-c, var(--accent)); }
+
+  .tl-origin-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--tl-era-c, var(--text-dim)); font-weight: 700; margin: 0 0 0.4rem;
+  }
+  .tl-company {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: clamp(1.2rem, 2.4vw, 1.5rem); font-weight: 700;
+    color: var(--text); margin: 0 0 0.2rem; line-height: 1.15;
+  }
+  .tl-role { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text-dim); margin: 0 0 0.3rem; }
+  .tl-dates {
+    font-family: 'Inter', sans-serif; font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
+    color: var(--tl-era-c, var(--accent)); margin: 0 0 1.1rem;
+  }
+
+  .tl-achievements {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .tl-tag {
+    font-family: 'Inter', sans-serif; font-size: 0.64rem;
+    text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700;
+    color: var(--text-faint); margin: 0 0 0.2rem;
+  }
+  .tl-tag::before { content: "❦ "; color: var(--tl-era-c, var(--accent-3)); }
+  .tl-line { font-family: 'Inter', sans-serif; font-size: 0.92rem; line-height: 1.6; color: var(--text-dim); margin: 0; }
+  .tl-metric {
+    font-family: 'Fraunces', 'Georgia', serif; font-weight: 700;
+    color: var(--tl-era-c, var(--accent));
+    background: color-mix(in srgb, var(--tl-era-c, var(--accent)) 14%, transparent);
+    padding: 0.05rem 0.4rem; border-radius: 0.3rem; white-space: nowrap;
+  }
+
+  /* ---------- Scroll-focus effect (only when JS is active) ---------- */
+  /* --f is a 0→1 "in focus" value set per item by the scroll handler.
+     Nearest the viewport center → 1 (full size, opaque); far → 0. */
+  .tl-js .tl-item { --f: 1; }
+  .tl-js .tl-card {
+    transform: scale(calc(0.9 + 0.1 * var(--f)));
+    opacity: calc(0.4 + 0.6 * var(--f));
+  }
+  .tl-js .tl-item:nth-of-type(odd) .tl-card  { transform-origin: right center; }
+  .tl-js .tl-item:nth-of-type(even) .tl-card { transform-origin: left center; }
+  .tl-js .tl-node { opacity: calc(0.55 + 0.45 * var(--f)); }
+  .tl-js .tl-year { opacity: calc(0.35 + 0.65 * var(--f)); }
+
+  /* the focused era's node + year lifts and takes its accent color */
+  .tl-item.is-active .tl-node {
+    border-color: var(--tl-era-c, var(--accent));
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--tl-era-c, var(--accent)) 20%, transparent), 0 10px 22px rgba(45,42,32,.22);
+    /* transform (translate -50% -50% scale 1.08) is set in the node block above */
+  }
+  .tl-item.is-active .tl-year { color: var(--tl-era-c, var(--accent)); }
+
+  /* ---------- Mobile: single left rail, all tiles to the right ---------- */
+  /* The weaving road collapses to a straight left rail: both node columns snap
+     to a fixed 26px, tiles go full-width to the right, all nubs point right. */
+  @media (max-width: 720px) {
+    .tl-track {
+      margin-top: 2rem;
+      --tl-col-left: 26px;
+      --tl-col-right: 26px;
+    }
+    /* override the per-tile desktop columns (incl. the heavy-tile ones) back to
+       the single rail — (0,2,0) specificity, later in source, so it wins. */
+    .tl-track .tl-item { --tl-node-x: 26px; }
+    .tl-item {
+      padding-top: 0;
+      margin-bottom: 2.5rem;
+    }
+    .tl-node { top: 26px; transform: translate(-50%, 0); width: 50px; height: 50px; }
+    .tl-item.is-active .tl-node { transform: translate(-50%, 0) scale(1.08); }
+    .tl-node-logo { width: 32px; height: 32px; }
+    /* every card full-width on the right, pointing left */
+    .tl-item:nth-of-type(odd) .tl-card,
+    .tl-item:nth-of-type(even) .tl-card {
+      width: auto;
+      margin-left: 58px; margin-right: 0;
+    }
+    .tl-item:nth-of-type(odd) .tl-card::before,
+    .tl-item:nth-of-type(even) .tl-card::before { left: 0; right: auto; }
+    /* every node points RIGHT toward its card */
+    .tl-item:nth-of-type(odd) .tl-node::after,
+    .tl-item:nth-of-type(even) .tl-node::after {
+      left: 100%; right: auto; margin-left: -9px; margin-right: 0;
+      top: 50%;
+      border: 0;
+      border-top: 3px solid var(--border);
+      border-right: 3px solid var(--border);
+      border-top-right-radius: 5px; border-bottom-left-radius: 0;
+    }
+    .tl-js .tl-item:nth-of-type(odd) .tl-card,
+    .tl-js .tl-item:nth-of-type(even) .tl-card { transform-origin: left center; }
+  }
+
+  /* ---------- No focus dimming when motion is reduced ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .tl-js .tl-card { transform: none; opacity: 1; }
+    .tl-js .tl-node, .tl-js .tl-year { opacity: 1; }
+    .tl-node, .tl-spine-fill { transition: none; }
+    .tl-item.is-active .tl-node { transform: none; }
+  }
+</style>
+
+<!-- ============================================================
+     SECTION-SCOPED SCRIPT — scroll-linked focus.
+     For each era row, measures how close its center is to the
+     viewport's vertical center and writes a 0→1 --f value that CSS
+     maps to scale + opacity. The closest row gets .is-active (accent
+     node) and the spine fills down to it. rAF-throttled; no scroll
+     hijacking — the page scrolls normally at all times.
+     ============================================================ -->
+<script>
+  (function () {
+    var section = document.getElementById('experience');
+    if (!section) return;
+    var track = section.querySelector('[data-tl-track]');
+    var items = Array.prototype.slice.call(section.querySelectorAll('.tl-item'));
+    var svg = section.querySelector('[data-tl-spine]');
+    var trackPath = section.querySelector('[data-tl-track-path]');
+    var fill = section.querySelector('[data-tl-fill]');
+    if (!track || !items.length) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Enable the focus CSS (cards start full-size for no-JS users). */
+    section.classList.add('tl-js');
+
+    /* nodeCenters[i] = {x, y} of each node, in track-local px. cumLen[i] =
+       normalized path length (0…1) at node i, so we can map "active node"
+       → how much of the road to pave. Rebuilt by layout(). */
+    var nodeCenters = [];
+    var cumLen = [];
+    var totalLen = 1;
+
+    /* Stable pseudo-random in [0,1) from an integer seed — so the vine's
+       wander is irregular but identical across every resize/relayout. */
+    function hash(n) {
+      var x = Math.sin(n * 12.9898) * 43758.5453;
+      return x - Math.floor(x);
+    }
+
+    /* Build the vine by ROUTING THROUGH THE GAPS, never across a card.
+       Every node sits on the outer edge of its own card, so a node's vertical
+       column is clear within its own row, and the horizontal band between two
+       stacked cards is fully clear. So for each pair of nodes the vine:
+         drops vertically in node i's clear gutter → crosses horizontally inside
+         the empty gap band between the two cards → drops into node i+1.
+       Corners are rounded (which cut INSIDE the angle, so the curve can never
+       bulge onto a tile), and the crossing height wanders per-segment via hash
+       so the weave reads organic and asymmetric rather than mechanical. */
+    function buildPath(nodes, cards) {
+      if (nodes.length < 2) return '';
+      function fmt(x, y) { return x.toFixed(2) + ' ' + y.toFixed(2); }
+
+      var d = 'M ' + fmt(nodes[0].x, nodes[0].y);
+      for (var i = 0; i < nodes.length - 1; i++) {
+        var a = nodes[i], b = nodes[i + 1];
+        var cA = cards[i], cB = cards[i + 1];
+
+        /* crossing height: somewhere in the clear band between the two cards,
+           nudged asymmetrically per segment (0.30–0.70 into the gap). */
+        var gapTop = cA.bottom, gapBot = cB.top;
+        if (gapBot < gapTop) { gapTop = a.y; gapBot = b.y; }   /* safety */
+        var r1 = hash(i + 1);
+        var gm = gapTop + (gapBot - gapTop) * (0.30 + r1 * 0.40);
+        gm = Math.max(gapTop + 6, Math.min(gapBot - 6, gm));
+
+        var sgn = (b.x - a.x) >= 0 ? 1 : -1;
+        var v1 = gm - a.y;                 /* first vertical drop length */
+        var hlen = Math.abs(b.x - a.x);    /* horizontal crossing length */
+        var v2 = b.y - gm;                 /* second vertical drop length */
+
+        /* When nodes share an X column (e.g. the mobile rail), there's no gap to
+           cross — draw a clean straight vertical instead of a tiny corner jog. */
+        if (hlen < 2) {
+          d += ' L ' + fmt(b.x, b.y);
+          continue;
+        }
+
+        var r = Math.min(v1, v2, hlen) * 0.5;
+        r = Math.max(2, Math.min(r, 54));  /* generous, soft corners */
+
+        /* vertical down node i's gutter, round into the crossing, run across
+           the gap, round into node i+1's gutter, drop to the node. */
+        d += ' L ' + fmt(a.x, gm - r);
+        d += ' Q ' + fmt(a.x, gm) + ' ' + fmt(a.x + sgn * r, gm);
+        d += ' L ' + fmt(b.x - sgn * r, gm);
+        d += ' Q ' + fmt(b.x, gm) + ' ' + fmt(b.x, gm + r);
+        d += ' L ' + fmt(b.x, b.y);
+      }
+      return d;
+    }
+
+    function layout() {
+      var tr = track.getBoundingClientRect();
+      if (!tr.width || !tr.height) return;
+
+      /* SVG uses a 1:1 px user space matching the track box. */
+      svg.setAttribute('viewBox', '0 0 ' + tr.width + ' ' + tr.height);
+
+      nodeCenters = items.map(function (it) {
+        var n = it.querySelector('.tl-node');
+        var nr = n.getBoundingClientRect();
+        return { x: nr.left - tr.left + nr.width / 2, y: nr.top - tr.top + nr.height / 2 };
+      });
+
+      /* card top/bottom (track-local) per row — the vine's crossing must land
+         in the clear band between one card's bottom and the next card's top. */
+      var cardRects = items.map(function (it) {
+        var c = it.querySelector('.tl-card');
+        var cr = (c || it).getBoundingClientRect();
+        return { top: cr.top - tr.top, bottom: cr.bottom - tr.top };
+      });
+
+      var d = buildPath(nodeCenters, cardRects);
+      trackPath.setAttribute('d', d);
+      fill.setAttribute('d', d);
+
+      /* Normalize both dash geometries to a 0…1 pathLength so stroke math is
+         resolution-independent. Track shows a dotted pattern (its own dasharray
+         from CSS wins because we don't set pathLength there). */
+      totalLen = fill.getTotalLength() || 1;
+      fill.setAttribute('pathLength', '1');
+      fill.style.strokeDasharray = '1';
+
+      /* cumulative normalized length at each node center */
+      cumLen = [];
+      var acc = 0;
+      cumLen.push(0);
+      for (var i = 1; i < nodeCenters.length; i++) {
+        var a = nodeCenters[i - 1], b = nodeCenters[i];
+        /* chord approximation is plenty for a monotone-y weave */
+        acc += Math.hypot(b.x - a.x, b.y - a.y);
+        cumLen.push(acc);
+      }
+      var last = acc || 1;
+      cumLen = cumLen.map(function (v) { return v / last; });
+    }
+
+    if (reduceMotion) {
+      /* Static: everything visible, road fully paved, first era active. */
+      function relayoutStatic() {
+        layout();
+        if (fill) fill.style.strokeDashoffset = '0';
+      }
+      relayoutStatic();
+      items[0].classList.add('is-active');
+      /* Fonts / lazy images can reflow the cards after this first measurement,
+         so re-measure the road on those events (mirrors the animated branch). */
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(relayoutStatic);
+      }
+      window.addEventListener('load', relayoutStatic);
+      var rmResizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(rmResizeTimer);
+        rmResizeTimer = setTimeout(relayoutStatic, 120);
+      });
+      return;
+    }
+
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var vc = vh / 2;
+      var falloff = Math.min(vh * 0.62, 520);
+      var best = 0, bestF = -1;
+
+      items.forEach(function (it, idx) {
+        var r = it.getBoundingClientRect();
+        var center = r.top + r.height / 2;
+        var f = Math.max(0, 1 - Math.abs(center - vc) / falloff);
+        it.style.setProperty('--f', f.toFixed(3));
+        if (f > bestF) { bestF = f; best = idx; }
+      });
+
+      items.forEach(function (it, idx) {
+        it.classList.toggle('is-active', idx === best);
+      });
+
+      /* Pave the road smoothly from the first node to a point that tracks the
+         viewport center as it travels between the active node and its neighbor,
+         so the fill glides rather than snapping node-to-node. */
+      if (fill && cumLen.length) {
+        var tr = track.getBoundingClientRect();
+        var progressPx = vc - tr.top;                     /* viewport center in track space */
+        var paved = 0;
+        if (nodeCenters.length) {
+          if (progressPx <= nodeCenters[0].y) {
+            paved = 0;
+          } else if (progressPx >= nodeCenters[nodeCenters.length - 1].y) {
+            paved = 1;
+          } else {
+            for (var i = 1; i < nodeCenters.length; i++) {
+              if (progressPx <= nodeCenters[i].y) {
+                var y0 = nodeCenters[i - 1].y, y1 = nodeCenters[i].y;
+                var t = (y1 === y0) ? 0 : (progressPx - y0) / (y1 - y0);
+                paved = cumLen[i - 1] + (cumLen[i] - cumLen[i - 1]) * t;
+                break;
+              }
+            }
+          }
+        }
+        fill.style.strokeDashoffset = String(1 - Math.max(0, Math.min(1, paved)));
+      }
+    }
+
+    function onScroll() {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }
+
+    var resizeTimer;
+    function onResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () { layout(); update(); }, 120);
+    }
+
+    layout();
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    /* Fonts can reflow the cards after first paint → re-measure the road. */
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { layout(); update(); });
+    }
+    window.addEventListener('load', function () { layout(); update(); });
+  })();
+</script>
+
+
+<!-- ===== 03-skills.html ===== -->
+<!-- ============================================================
+     SECTION: Skills Matrix (id="skills")
+     Prefix: sk-
+     Depends on global tokens defined in :root by the assembler
+     (--bg, --bg-elev, --border, --text, --accent, --accent-2, --accent-3, etc.)
+     ============================================================ -->
+<section id="skills" class="sk-section" aria-labelledby="sk-heading">
+  <div class="sk-container">
+    <p class="eyebrow"><span>02</span> Skills</p>
+    <h2 id="sk-heading" class="sk-heading">Skills Matrix</h2>
+    <p class="sk-sub">Languages I ship in daily, the AWS stack that runs my services, and how I work.</p>
+
+    <div class="sk-grid-main">
+      <!-- Languages: proficiency bars -->
+      <article class="sk-card sk-observe" data-sk-stagger="0">
+        <div class="sk-card-head">
+          <h3 class="sk-card-title">Languages</h3>
+          <div class="sk-legend" aria-hidden="true">
+            <span class="sk-legend-item"><span class="sk-legend-dot sk-legend-dot--proficient"></span>Proficient</span>
+            <span class="sk-legend-item"><span class="sk-legend-dot sk-legend-dot--familiar"></span>Familiar</span>
+          </div>
+        </div>
+        <ul class="sk-bar-list">
+          <li class="sk-bar-item" data-level="proficient" style="--pct:95%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Java</span>
+              <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="proficient" style="--pct:88%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">C++</span>
+              <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="proficient" style="--pct:90%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">SQL</span>
+              <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="proficient" style="--pct:85%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">NoSQL</span>
+              <span class="sk-bar-tag sk-bar-tag--proficient">proficient</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:55%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">C#</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:15%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Scala</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:15%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Python</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+          <li class="sk-bar-item" data-level="familiar" style="--pct:15%">
+            <div class="sk-bar-row">
+              <span class="sk-bar-label">Ruby</span>
+              <span class="sk-bar-tag sk-bar-tag--familiar">familiar</span>
+            </div>
+            <div class="sk-bar-track" aria-hidden="true">
+              <div class="sk-bar-fill"></div>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- AWS Tech Stack: tag cloud -->
+      <article class="sk-card sk-observe" data-sk-stagger="1">
+        <div class="sk-card-head">
+          <h3 class="sk-card-title">AWS Tech Stack</h3>
+        </div>
+        <ul class="sk-chip-cloud" aria-label="AWS services used">
+          <li class="sk-chip sk-chip--aws">DynamoDB</li>
+          <li class="sk-chip sk-chip--aws">Redshift</li>
+          <li class="sk-chip sk-chip--aws">RDS</li>
+          <li class="sk-chip sk-chip--aws">S3</li>
+          <li class="sk-chip sk-chip--aws">Lambda</li>
+          <li class="sk-chip sk-chip--aws">Kinesis</li>
+          <li class="sk-chip sk-chip--aws">QuickSight</li>
+          <li class="sk-chip sk-chip--aws">EC2</li>
+          <li class="sk-chip sk-chip--aws">CloudWatch</li>
+          <li class="sk-chip sk-chip--aws">CloudFormation</li>
+          <li class="sk-chip sk-chip--aws">IAM</li>
+          <li class="sk-chip sk-chip--aws">KMS</li>
+          <li class="sk-chip sk-chip--aws">SNS</li>
+          <li class="sk-chip sk-chip--aws">SQS</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="sk-grid-sub">
+      <!-- Tools & Processes -->
+      <article class="sk-card sk-observe" data-sk-stagger="2">
+        <div class="sk-card-head">
+          <h3 class="sk-card-title">Tools &amp; Process</h3>
+        </div>
+        <ul class="sk-chip-cloud" aria-label="Tools and processes used">
+          <li class="sk-chip sk-chip--tool">Agile</li>
+          <li class="sk-chip sk-chip--tool">Kanban</li>
+          <li class="sk-chip sk-chip--tool">Git</li>
+          <li class="sk-chip sk-chip--tool">Claude</li>
+          <li class="sk-chip sk-chip--tool">Cursor</li>
+        </ul>
+      </article>
+
+      <!-- Education -->
+      <article class="sk-card sk-observe" data-sk-stagger="3">
+        <div class="sk-card-head">
+          <h3 class="sk-card-title">Education</h3>
+        </div>
+        <ul class="sk-edu-list">
+          <li class="sk-edu-item">
+            <div class="sk-edu-top">
+              <span class="sk-edu-degree">M.S. Computer Science</span>
+              <span class="sk-edu-gpa">GPA 3.56/4</span>
+            </div>
+            <div class="sk-edu-school">University of Florida, Gainesville FL</div>
+            <div class="sk-edu-date">Aug 2017 – Dec 2018</div>
+          </li>
+          <li class="sk-edu-item">
+            <div class="sk-edu-top">
+              <span class="sk-edu-degree">B.Tech Electronics &amp; Communication</span>
+              <span class="sk-edu-gpa">GPA 9.1/10</span>
+            </div>
+            <div class="sk-edu-school">Jaypee University of Information &amp; Technology, Solan, India</div>
+            <div class="sk-edu-date">Aug 2013 – May 2017</div>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Section-specific styles for #skills (prefix: sk-)
+     ============================================================ -->
+<style>
+  /* Reused eyebrow pattern per shared design system (idempotent if repeated by other sections) */
+  .eyebrow {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-ink);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .eyebrow span {
+    color: var(--text-faint);
+  }
+
+  .sk-section {
+    padding: 6rem 0;
+    position: relative;
+  }
+
+  .sk-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .sk-container {
+      padding: 0 2rem;
+    }
+  }
+
+  .sk-heading {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 0.75rem;
+  }
+
+  .sk-sub {
+    color: var(--text-dim);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 0 2.5rem;
+  }
+
+  /* Main grid: Languages + AWS stack, reflow via auto-fit (no horizontal scroll) */
+  .sk-grid-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sk-grid-sub {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 1.5rem;
+  }
+
+  .sk-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .sk-card.sk-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .sk-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 24px rgba(47, 158, 120, 0.25), inset 0 1px 0 rgba(255, 248, 227, 0.4);
+  }
+
+  .sk-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .sk-card-title {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  /* Legend */
+  .sk-legend {
+    display: flex;
+    gap: 0.9rem;
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .sk-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .sk-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .sk-legend-dot--proficient {
+    background: var(--accent);
+    box-shadow: 0 0 8px rgba(211, 164, 79, 0.6);
+  }
+
+  .sk-legend-dot--familiar {
+    background: var(--text-faint);
+  }
+
+  /* Proficiency bars */
+  .sk-bar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sk-bar-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+  }
+
+  .sk-bar-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .sk-bar-tag {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .sk-bar-tag--proficient {
+    color: var(--accent-ink);
+  }
+
+  .sk-bar-tag--familiar {
+    color: var(--text-faint);
+  }
+
+  .sk-bar-track {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--bg-elev-2);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .sk-bar-fill {
+    position: absolute;
+    inset: 0;
+    width: 0%;
+    border-radius: 999px;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .sk-bar-item[data-level="proficient"] .sk-bar-fill {
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    box-shadow: 0 0 10px rgba(211, 164, 79, 0.5);
+  }
+
+  .sk-bar-item[data-level="familiar"] .sk-bar-fill {
+    background: var(--text-faint);
+    opacity: 0.75;
+  }
+
+  .sk-bar-item.sk-bar-fill-active .sk-bar-fill {
+    width: var(--pct);
+  }
+
+  /* Chip / tag cloud */
+  .sk-chip-cloud {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .sk-chip {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    background: var(--bg-elev-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.45rem 0.95rem;
+    line-height: 1;
+    transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .sk-chip--aws:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(47, 158, 120, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .sk-chip--tool:hover {
+    color: var(--text);
+    border-color: var(--accent-3);
+    box-shadow: 0 0 20px rgba(211, 164, 79, 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* Education */
+  .sk-edu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .sk-edu-item {
+    border-left: 2px solid var(--border);
+    padding-left: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .sk-edu-item:hover {
+    border-color: var(--accent-2);
+  }
+
+  .sk-edu-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .sk-edu-degree {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+
+  .sk-edu-gpa {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--accent-3);
+    white-space: nowrap;
+  }
+
+  .sk-edu-school {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+  }
+
+  .sk-edu-date {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--text-faint);
+    margin-top: 0.25rem;
+  }
+
+  /* Focus visibility (keyboard nav) for any focusable descendants */
+  .sk-section :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Reduced motion: disable transforms/transitions, show final state immediately */
+  @media (prefers-reduced-motion: reduce) {
+    .sk-card {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .sk-bar-fill {
+      transition: none;
+    }
+    .sk-chip:hover,
+    .sk-edu-item:hover {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-card {
+      padding: 1.35rem;
+    }
+  }
+</style>
+
+<!-- ============================================================
+     Section-specific script for #skills (prefix: sk-)
+     Scroll-triggered fade-up for cards (staggered) + bar fill animation.
+     Honors prefers-reduced-motion.
+     ============================================================ -->
+<script>
+  (function () {
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cards = document.querySelectorAll('#skills .sk-observe');
+    var barItems = document.querySelectorAll('#skills .sk-bar-item');
+
+    if (prefersReducedMotion) {
+      cards.forEach(function (card) {
+        card.classList.add('sk-visible');
+      });
+      barItems.forEach(function (item) {
+        item.classList.add('sk-bar-fill-active');
+      });
+      return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach(function (card) {
+        card.classList.add('sk-visible');
+      });
+      barItems.forEach(function (item) {
+        item.classList.add('sk-bar-fill-active');
+      });
+      return;
+    }
+
+    var cardObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var stagger = parseInt(el.getAttribute('data-sk-stagger'), 10) || 0;
+            setTimeout(function () {
+              el.classList.add('sk-visible');
+            }, stagger * 60);
+            cardObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    cards.forEach(function (card) {
+      cardObserver.observe(card);
+    });
+
+    var barObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('sk-bar-fill-active');
+            barObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    barItems.forEach(function (item) {
+      barObserver.observe(item);
+    });
+  })();
+</script>
+
+
+<!-- ===== 04-projects.html ===== -->
+<!-- ============================================================
+  SECTION: Projects / Case Studies (id="projects")
+  Eyebrow: "03 Projects" — follows shared DESIGN_SYSTEM.md tokens.
+  Prefix: .pj- for all section-scoped classes.
+============================================================ -->
+<section id="projects" class="pj-section" aria-labelledby="pj-heading">
+  <div class="pj-container">
+    <p class="eyebrow"><span>03</span> Projects</p>
+    <h2 id="pj-heading" class="pj-title">Case studies</h2>
+    <p class="pj-subtitle">
+      Systems shipped at scale — a from-scratch rendering engine, an API-first agentic
+      communications platform, a 10x throughput rewrite, a five-nines reliability framework,
+      and a maintenance platform protecting half a million customers.
+    </p>
+
+    <div class="pj-grid">
+
+      <!-- Card 1: Sage Rendering Engine -->
+      <article class="pj-card" data-pj-index="0">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Sage Rendering Engine</h3>
+            <span class="pj-metric">&gt;$1B channel powered</span>
+          </div>
+          <p class="pj-desc">
+            Architected a high-performance Handlebars scripting engine from scratch, leading the
+            end-to-end replacement of Salesforce's legacy E360 platform. Designed the
+            two-step gRPC API and a generic helper framework — 40+ scripting helpers reaching 100%
+            functional parity with legacy behavior — and set the reference architecture now shared
+            across SMS, email, and RCS. Critical functionality delivered two releases ahead of
+            schedule.
+          </p>
+          <figure class="pj-flow" role="img" aria-label="System design: two-step gRPC pipeline — client request compiles once, renders per recipient, then delivers to email.">
+            <figcaption class="pj-flow-caption">Design detail — two-step gRPC pipeline</figcaption>
+            <div class="pj-flow-row" aria-hidden="true">
+              <span class="pj-flow-node">Client</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node pj-flow-node--accent">Compile</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node pj-flow-node--accent2">Render</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node">Email</span>
+            </div>
+          </figure>
+          <ul class="pj-tags">
+            <li>Java</li>
+            <li>gRPC</li>
+            <li>Architecture</li>
+            <li>Lead</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 2: Email Service 10x Throughput -->
+      <article class="pj-card" data-pj-index="1">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Email Service 10x Throughput</h3>
+            <span class="pj-metric">4M &rarr; 40M / hr</span>
+          </div>
+          <p class="pj-desc">
+            Drove a full redesign of email delivery, taking throughput from 4M to
+            40M emails per hour by optimizing AWS DynamoDB batch loads and streamlining
+            intermediate step execution. Introduced Redis for deduplication to eliminate redundant
+            sends at scale.
+          </p>
+          <ul class="pj-tags">
+            <li>AWS</li>
+            <li>DynamoDB</li>
+            <li>Redis</li>
+            <li>Performance</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 3: Five-Nines Availability Framework -->
+      <article class="pj-card" data-pj-index="2">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Five-Nines Availability Framework</h3>
+            <span class="pj-metric">99.999% SLO</span>
+          </div>
+          <p class="pj-desc">
+            Architected a pre-deploy validation framework that sustains a 99.999% monthly
+            service-availability SLO. Cut PagerDuty alerts by more than 10 per week and turned
+            future bug fixes into minor, low-risk code changes. Built as the source of truth for
+            on-call reliability.
+          </p>
+          <ul class="pj-tags">
+            <li>Reliability</li>
+            <li>Validation</li>
+            <li>On-call</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 4: EC2 Reboot-on-Degrade -->
+      <article class="pj-card" data-pj-index="3">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">EC2 Reboot-on-Degrade</h3>
+            <span class="pj-metric">556K+ customers protected</span>
+          </div>
+          <p class="pj-desc">
+            Rearchitected the customer maintenance service to let EC2 send "reboot" events across
+            25 public regions when hardware degraded, safeguarding instance data for more than
+            556,000 customers. Part of a broader scheduler overhaul that removed manual daily scripts.
+          </p>
+          <ul class="pj-tags">
+            <li>AWS</li>
+            <li>EC2</li>
+            <li>Distributed Systems</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 5: AI-Orchestrated Org Provisioning & Test Automation -->
+      <article class="pj-card" data-pj-index="4">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">AI-Orchestrated Org Provisioning &amp; Test Automation</h3>
+            <span class="pj-metric">~4 hrs/org &rarr; automated</span>
+          </div>
+          <p class="pj-desc">
+            Architected an agentic automation pipeline using Claude and AI agents to replace a
+            manual ~4-hour-per-org workflow — provisioning a new org, executing preview and real
+            email sends, and standing up integration and daily service-health tests. Eliminated
+            repetitive setup toil and reclaimed multiple weeks of aggregate team effort.
+          </p>
+          <ul class="pj-tags">
+            <li>Claude</li>
+            <li>AI Agents</li>
+            <li>Automation</li>
+            <li>Test Infrastructure</li>
+            <li>Salesforce</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 6: Salesforce Headless 360 — Agentic Communications Platform -->
+      <article class="pj-card" data-pj-index="5">
+        <span class="pj-card-spotlight" aria-hidden="true"></span>
+        <div class="pj-card-inner">
+          <div class="pj-card-head">
+            <h3 class="pj-card-title">Salesforce Headless 360</h3>
+            <span class="pj-metric">API-first &middot; no UI</span>
+          </div>
+          <p class="pj-desc">
+            Owned the scripting feature end-to-end — design, development, deployment, and
+            performance testing — for Salesforce Headless 360, an API-first, agentic
+            communications platform. Customers (and their agents) orchestrate email &amp; SMS
+            sends entirely programmatically, with no UI in the loop. Built in-platform helpers
+            wiring three upstream services and drove the work across four partner teams to a
+            clean, rollback-free launch.
+          </p>
+          <figure class="pj-flow" role="img" aria-label="System design: agent calls the Headless 360 API, which orchestrates the send across email and SMS channels.">
+            <figcaption class="pj-flow-caption">Design detail — agent-driven, headless send</figcaption>
+            <div class="pj-flow-row" aria-hidden="true">
+              <span class="pj-flow-node">Agent</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node pj-flow-node--accent">Headless 360 API</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node pj-flow-node--accent2">Orchestrate</span>
+              <span class="pj-flow-arrow">&rarr;</span>
+              <span class="pj-flow-node">Email / SMS</span>
+            </div>
+          </figure>
+          <ul class="pj-tags">
+            <li>Java</li>
+            <li>API-First</li>
+            <li>Agentic</li>
+            <li>Salesforce</li>
+            <li>Lead</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  STYLE: Projects section (scoped, prefix .pj-)
+  Shared eyebrow pattern re-declared here per DESIGN_SYSTEM.md
+  spec (uppercase, jade green, letter-spaced) in case no other
+  fragment defines it — identical rules are harmless if it does.
+============================================================ -->
+<style>
+  #projects .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  #projects .eyebrow span {
+    color: var(--text-faint);
+  }
+
+  .pj-section {
+    padding-block: 6rem;
+  }
+
+  .pj-container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .pj-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  .pj-title {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .pj-subtitle {
+    font-family: 'Inter', sans-serif;
+    max-width: 640px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  .pj-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .pj-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+  }
+
+  /* ---- Card shell ---- */
+  .pj-card {
+    position: relative;
+    isolation: isolate;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--bg-elev);
+    overflow: hidden;
+    outline: none;
+    cursor: default;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  .pj-card:hover,
+  .pj-card:focus-visible {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 18px rgba(45, 42, 32, 0.12);
+  }
+
+  .pj-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Gradient border glow (mask trick) */
+  .pj-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--grad);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .pj-card:hover::before,
+  .pj-card:focus-visible::before {
+    opacity: 1;
+  }
+
+  /* Pointer-follow spotlight (decorative, optional, degrades gracefully) */
+  .pj-card-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(
+      320px circle at var(--pj-mx, 50%) var(--pj-my, 50%),
+      rgba(47, 158, 120, 0.16),
+      transparent 65%
+    );
+    pointer-events: none;
+  }
+
+  .pj-card:hover .pj-card-spotlight {
+    opacity: 1;
+  }
+
+  .pj-card-inner {
+    position: relative;
+    z-index: 1;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .pj-card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+
+  .pj-card-title {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+
+  .pj-metric {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    text-shadow: 0 1px 0 rgba(255, 255, 246, 0.6);
+    background: rgba(47, 158, 120, 0.08);
+    border: 1px solid rgba(47, 158, 120, 0.3);
+    border-radius: 999px;
+    padding: 0.3rem 0.65rem;
+    white-space: nowrap;
+  }
+
+  .pj-desc {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dim);
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+
+  /* ---- System-design artifact (Sage card only): mini gRPC flow diagram ---- */
+  .pj-flow {
+    margin: 0.15rem 0 0;
+    padding: 0.85rem 0.9rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 0.65rem;
+    background: linear-gradient(180deg, rgba(122, 154, 46, 0.08), rgba(47, 158, 120, 0.05));
+  }
+
+  .pj-flow-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 0.65rem;
+  }
+
+  .pj-flow-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pj-flow-node {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    background: var(--bg-elev-2);
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .pj-flow-node--accent {
+    color: var(--accent);
+    border-color: rgba(47, 158, 120, 0.4);
+    background: rgba(47, 158, 120, 0.1);
+  }
+
+  .pj-flow-node--accent2 {
+    color: var(--accent-2);
+    border-color: rgba(122, 154, 46, 0.4);
+    background: rgba(122, 154, 46, 0.1);
+  }
+
+  .pj-flow-arrow {
+    color: var(--accent-3);
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 420px) {
+    .pj-flow-row {
+      gap: 0.35rem;
+    }
+    .pj-flow-node {
+      font-size: 0.66rem;
+      padding: 0.26rem 0.5rem;
+    }
+  }
+
+  .pj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin-top: 0.25rem;
+    padding: 0;
+  }
+
+  .pj-tags li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    background: var(--bg-elev-2);
+    border-radius: 999px;
+    padding: 0.28rem 0.6rem;
+    transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .pj-tags li:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(47, 158, 120, 0.08);
+  }
+
+  /* ---- Reveal-on-scroll (JS-gated so no-JS users always see content) ---- */
+  .pj-card.pj-pending {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .pj-card.pj-pending.pj-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pj-card,
+    .pj-card.pj-pending,
+    .pj-card.pj-pending.pj-visible {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    .pj-card:hover,
+    .pj-card:focus-visible {
+      transform: none !important;
+    }
+    .pj-card-spotlight {
+      display: none !important;
+    }
+  }
+</style>
+
+<!-- ============================================================
+  SCRIPT: Projects section (scoped to #projects, prefix pj-)
+  - Reveal-on-scroll with 60ms stagger via IntersectionObserver
+  - Pointer-follow spotlight highlight (mouse/pointer only)
+  - Fully guarded by prefers-reduced-motion + feature detection
+============================================================ -->
+<script>
+  (function () {
+    var section = document.getElementById('projects');
+    if (!section) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cards = Array.prototype.slice.call(section.querySelectorAll('.pj-card'));
+
+    // Reveal-on-scroll with stagger (skipped entirely under reduced motion)
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      cards.forEach(function (card) {
+        card.classList.add('pj-pending');
+      });
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var idx = parseInt(entry.target.getAttribute('data-pj-index'), 10) || 0;
+              var delay = idx * 60;
+              setTimeout(function () {
+                entry.target.classList.add('pj-visible');
+              }, delay);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      cards.forEach(function (card) {
+        observer.observe(card);
+      });
+    }
+
+    // Pointer-follow spotlight highlight (progressive enhancement only)
+    if (!reduceMotion && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+      cards.forEach(function (card) {
+        card.addEventListener('pointermove', function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = ((e.clientX - rect.left) / rect.width) * 100;
+          var y = ((e.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty('--pj-mx', x + '%');
+          card.style.setProperty('--pj-my', y + '%');
+        });
+      });
+    }
+  })();
+</script>
+
+
+<!-- ===== 05-college.html ===== -->
+<!-- ============================================================
+  SECTION: Academic / College Projects — collapsible archive (id="college")
+  Eyebrow: "IV Academic Projects" — follows shared DESIGN_SYSTEM.md tokens.
+  Prefix: .col- for all section-scoped classes.
+
+  Design intent: this is the "things I built while learning" archive —
+  intentionally lighter weight than the Projects section and COLLAPSED
+  by default so it never competes with professional work. It borrows the
+  aged-purple accent (--accent-2) instead of oxblood to read as an earlier,
+  quieter chapter rather than a second "Projects" section.
+
+  The disclosure is a real <button aria-expanded> + a panel toggled via
+  a CSS grid-rows animation (no JS height math). Panel ships with the
+  `hidden` attribute in markup so collapsed-by-default holds even before
+  JS runs; opening/closing is JS-driven and fully keyboard operable
+  (native <button> gets Enter/Space for free). Reduced motion removes
+  the transition and swaps straight to the hidden attribute.
+============================================================ -->
+<section id="college" class="col-section" aria-labelledby="col-heading">
+  <div class="col-container">
+    <p class="eyebrow col-eyebrow"><span>3.1</span> Academic Projects</p>
+    <div class="col-headrow">
+      <div>
+        <h2 id="col-heading" class="col-title">Where it started</h2>
+        <p class="col-subtitle">
+          Things I built while learning — university coursework and side builds, archived
+          here so they don't compete with the professional work above.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        id="col-toggle-btn"
+        class="col-toggle"
+        aria-expanded="false"
+        aria-controls="col-panel"
+      >
+        <span class="col-toggle-text">
+          <span class="col-toggle-label" data-col-show="Show academic projects" data-col-hide="Hide academic projects">Show academic projects</span>
+          <span class="col-toggle-count">8 projects</span>
+        </span>
+        <svg class="col-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <noscript>
+      <style>
+        #col-panel[hidden] {
+          display: block !important;
+        }
+        #col-panel {
+          grid-template-rows: 1fr !important;
+        }
+      </style>
+    </noscript>
+
+    <div id="col-panel" class="col-panel" role="region" aria-labelledby="col-toggle-btn" hidden>
+      <div class="col-panel-inner">
+        <div class="col-grid">
+
+          <!-- 1: MEAN-stack Web App -->
+          <article class="col-card" data-col-index="0">
+            <h3 class="col-card-title">MEAN-stack Web App</h3>
+            <p class="col-desc">
+              Full REST API server with Express, MongoDB, and Mongoose; auth via Passport + JWT,
+              with a Bootstrap + Angular front end.
+            </p>
+            <ul class="col-tags">
+              <li>Node.js</li><li>Express</li><li>MongoDB</li><li>Angular</li>
+            </ul>
+          </article>
+
+          <!-- 2: Java-based Compiler -->
+          <article class="col-card" data-col-index="1">
+            <h3 class="col-card-title">Java-based Compiler</h3>
+            <p class="col-desc">
+              Scanner and top-down parser for a custom grammar on a strongly-typed language;
+              visitor pattern for type checking with token-based lexical analysis.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>ASM</li><li>JVM Bytecode</li><li>JUnit</li>
+            </ul>
+          </article>
+
+          <!-- 3: P2P File-Sharing -->
+          <article class="col-card" data-col-index="2">
+            <h3 class="col-card-title">P2P File-Sharing (BitTorrent-like)</h3>
+            <p class="col-desc">
+              Peer-to-peer file management with choking/unchoking logic, cutting cross-machine
+              download time by roughly 50%.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>TCP/IP</li><li>Sockets</li>
+            </ul>
+          </article>
+
+          <!-- 4: Tomasulo's Algorithm Simulator -->
+          <article class="col-card" data-col-index="3">
+            <h3 class="col-card-title">Tomasulo's Algorithm Simulator</h3>
+            <p class="col-desc">
+              Schedules and executes MIPS instructions at the binary level, with multithreaded
+              modules for parallel execution efficiency.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>Multithreading</li><li>Computer Architecture</li>
+            </ul>
+          </article>
+
+          <!-- 5: Huffman Encoding Compressor -->
+          <article class="col-card" data-col-index="4">
+            <h3 class="col-card-title">Huffman Encoding Compressor</h3>
+            <p class="col-desc">
+              File compression comparing a 4-way min-heap, binary heap, and pairing heap; a
+              cache-optimized 4-way min-heap gave the fastest decoding.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>Data Structures</li><li>Algorithms</li>
+            </ul>
+          </article>
+
+          <!-- 6: VR Medical Diagnosis App -->
+          <article class="col-card" data-col-index="5">
+            <h3 class="col-card-title">VR Medical Diagnosis App (Afridokta)</h3>
+            <p class="col-desc">
+              Select a body part to predict likely illnesses via a decision-tree model and email
+              the doctor directly; built Agile/Scrum.
+            </p>
+            <ul class="col-tags">
+              <li>C#</li><li>Unity</li><li>VR</li><li>SQLite</li>
+            </ul>
+          </article>
+
+          <!-- 7: NRG — VR Energy Simulator -->
+          <article class="col-card" data-col-index="6">
+            <h3 class="col-card-title">NRG — VR Energy Simulator</h3>
+            <p class="col-desc">
+              Install fossil, solar, and wind generators and simulate their short- and long-term
+              effects over time in VR.
+            </p>
+            <ul class="col-tags">
+              <li>C#</li><li>Unity</li><li>VR</li>
+            </ul>
+          </article>
+
+          <!-- 8: Java Banking Application -->
+          <article class="col-card" data-col-index="7">
+            <h3 class="col-card-title">Java Banking Application</h3>
+            <p class="col-desc">
+              Desktop banking app for deposits and withdrawals backed by an Oracle SQL database.
+            </p>
+            <ul class="col-tags">
+              <li>Java</li><li>Oracle</li><li>SQL</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  STYLE: Academic Projects section (scoped, prefix .col-)
+  Uses --accent-2 (aged purple) instead of --accent (oxblood) as the
+  primary highlight color to visually mark this as an earlier, quieter
+  chapter — like a faded codex tucked behind the main scroll.
+============================================================ -->
+<style>
+  .col-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 0.75rem;
+  }
+  .col-eyebrow span {
+    color: var(--text-faint);
+  }
+
+  .col-section {
+    padding-block: 4.5rem;
+  }
+
+  .col-container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .col-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  .col-headrow {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .col-headrow {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .col-title {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .col-subtitle {
+    font-family: 'Inter', sans-serif;
+    max-width: 560px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* ---- Toggle button ---- */
+  .col-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.1rem;
+    color: var(--text);
+    font-family: 'Fraunces', 'Georgia', serif;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+
+  .col-toggle:hover {
+    border-color: rgba(47, 158, 120, 0.45);
+    box-shadow: 0 6px 20px rgba(43, 28, 13, 0.25), 0 0 0 1px rgba(211, 164, 79, 0.2);
+  }
+
+  .col-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .col-toggle-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .col-toggle-label {
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: -0.005em;
+  }
+
+  .col-toggle-count {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--text-faint);
+  }
+
+  .col-chevron {
+    color: var(--accent-2);
+    flex-shrink: 0;
+    transition: transform 0.35s ease;
+  }
+
+  .col-toggle[aria-expanded="true"] .col-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ---- Collapsible panel (CSS grid-rows animation, no JS height math) ---- */
+  .col-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .col-panel[hidden] {
+    display: none;
+  }
+
+  .col-panel.col-is-open {
+    grid-template-rows: 1fr;
+  }
+
+  .col-panel-inner {
+    overflow: hidden;
+    min-height: 0;
+    padding-top: 2.25rem;
+  }
+
+  /* ---- Card grid: 3-col desktop / 2 / 1 mobile, lighter than .pj-grid ---- */
+  .col-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  @media (min-width: 640px) {
+    .col-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .col-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+  }
+
+  .col-card {
+    border-radius: 0.85rem;
+    border: 1px solid var(--border);
+    background: var(--bg-elev);
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .col-card:hover,
+  .col-card:focus-within {
+    transform: translateY(-4px);
+    border-color: rgba(47, 158, 120, 0.4);
+    box-shadow: 0 10px 26px rgba(43, 28, 13, 0.22), 0 0 0 1px rgba(211, 164, 79, 0.18);
+  }
+
+  .col-card-title {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--text);
+  }
+
+  .col-desc {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dim);
+    line-height: 1.55;
+    font-size: 0.85rem;
+  }
+
+  .col-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin-top: 0.15rem;
+    padding: 0;
+  }
+
+  .col-tags li {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+    color: var(--text-faint);
+    border: 1px solid var(--border);
+    background: var(--bg-elev-2);
+    border-radius: 999px;
+    padding: 0.22rem 0.55rem;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  .col-card:hover .col-tags li {
+    border-color: rgba(47, 158, 120, 0.35);
+  }
+
+  /* ---- Reveal-on-scroll fade-up for cards, only on first panel open ---- */
+  .col-card.col-pending {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  .col-card.col-pending.col-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .col-panel,
+    .col-panel.col-is-open {
+      transition: none !important;
+    }
+    .col-chevron {
+      transition: none !important;
+    }
+    .col-card,
+    .col-card.col-pending,
+    .col-card.col-pending.col-visible {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    .col-card:hover,
+    .col-card:focus-within {
+      transform: none !important;
+    }
+  }
+</style>
+
+<!-- ============================================================
+  SCRIPT: Academic Projects section (scoped to #college, prefix col-)
+  - Real <button aria-expanded> disclosure; panel starts with the
+    `hidden` attribute so it is collapsed even before JS runs.
+  - Expand: remove `hidden`, then (next frame) add .col-is-open so the
+    grid-template-rows transition animates from 0fr -> 1fr.
+  - Collapse: remove .col-is-open to animate back to 0fr, then re-apply
+    `hidden` once the transition finishes so content leaves the a11y
+    tree and tab order while collapsed.
+  - prefers-reduced-motion: skip the transition and toggle `hidden`
+    immediately.
+  - First expand triggers a one-time 60ms-staggered fade-up on cards.
+============================================================ -->
+<script>
+  (function () {
+    var section = document.getElementById('college');
+    if (!section) return;
+
+    var btn = document.getElementById('col-toggle-btn');
+    var panel = document.getElementById('col-panel');
+    if (!btn || !panel) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var TRANSITION_MS = 500;
+    var cards = Array.prototype.slice.call(panel.querySelectorAll('.col-card'));
+    var revealed = false;
+
+    function revealCardsOnce() {
+      if (revealed || reduceMotion || !('IntersectionObserver' in window)) return;
+      revealed = true;
+      cards.forEach(function (card) {
+        card.classList.add('col-pending');
+      });
+      // Allow the panel's own expand transition to settle before staggering cards in.
+      requestAnimationFrame(function () {
+        cards.forEach(function (card) {
+          var idx = parseInt(card.getAttribute('data-col-index'), 10) || 0;
+          setTimeout(function () {
+            card.classList.add('col-visible');
+          }, idx * 60);
+        });
+      });
+    }
+
+    function setLabel(isOpen) {
+      var label = btn.querySelector('.col-toggle-label');
+      if (!label) return;
+      label.textContent = isOpen
+        ? label.getAttribute('data-col-hide')
+        : label.getAttribute('data-col-show');
+    }
+
+    // Handle to the pending "hide after close transition" timer, so a rapid
+    // close→open within the transition window can cancel it (otherwise the
+    // stale timer fires and hides the panel the user just reopened).
+    var hideTimer = null;
+
+    function openPanel() {
+      if (hideTimer !== null) { clearTimeout(hideTimer); hideTimer = null; }
+      panel.hidden = false;
+      if (reduceMotion) {
+        panel.classList.add('col-is-open');
+      } else {
+        // Two rAFs ensure the browser paints the 0fr state before we
+        // switch to 1fr, so the grid-template-rows transition actually runs.
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            panel.classList.add('col-is-open');
+          });
+        });
+      }
+      revealCardsOnce();
+    }
+
+    function closePanel() {
+      panel.classList.remove('col-is-open');
+      if (reduceMotion) {
+        panel.hidden = true;
+      } else {
+        if (hideTimer !== null) clearTimeout(hideTimer);
+        hideTimer = setTimeout(function () {
+          panel.hidden = true;
+          hideTimer = null;
+        }, TRANSITION_MS);
+      }
+    }
+
+    btn.addEventListener('click', function () {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      setLabel(!isOpen);
+      if (isOpen) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    });
+  })();
+</script>
+
+  </main>
+  <footer>
+    <div class="wrap" style="padding-top:3.5rem;padding-bottom:1rem;text-align:center;">
+      <figure class="bye-critter" aria-label="A little lizard waving goodbye">
+        <div class="bye-cameo">
+          <div class="bye-bubble" aria-hidden="true"><span>Bye!</span></div>
+          <div class="bye-medallion">
+            <img src="images/gif/bye.gif" alt="A happy little lizard saying goodbye" width="498" height="462" loading="lazy" />
+          </div>
+        </div>
+        <figcaption>Thanks for stopping by &mdash; let's build something</figcaption>
+      </figure>
+    </div>
+    <div class="wrap py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm" style="border-top:1px solid var(--border);">
+      <p>© <span id="yr"></span> Parth Sethi — Senior Software Engineer</p>
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2" style="font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.01em;">
+        <a href="https://www.linkedin.com/in/parth-sethi-a24753b7/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:sethiparth.ps@gmail.com">sethiparth.ps@gmail.com</a>
+        <a href="tel:+13527459455">+1 (352) 745-9455</a>
+      </div>
+    </div>
+  </footer>
+  <style>
+    .bye-critter{position:relative;display:inline-flex;flex-direction:column;align-items:center;margin:0 auto;}
+    /* Cameo wraps ONLY the bubble + circle (like .hero-scholar) so the bubble's
+       %-offsets are measured against the circle height, not the taller figure. */
+    .bye-cameo{position:relative;width:clamp(120px,20vw,160px);}
+    .bye-medallion{position:relative;width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#243b2f;border:5px solid var(--accent);box-shadow:0 0 0 3px #fffdf6,0 0 0 8px rgba(47,158,120,.3),0 12px 28px rgba(45,42,32,.22);animation:bye-bob 4.5s ease-in-out infinite;}
+    .bye-medallion img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);}
+    .bye-bubble{position:absolute;top:-8%;right:-14%;z-index:3;background:#fffdf6;border:2px solid var(--accent);color:var(--accent);font-family:'Fraunces',serif;font-weight:700;font-size:1rem;letter-spacing:.01em;padding:.35rem .8rem;border-radius:.9rem;box-shadow:0 6px 18px rgba(45,42,32,.14);}
+    .bye-bubble::after{content:'';position:absolute;left:14px;bottom:-9px;border:8px solid transparent;border-top-color:#fffdf6;filter:drop-shadow(0 2px 0 var(--accent));}
+    .bye-critter figcaption{margin-top:1rem;font-family:'Fraunces',serif;font-style:italic;letter-spacing:0;font-size:1rem;color:var(--text-dim);}
+    @keyframes bye-bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+    @media (prefers-reduced-motion: reduce){ .bye-medallion{animation:none;} }
+  </style>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

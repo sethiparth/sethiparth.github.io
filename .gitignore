@@ -1,0 +1,10 @@
+# OS / editor junk
+.DS_Store
+
+# Legacy static-site build caches (no longer used)
+.build/
+.sass-cache/
+.vs/
+
+# Node
+node_modules/

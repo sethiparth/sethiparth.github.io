@@ -232,7 +232,7 @@ export function Hero() {
           </h1>
           <div className="hero-rise mt-6 flex items-center gap-3" style={{ animationDelay: '0.4s' }}>
             <a
-              href="#work"
+              href="#experience"
               className="group pointer-events-auto relative overflow-hidden rounded-full bg-white px-7 py-3 font-semibold text-gray-900 shadow-lg shadow-black/20 transition-transform hover:scale-[1.04] active:scale-95 sm:px-8 sm:py-3.5"
             >
               <span className="relative z-10">See my work</span>
@@ -247,10 +247,14 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* 6. Scroll cue */}
-        <div className="pointer-events-none absolute bottom-6 left-1/2 z-40 hidden -translate-x-1/2 md:block">
-          <ArrowDown size={20} className="scroll-cue text-white/60" />
-        </div>
+        {/* 6. Scroll cue — clickable, drops to the first content section */}
+        <a
+          href="#experience"
+          aria-label="Scroll to experience"
+          className="pointer-events-auto absolute bottom-6 left-1/2 z-40 hidden -translate-x-1/2 rounded-full p-2 text-white/60 transition-colors hover:text-white md:block"
+        >
+          <ArrowDown size={20} className="scroll-cue" />
+        </a>
       </motion.div>
     </section>
   )

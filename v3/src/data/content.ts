@@ -165,8 +165,8 @@ export const EDUCATION: Education[] = [
 ]
 
 export const NAV_LINKS = [
-  { label: 'Experience', href: '#experience' },
-  { label: 'Work', href: '#work' },
+  { label: 'Work', href: '#experience' },
+  { label: 'Education', href: '#education' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ] as const

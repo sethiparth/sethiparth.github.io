@@ -44,6 +44,7 @@ export function Experience() {
             </Reveal>
           ))}
 
+          <div id="education" className="scroll-mt-24 space-y-24 md:space-y-32">
           {EDUCATION.map((ed, i) => (
             <Reveal key={ed.school} delay={(EXPERIENCE.length + i) * 0.05}>
               <article className="exp-chapter">
@@ -68,6 +69,7 @@ export function Experience() {
               </article>
             </Reveal>
           ))}
+          </div>
         </div>
       </div>
     </section>

@@ -324,6 +324,406 @@ body {
   animation: arcMarkIn 0.7s ease forwards;
 }
 
+/* ==========================================================================
+   Experience — "Trajectory": a scroll-pinned 2.5-D world walked backward
+   through time. All depth is built from the site's own vocabulary — perspective
+   grid terrain, ember horizon, glowing trajectory wire, glass-panel monoliths,
+   and a diamond-core drone. One warm voltage stays the only saturated signal.
+   Only transform/opacity animate; parallax = differential translate rates.
+   ========================================================================== */
+.journey-section {
+  position: relative;
+  height: 520vh;               /* scroll runway for 5 waypoints */
+  background: var(--color-ink);
+  /* The sticky stage fills the whole viewport, so the "Work" jump must land the
+     section flush at the top — the global 88px navbar offset would otherwise
+     leave the hero peeking above the stage. The nav floats over it instead. */
+  scroll-margin-top: 0;
+}
+
+/* Invisible target so the nav's "Education" jump lands where UF enters. */
+.journey-edu-anchor {
+  position: absolute;
+  top: 62%;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  scroll-margin-top: 88px;
+}
+
+.journey-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 50% 8%, rgba(11, 9, 8, 0), var(--color-ink) 72%),
+    var(--color-ink);
+}
+
+/* 1 — deep sky: warm nebula + a scatter of faint stars, slow parallax. */
+.journey-sky {
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  z-index: 0;
+  background:
+    radial-gradient(2px 2px at 12% 22%, rgba(255, 255, 255, 0.5), transparent 60%),
+    radial-gradient(1.5px 1.5px at 28% 64%, rgba(255, 255, 255, 0.35), transparent 60%),
+    radial-gradient(2px 2px at 46% 30%, rgba(255, 255, 255, 0.45), transparent 60%),
+    radial-gradient(1.5px 1.5px at 63% 52%, rgba(255, 255, 255, 0.3), transparent 60%),
+    radial-gradient(2px 2px at 78% 20%, rgba(255, 255, 255, 0.4), transparent 60%),
+    radial-gradient(1.5px 1.5px at 88% 58%, rgba(255, 255, 255, 0.32), transparent 60%),
+    radial-gradient(2px 2px at 8% 46%, rgba(255, 255, 255, 0.28), transparent 60%),
+    radial-gradient(70% 60% at 30% 18%, rgba(107, 50, 22, 0.28), transparent 70%),
+    radial-gradient(60% 55% at 82% 30%, rgba(158, 82, 40, 0.2), transparent 72%);
+}
+
+/* 2 — ember horizon glow: the warm band the terrain recedes into. */
+.journey-horizon {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: 52%;
+  height: 22vh;
+  z-index: 1;
+  background: radial-gradient(60% 100% at 50% 100%, rgba(255, 90, 30, 0.22), rgba(158, 82, 40, 0.12) 45%, transparent 72%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* 3 — perspective grid terrain, tilted back to the horizon, fast parallax.
+   Tilt is static on the plane; the grid translates via a real `x` transform. */
+.journey-floor-plane {
+  position: absolute;
+  left: 0;
+  bottom: -4vh;
+  width: 600vw;
+  height: 82vh;
+  z-index: 2;
+  transform-origin: 50% 100%;
+  transform: perspective(560px) rotateX(61deg);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to top, #000 4%, rgba(0, 0, 0, 0.35) 42%, transparent 82%);
+  mask-image: linear-gradient(to top, #000 4%, rgba(0, 0, 0, 0.35) 42%, transparent 82%);
+  pointer-events: none;
+}
+.journey-floor-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 122, 69, 0.22) 1px, transparent 1px),
+    linear-gradient(to top, rgba(158, 82, 40, 0.28) 1px, transparent 1px);
+  background-size: 88px 88px;
+  will-change: transform;
+}
+
+/* 4 — the world strip: carries the ground line + billboard monoliths. */
+.journey-strip {
+  position: absolute;
+  inset: 0;
+  width: 320vw;
+  z-index: 3;
+  will-change: transform;
+}
+
+/* The glowing trajectory wire — now the ground path the robot walks. */
+.journey-line {
+  position: absolute;
+  top: 79%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,
+    rgba(255, 90, 30, 0) 0%,
+    rgba(255, 122, 69, 0.35) 6%,
+    rgba(255, 90, 30, 0.7) 50%,
+    rgba(255, 122, 69, 0.35) 94%,
+    rgba(255, 90, 30, 0) 100%);
+  box-shadow: 0 0 14px rgba(255, 90, 30, 0.5);
+}
+
+/* One employer billboard, standing in the upper band above the traveler. */
+.journey-monolith {
+  position: absolute;
+  top: 30%;
+  width: max-content;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  will-change: transform, opacity;
+}
+
+/* The marker beneath the slab — a softly pulsing node hanging toward the scene. */
+.journey-node {
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  border-radius: 2px;
+  background: var(--color-accent);
+  transform: rotate(45deg);
+  box-shadow: 0 0 12px rgba(255, 90, 30, 0.7);
+  animation: journeyNodePulse 2.8s ease-in-out infinite;
+}
+
+.journey-slab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 250px;
+  margin-bottom: 14px;
+  text-align: center;
+  border-color: rgba(255, 122, 69, 0.18);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
+    0 24px 60px -30px rgba(0, 0, 0, 0.8),
+    0 0 34px -6px rgba(255, 90, 30, 0.28);
+}
+
+@keyframes journeyNodePulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 90, 30, 0.55); }
+  50% { box-shadow: 0 0 20px rgba(255, 90, 30, 0.85); }
+}
+
+.journey-index {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.62rem;
+}
+
+.journey-mark {
+  display: grid;
+  place-items: center;
+  height: 58px;
+}
+.journey-mark img {
+  max-height: 56px;
+  max-width: 180px;
+  width: auto;
+  object-fit: contain;
+  /* Logos are pre-treated to white knockouts; light them like holograms. */
+  filter: drop-shadow(0 0 10px rgba(255, 90, 30, 0.55)) drop-shadow(0 0 24px rgba(255, 90, 30, 0.25));
+}
+
+.journey-wordmark {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  line-height: 0.92;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: pre-line;
+  text-shadow: 0 0 14px rgba(255, 90, 30, 0.45);
+}
+
+.journey-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+.journey-metric {
+  color: var(--color-accent);
+  font-size: 0.64rem;
+}
+.journey-period {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+
+/* 5 — the traveler: the EVA-style hover robot, composited over the dark scene.
+   The wrapper spans the stage (non-interactive) and carries the ember glow pool;
+   the figure itself sits small on the right and is the only draggable element. */
+.journey-robot {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+.journey-robot::after {
+  /* ember pool the robot appears to hover over */
+  content: '';
+  position: absolute;
+  left: 17%;
+  bottom: 10%;
+  width: 220px;
+  height: 44px;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 90, 30, 0.3), transparent 70%);
+  filter: blur(6px);
+}
+/* The robot figure: small, right side, draggable (pick-up-and-return). */
+.journey-robot-fig {
+  position: absolute;
+  left: 7%;
+  bottom: 13%;
+  /* Box aspect matches the re-cropped clip (540×460 ≈ 1.17) so `contain` shows
+     the robot whole — the wave arm and grab reach live inside the crop now, and
+     the transparent letterbox from `contain` is invisible against the scene. */
+  width: 300px;
+  height: 256px;
+  pointer-events: auto;
+  cursor: grab;
+}
+.journey-robot-fig:active {
+  cursor: grabbing;
+}
+/* Each clip is a real alpha video (WebM VP9 yuva420p, black luma-keyed to
+   transparent), so the robot composites cleanly with no black box. Clips are
+   stacked and cross-faded via opacity; a slow eased fade blends the pose
+   handoff between walk / point / grab so the switch reads as a dissolve, not a
+   cut. The MP4 source is a same-frame fallback for engines without VP9 alpha
+   (Safari) — there `mix-blend-mode: screen` still drops its black background. */
+.journey-robot-fig video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  mix-blend-mode: screen;
+  opacity: 0;
+  /* Duration is overridden per-transition from JS (snappy into walk, gentle into
+     idle); this is only the fallback + easing curve. */
+  transition: opacity 320ms cubic-bezier(0.45, 0, 0.55, 1);
+  pointer-events: none;
+  will-change: opacity;
+}
+
+/* 6 — dossier: the arrival detail panel, bottom-left, on a solid readable card
+   so copy never washes out against the moving world behind it. */
+.journey-dossier-wrap {
+  position: absolute;
+  right: 4.5%;
+  bottom: 7%;
+  z-index: 5;
+  width: min(410px, 38vw);
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* Widen for the 2-column dossiers (roles with 3+ bullets). */
+.journey-dossier-wrap.is-wide {
+  width: min(640px, 54vw);
+}
+.journey-dossier {
+  border-color: rgba(255, 122, 69, 0.28);
+  background: linear-gradient(180deg, rgba(17, 13, 11, 0.92), rgba(9, 8, 7, 0.94));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
+    0 30px 80px -28px rgba(0, 0, 0, 0.9),
+    0 0 40px -10px rgba(255, 90, 30, 0.25);
+}
+.journey-dossier-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 0.6rem;
+}
+.journey-dossier-role {
+  margin-top: 0.4rem;
+  font-size: 1.02rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+.journey-dossier-meta {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.62rem;
+}
+.journey-dossier-lines {
+  margin-top: 1rem;
+  padding-left: 1.1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.journey-dossier-lines li {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.86);
+}
+/* Bullet-heavy roles flow into two balanced columns so the tile reads short and
+   wide instead of tall — paired with `.is-wide` on the wrap. A column-rule
+   replaces the single left keyline; break-inside keeps each bullet whole. */
+.journey-dossier-lines--2col {
+  display: block;
+  padding-left: 0;
+  border-left: none;
+  columns: 2;
+  column-gap: 1.5rem;
+  column-rule: 1px solid rgba(255, 255, 255, 0.1);
+}
+.journey-dossier-lines--2col li {
+  break-inside: avoid;
+  margin-bottom: 0.75rem;
+}
+.journey-dossier-lines--2col li:last-child {
+  margin-bottom: 0;
+}
+/* Keyword emphasis inside a dossier line — brighter + heavier so metrics and
+   tech names pop out when the panel is scanned. */
+.journey-kw {
+  font-weight: 650;
+  color: #fff;
+}
+
+/* 7 — progress rail + chapter counter, top-right. */
+.journey-rail {
+  position: absolute;
+  top: 8%;
+  right: 4.5%;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.55rem;
+}
+.journey-rail-count {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.journey-rail-total {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+}
+.journey-rail-track {
+  width: 160px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+.journey-rail-fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--color-accent-soft), var(--color-accent));
+}
+
+/* Scroll hint, bottom-centre, fades out once travelling. */
+.journey-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  z-index: 6;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.66rem;
+  transition: opacity 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-node {
+    animation: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-rise,
   .nav-drop,

@@ -570,9 +570,10 @@ body {
 }
 /* Each clip is a real alpha video (WebM VP9 yuva420p, black luma-keyed to
    transparent), so the robot composites cleanly with no black box. Clips are
-   stacked and cross-faded via opacity; a slow eased fade blends the pose
-   handoff between walk / point / grab so the switch reads as a dissolve, not a
-   cut. The MP4 source is a same-frame fallback for engines without VP9 alpha
+   stacked and cross-faded via opacity. The walk→stand handoff is carried by a
+   scrubbed `transition` clip (real interpolated motion), so the remaining
+   walk / trans / point / grab fades only bridge already-matching poses and stay
+   short. The MP4 source is a same-frame fallback for engines without VP9 alpha
    (Safari) — there `mix-blend-mode: screen` still drops its black background. */
 .journey-robot-fig video {
   position: absolute;

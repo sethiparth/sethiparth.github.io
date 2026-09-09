@@ -1,10 +1,27 @@
-# OS / editor junk
-.DS_Store
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
 
-# Legacy static-site build caches (no longer used)
+# Dependencies
+node_modules
+
+# Build output (produced by CI, never committed)
+dist
+dist-ssr
+*.local
+
+# Legacy static-site build caches
 .build/
 .sass-cache/
 .vs/
 
-# Node
-node_modules/
+# Editor / OS junk
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.sw?

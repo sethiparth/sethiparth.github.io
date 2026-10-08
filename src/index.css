@@ -590,6 +590,11 @@ body {
   pointer-events: none;
   will-change: opacity;
 }
+/* Safari path: `.journey-robot` (absolute + z-index) is the isolating stacking
+   context, so the screen blend must live on it to composite against the scene. */
+.journey-robot:has(> .journey-robot-fig[data-blend="screen"]) {
+  mix-blend-mode: screen;
+}
 
 /* 6 — dossier: the arrival detail panel, bottom-left, on a solid readable card
    so copy never washes out against the moving world behind it. */
@@ -717,6 +722,192 @@ body {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.66rem;
   transition: opacity 0.5s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Compact (phones, portrait): same world, re-composed top-to-bottom —
+   monolith in the upper band, robot on the wire beneath it, dossier as a
+   bottom sheet. Cheap paint: no big blurs/box-shadows, transform/opacity only.
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .journey-section {
+    height: 450vh;
+    height: 450svh;
+  }
+  .journey-edu-anchor {
+    scroll-margin-top: 72px;
+  }
+  .journey-stage {
+    height: 100vh;
+    height: 100svh;
+    background:
+      linear-gradient(to top, rgba(158, 82, 40, 0.16), rgba(158, 82, 40, 0.07) 30%, transparent 48%),
+      radial-gradient(120% 80% at 50% 8%, rgba(11, 9, 8, 0), var(--color-ink) 72%),
+      var(--color-ink);
+  }
+
+  .journey-horizon {
+    top: 40%;
+    height: 14svh;
+    filter: none;
+  }
+  .journey-floor-plane {
+    bottom: -2svh;
+    height: 80svh;
+    transform: perspective(520px) rotateX(52deg);
+  }
+  .journey-floor-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 122, 69, 0.34) 1px, transparent 1px),
+      linear-gradient(to top, rgba(158, 82, 40, 0.42) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .journey-floor-plane {
+    -webkit-mask-image: linear-gradient(to top, #000 8%, rgba(0, 0, 0, 0.6) 50%, transparent 94%);
+    mask-image: linear-gradient(to top, #000 8%, rgba(0, 0, 0, 0.6) 50%, transparent 94%);
+  }
+
+  /* Ground plane under the wire: static receding rows so the dossier floats over
+     continuous scenery on tall phones (the tilted grid only reaches the bottom). */
+  .journey-stage::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 54%;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(to bottom, rgba(255, 122, 69, 0.09) 0 1px, transparent 1px 30px),
+      linear-gradient(to bottom, rgba(255, 90, 30, 0.08), rgba(158, 82, 40, 0.03) 60%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.5) 70%, transparent);
+    mask-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.5) 70%, transparent);
+  }
+  .journey-line {
+    top: 54%;
+    box-shadow: none;
+  }
+
+  .journey-monolith {
+    top: 18%;
+  }
+  .journey-slab {
+    width: min(62vw, 240px);
+    gap: 0.5rem;
+    margin-bottom: 10px;
+    padding: 0.85rem 0.9rem;
+    box-shadow: 0 0 22px -8px rgba(255, 90, 30, 0.3);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(20, 15, 12, 0.88);
+  }
+  .journey-node {
+    box-shadow: 0 0 8px rgba(255, 90, 30, 0.7);
+    animation: none;
+  }
+  .journey-mark {
+    height: 46px;
+  }
+  .journey-mark img {
+    max-height: 46px;
+    max-width: min(48vw, 190px);
+    filter: drop-shadow(0 0 8px rgba(255, 90, 30, 0.5));
+  }
+  .journey-wordmark {
+    font-size: 1.5rem;
+    text-shadow: none;
+  }
+  .journey-name {
+    font-size: 0.86rem;
+  }
+  .journey-period {
+    font-size: 0.6rem;
+  }
+
+  .journey-robot::after {
+    left: calc(50% - 115px);
+    bottom: calc(46svh - 8px);
+    width: 170px;
+    height: 30px;
+    filter: none;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 90, 30, 0.34), transparent 70%);
+  }
+  .journey-robot-fig {
+    left: calc(50% - 190px);
+    bottom: calc(46svh - 2px);
+    width: 150px;
+    height: 128px;
+  }
+
+  .journey-dossier-wrap,
+  .journey-dossier-wrap.is-wide {
+    left: 16px;
+    right: 16px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+    width: auto;
+    max-height: 46vh;
+    max-height: 46svh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 20px;
+    transition: none;
+  }
+  .journey-dossier {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: linear-gradient(180deg, rgba(17, 13, 11, 0.96), rgba(9, 8, 7, 0.97));
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05) inset;
+    padding: 1.1rem 1.15rem;
+    transform: none !important;
+  }
+  .journey-dossier-name {
+    font-size: 1.5rem;
+    margin-top: 0.4rem;
+  }
+  .journey-dossier-role {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+  .journey-dossier-lines {
+    margin-top: 0.7rem;
+    padding-left: 0.8rem;
+    gap: 0.5rem;
+  }
+  .journey-dossier-lines li {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .journey-dossier-lines--2col {
+    display: flex;
+    columns: auto;
+    padding-left: 0.8rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    column-rule: none;
+  }
+  .journey-dossier-lines--2col li,
+  .journey-dossier-lines--2col li:last-child {
+    margin-bottom: 0;
+  }
+
+  .journey-rail {
+    top: 72px;
+    right: 16px;
+    gap: 0.4rem;
+  }
+  .journey-rail-count {
+    font-size: 0.95rem;
+  }
+  .journey-rail-track {
+    width: 96px;
+  }
+  .journey-hint {
+    left: auto;
+    right: 16px;
+    transform: none;
+    bottom: calc(46svh + 18px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

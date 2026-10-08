@@ -16,12 +16,40 @@ const RobotTraveler = lazy(() => import('./RobotTraveler'))
 // visible but smaller. Cell i sits at (i·SPACING + 0.5)·vw in strip space and
 // reaches frame-centre when the strip is translated -i·SPACING·vw.
 const SPACING = 0.4
+// Portrait phones: one monolith dominates, neighbours only peek at the edges.
+const SPACING_COMPACT = 0.82
 
 // Where the active waypoint rests horizontally, as a %-of-viewport. Not dead
 // centre (50) but the midpoint of the visible GAP between the robot (its body
 // ends ~21vw) and the dossier's near edge (~53vw), so the open billboard sits
 // balanced in the space between the pair rather than crowding the tile.
 const FRAME_CENTER = 37
+const FRAME_CENTER_COMPACT = 50
+
+const COMPACT_QUERY = '(max-width: 767px)'
+
+/* Live `compact` flag + viewport width. Width is only committed when it really
+   changes, so iOS address-bar height resizes don't re-render the journey. */
+function useViewport() {
+  const read = () => ({
+    vw: typeof window === 'undefined' ? 1440 : window.innerWidth,
+    compact: typeof window !== 'undefined' && window.matchMedia(COMPACT_QUERY).matches,
+  })
+  const [state, setState] = useState(read)
+  useEffect(() => {
+    const sync = () => {
+      const next = read()
+      setState((prev) => (prev.vw === next.vw && prev.compact === next.compact ? prev : next))
+    }
+    window.addEventListener('resize', sync)
+    window.addEventListener('orientationchange', sync)
+    return () => {
+      window.removeEventListener('resize', sync)
+      window.removeEventListener('orientationchange', sync)
+    }
+  }, [])
+  return state
+}
 
 /* ==========================================================================
    Career Journey — a scroll-pinned 2.5-D world the traveler walks backward
@@ -75,12 +103,9 @@ export function CareerJourney() {
   // WAAPI path rejects percentage-string keyframes bound to `x`, so we keep every
   // scroll-linked style value numeric. Cell i (centre at (i+0.5)·vw) reaches
   // frame-centre when the strip is translated -i·vw — landing at progress i/(N-1).
-  const [vw, setVw] = useState(() => (typeof window === 'undefined' ? 1440 : window.innerWidth))
-  useEffect(() => {
-    const onResize = () => setVw(window.innerWidth)
-    window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
-  }, [])
+  const { vw, compact } = useViewport()
+  const spacing = compact ? SPACING_COMPACT : SPACING
+  const frameCenter = compact ? FRAME_CENTER_COMPACT : FRAME_CENTER
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -88,7 +113,7 @@ export function CareerJourney() {
   })
 
   // World + parallax layers — differential translate rates create depth.
-  const stripX = useTransform(scrollYProgress, [0, 1], [0, -(N - 1) * SPACING * vw]) // world
+  const stripX = useTransform(scrollYProgress, [0, 1], [0, -(N - 1) * spacing * vw]) // world
   const skyX = useTransform(scrollYProgress, [0, 1], [0, -0.32 * vw]) // far → slow
   const floorX = useTransform(scrollYProgress, [0, 1], [0, -3.2 * vw]) // near → fast
 
@@ -106,7 +131,7 @@ export function CareerJourney() {
     <section
       id="experience"
       ref={sectionRef}
-      className="journey-section"
+      className={`journey-section${compact ? ' is-compact' : ''}`}
       aria-label="Career journey"
     >
       {/* Anchor the nav's "Education" jump roughly where UF enters (index 3). */}
@@ -130,7 +155,14 @@ export function CareerJourney() {
         <motion.div className="journey-strip" style={{ x: stripX }}>
           <div className="journey-line" aria-hidden="true" />
           {WAYPOINTS.map((w, i) => (
-            <Monolith key={w.id} wp={w} index={i} progress={scrollYProgress} />
+            <Monolith
+              key={w.id}
+              wp={w}
+              index={i}
+              progress={scrollYProgress}
+              spacing={spacing}
+              frameCenter={frameCenter}
+            />
           ))}
         </motion.div>
 
@@ -144,9 +176,9 @@ export function CareerJourney() {
 
         {/* 6 — dossier: the arrival detail panel, crossfading per waypoint. The
             wrap widens for bullet-heavy roles so the 2-column list reads short. */}
-        <div className={`journey-dossier-wrap${wp.lines.length > 2 ? ' is-wide' : ''}`}>
+        <div className={`journey-dossier-wrap${!compact && wp.lines.length > 2 ? ' is-wide' : ''}`}>
           <AnimatePresence mode="wait">
-            <Dossier key={wp.id} wp={wp} index={active} />
+            <Dossier key={wp.id} wp={wp} index={active} compact={compact} />
           </AnimatePresence>
         </div>
 
@@ -173,9 +205,11 @@ interface MonolithProps {
   wp: Waypoint
   index: number
   progress: MotionValue<number>
+  spacing: number
+  frameCenter: number
 }
 
-function Monolith({ wp, index, progress }: MonolithProps) {
+function Monolith({ wp, index, progress, spacing, frameCenter }: MonolithProps) {
   const center = index / (N - 1)
   const step = 1 / (N - 1) // progress-distance to the adjacent waypoint
 
@@ -215,7 +249,7 @@ function Monolith({ wp, index, progress }: MonolithProps) {
   return (
     <motion.div
       className="journey-monolith"
-      style={{ left: `${index * SPACING * 100 + FRAME_CENTER}vw`, x: '-50%', opacity, y, scale }}
+      style={{ left: `${index * spacing * 100 + frameCenter}vw`, x: '-50%', opacity, y, scale }}
     >
       {/* node where the monolith meets the trajectory line */}
       <span className="journey-node" />
@@ -246,6 +280,7 @@ function Monolith({ wp, index, progress }: MonolithProps) {
 interface DossierProps {
   wp: Waypoint
   index: number
+  compact: boolean
 }
 
 /* Render **bold** spans in a dossier line as emphasized keywords. Splitting on a
@@ -260,8 +295,8 @@ function emphasize(text: string) {
   )
 }
 
-function Dossier({ wp, index }: DossierProps) {
-  const twoCol = wp.lines.length > 2
+function Dossier({ wp, index, compact }: DossierProps) {
+  const twoCol = !compact && wp.lines.length > 2
 
   function onMove(e: MouseEvent<HTMLElement>) {
     const el = e.currentTarget

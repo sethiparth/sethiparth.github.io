@@ -5,18 +5,15 @@ import { CareerJourney } from './experience/CareerJourney'
 
 const pad = (n: number) => String(n).padStart(2, '0')
 
-/* The enhanced scroll-pinned journey is a pointer-driven, motion-heavy
-   experience. It is offered only where it is actually good: a fine pointer, a
-   wide viewport, and no reduced-motion request. Everywhere else — touch,
-   narrow, or reduced-motion — we serve the original editorial chapters, which
-   are fully accessible and never scroll-jack. */
+/* The scroll-pinned journey is served on every device (CareerJourney adapts
+   itself to portrait/touch). Only a reduced-motion request falls back to the
+   original editorial chapters, which are fully accessible and never
+   scroll-jack. */
+const MOTION_OK = '(prefers-reduced-motion: no-preference)'
+
 function canEnhance(): boolean {
   if (typeof window === 'undefined' || !window.matchMedia) return false
-  return (
-    window.matchMedia('(pointer: fine)').matches &&
-    window.matchMedia('(min-width: 768px)').matches &&
-    window.matchMedia('(prefers-reduced-motion: no-preference)').matches
-  )
+  return window.matchMedia(MOTION_OK).matches
 }
 
 export function Experience() {
@@ -24,14 +21,10 @@ export function Experience() {
   const [enhanced, setEnhanced] = useState(canEnhance)
 
   useEffect(() => {
-    const queries = [
-      '(pointer: fine)',
-      '(min-width: 768px)',
-      '(prefers-reduced-motion: no-preference)',
-    ].map((q) => window.matchMedia(q))
+    const mq = window.matchMedia(MOTION_OK)
     const sync = () => setEnhanced(canEnhance())
-    queries.forEach((mq) => mq.addEventListener('change', sync))
-    return () => queries.forEach((mq) => mq.removeEventListener('change', sync))
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
   }, [])
 
   if (enhanced) return <CareerJourney />

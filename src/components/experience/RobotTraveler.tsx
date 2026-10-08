@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 
 /* ==========================================================================
@@ -37,6 +37,28 @@ const SCRUB_EASE = 0.18 // per-frame lerp toward the scroll target — smooths t
 const FADE_IN_WALK = 170 // scroll begins → crisp handoff into the walking clip
 const FADE_TO_IDLE = 480 // scroll stops → ease into the point gesture
 const FADE_GRAB = 240 // pick-up / release → responsive but soft
+const TAP_GRAB_MS = 1200 // touch: how long a tap holds the grab clip
+
+// WebKit decodes VP9 but drops its alpha channel (black box), so Safari/iOS
+// gets the mp4 only and relies on a screen blend to key out the black.
+const noWebmAlpha = () =>
+  typeof navigator !== 'undefined' &&
+  (navigator.vendor === 'Apple Computer, Inc.' ||
+    /^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent))
+
+// iOS only honours inline, muted playback when both the property and the
+// (legacy) attribute are set before play().
+function prepareInline(el: HTMLVideoElement | null) {
+  if (!el) return
+  el.muted = true
+  el.setAttribute('webkit-playsinline', '')
+  el.setAttribute('playsinline', '')
+}
+
+// Touch devices: motion's `drag` sets touch-action:none, which would trap page
+// scroll under the thumb, so we swap drag for tap-to-grab there.
+const isCoarsePointer = () =>
+  typeof window !== 'undefined' && !!window.matchMedia && window.matchMedia('(pointer: coarse)').matches
 
 type Mode = 'walk' | 'point' | 'grab'
 
@@ -50,6 +72,9 @@ export function RobotTraveler({ progressRef }: RobotTravelerProps) {
   const grabRef = useRef<HTMLVideoElement>(null)
   const mode = useRef<Mode>('walk')
   const dragging = useRef(false)
+  const tapTimer = useRef(0)
+  const [coarse] = useState(isCoarsePointer)
+  const [mp4Only] = useState(noWebmAlpha)
 
   // Imperatively cross-fade / play-pause the clips from a rAF loop so the
   // scroll scrub never triggers a React re-render.
@@ -58,6 +83,17 @@ export function RobotTraveler({ progressRef }: RobotTravelerProps) {
     const point = pointRef.current
     const grab = grabRef.current
     if (!walk) return
+
+    ;[walk, point, grab].forEach(prepareInline)
+
+    // iOS Safari paints no frame for a never-played video and ignores
+    // currentTime before metadata: play-then-pause once to prime the decoder.
+    const prime = () => {
+      walk.play().then(() => walk.pause()).catch(() => {})
+    }
+    if (walk.readyState === 0) walk.load()
+    if (walk.readyState >= 1) prime()
+    else walk.addEventListener('loadedmetadata', prime, { once: true })
 
     // point & grab hover-loop continuously; we only cross-fade their opacity and
     // never reset currentTime, so a switch dissolves mid-loop (pose stays
@@ -132,6 +168,8 @@ export function RobotTraveler({ progressRef }: RobotTravelerProps) {
     return () => {
       cancelAnimationFrame(raf)
       clearTimeout(walkFadeTimer)
+      clearTimeout(tapTimer.current)
+      walk.removeEventListener('loadedmetadata', prime)
     }
   }, [progressRef])
 
@@ -172,27 +210,40 @@ export function RobotTraveler({ progressRef }: RobotTravelerProps) {
     if (w) w.style.opacity = '1'
   }
 
+  const onTap = () => {
+    clearTimeout(tapTimer.current)
+    startGrab()
+    tapTimer.current = window.setTimeout(endGrab, TAP_GRAB_MS)
+  }
+
+  const dragProps = coarse
+    ? ({ drag: false, onTap } as const)
+    : ({
+        drag: true,
+        dragSnapToOrigin: true,
+        dragMomentum: false,
+        dragElastic: 0.35,
+        whileDrag: { scale: 1.06 },
+        onDragStart: startGrab,
+        onDragEnd: endGrab,
+      } as const)
+
   return (
     <motion.div
       className="journey-robot-fig"
-      drag
-      dragSnapToOrigin
-      dragMomentum={false}
-      dragElastic={0.35}
-      whileDrag={{ scale: 1.06 }}
-      onDragStart={startGrab}
-      onDragEnd={endGrab}
+      data-blend={mp4Only ? 'screen' : undefined}
+      {...dragProps}
     >
-      <video ref={walkRef} muted playsInline preload="auto" aria-hidden="true">
-        <source src={CLIPS.walk[0]} type="video/webm" />
+      <video ref={walkRef} muted playsInline webkit-playsinline="" preload="auto" aria-hidden="true">
+        {!mp4Only && <source src={CLIPS.walk[0]} type="video/webm" />}
         <source src={CLIPS.walk[1]} type="video/mp4" />
       </video>
-      <video ref={pointRef} muted playsInline loop preload="auto" aria-hidden="true">
-        <source src={CLIPS.point[0]} type="video/webm" />
+      <video ref={pointRef} muted playsInline webkit-playsinline="" loop preload="auto" aria-hidden="true">
+        {!mp4Only && <source src={CLIPS.point[0]} type="video/webm" />}
         <source src={CLIPS.point[1]} type="video/mp4" />
       </video>
-      <video ref={grabRef} muted playsInline loop preload="auto" aria-hidden="true">
-        <source src={CLIPS.grab[0]} type="video/webm" />
+      <video ref={grabRef} muted playsInline webkit-playsinline="" loop preload="auto" aria-hidden="true">
+        {!mp4Only && <source src={CLIPS.grab[0]} type="video/webm" />}
         <source src={CLIPS.grab[1]} type="video/mp4" />
       </video>
     </motion.div>

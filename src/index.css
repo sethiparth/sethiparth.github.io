@@ -747,7 +747,7 @@ body {
   }
 
   .journey-horizon {
-    top: 40%;
+    top: 56%;
     height: 14svh;
     filter: none;
   }
@@ -774,29 +774,78 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    top: 54%;
+    top: 70%;
     bottom: 0;
     z-index: 2;
     pointer-events: none;
     background:
       repeating-linear-gradient(to bottom, rgba(255, 122, 69, 0.09) 0 1px, transparent 1px 30px),
       linear-gradient(to bottom, rgba(255, 90, 30, 0.08), rgba(158, 82, 40, 0.03) 60%, transparent);
-    -webkit-mask-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.5) 70%, transparent);
-    mask-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.5) 70%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.4) 50%, transparent 88%);
+    mask-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.4) 50%, transparent 88%);
   }
   .journey-line {
-    top: 54%;
+    top: 70%;
     box-shadow: none;
   }
 
   .journey-monolith {
-    top: 18%;
+    top: 28%;
+  }
+  .journey-monolith.is-tappable {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .journey-monolith.is-tappable:focus-visible {
+    outline: none;
+  }
+  .journey-monolith.is-tappable:focus-visible .journey-slab {
+    outline: 2px solid var(--color-accent-soft);
+    outline-offset: 4px;
+  }
+  /* Press feedback lives on the slab: the monolith's own transform is driven by
+     the scroll animation, so scaling it would fight that. */
+  .journey-monolith.is-tappable .journey-slab {
+    position: relative;
+    transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .journey-monolith.is-tappable:active .journey-slab {
+    transform: scale(0.97);
+  }
+  /* Pulsing ring: opacity/transform only. */
+  .journey-monolith.is-tappable .journey-slab::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    border: 1px solid var(--color-accent-soft);
+    pointer-events: none;
+    opacity: 0;
+    animation: journeyTapRing 2.6s ease-out infinite;
+  }
+  .journey-section[data-dossier-open='true'] .journey-monolith.is-tappable .journey-slab::after {
+    animation: none;
+  }
+  /* The monolith is column-reverse, so the lowest order sits at the bottom:
+     the hint lands just beneath the wire diamond. */
+  .journey-tap-hint {
+    order: -1;
+    margin-top: 0.55rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.6rem;
+    text-align: center;
+    white-space: nowrap;
+    animation: journeyHintFade 2.6s ease-in-out infinite;
+  }
+  .journey-section[data-dossier-open='true'] .journey-tap-hint {
+    display: none;
   }
   .journey-slab {
-    width: min(62vw, 240px);
-    gap: 0.5rem;
+    width: min(68vw, 270px);
+    gap: 0.6rem;
     margin-bottom: 10px;
-    padding: 0.85rem 0.9rem;
+    padding: 1rem 1rem;
     box-shadow: 0 0 22px -8px rgba(255, 90, 30, 0.3);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
@@ -807,11 +856,11 @@ body {
     animation: none;
   }
   .journey-mark {
-    height: 46px;
+    height: 52px;
   }
   .journey-mark img {
-    max-height: 46px;
-    max-width: min(48vw, 190px);
+    max-height: 52px;
+    max-width: min(52vw, 210px);
     filter: drop-shadow(0 0 8px rgba(255, 90, 30, 0.5));
   }
   .journey-wordmark {
@@ -827,7 +876,7 @@ body {
 
   .journey-robot::after {
     left: calc(50% - 115px);
-    bottom: calc(46svh - 8px);
+    bottom: calc(30svh - 8px);
     width: 170px;
     height: 30px;
     filter: none;
@@ -835,24 +884,85 @@ body {
   }
   .journey-robot-fig {
     left: calc(50% - 190px);
-    bottom: calc(46svh - 2px);
+    bottom: calc(30svh - 2px);
     width: 150px;
     height: 128px;
   }
 
+  /* Modal bottom sheet: opened by tapping the tile, above the backdrop. */
+  .journey-sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.55);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    animation: journeyFadeIn 0.22s ease-out both;
+  }
   .journey-dossier-wrap,
   .journey-dossier-wrap.is-wide {
-    left: 16px;
-    right: 16px;
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
     width: auto;
-    max-height: 46vh;
-    max-height: 46svh;
+    transition: none;
+  }
+  .journey-dossier-wrap.is-sheet {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+    z-index: 9999;
+    max-height: 78vh;
+    max-height: 78svh;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
-    border-radius: 20px;
-    transition: none;
+    border-radius: 20px 20px 0 0;
+    background: rgba(9, 8, 7, 0.97);
+    animation: journeySheetUp 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .journey-dossier-wrap.is-sheet::before {
+    content: '';
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 40px;
+    height: 4px;
+    margin: 8px auto -4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.22);
+  }
+  .journey-dossier-wrap.is-sheet .journey-dossier {
+    border-radius: 20px 20px 0 0;
+    padding: 1.4rem 1.15rem 1.25rem;
+  }
+  .journey-sheet-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .journey-sheet-close:active {
+    background: rgba(255, 255, 255, 0.14);
+  }
+  .journey-sheet-close:focus-visible {
+    outline: 2px solid var(--color-accent-soft);
+    outline-offset: 2px;
   }
   .journey-dossier {
     -webkit-backdrop-filter: none;
@@ -863,6 +973,7 @@ body {
     transform: none !important;
   }
   .journey-dossier-name {
+    padding-right: 2.5rem;
     font-size: 1.5rem;
     margin-top: 0.4rem;
   }
@@ -906,12 +1017,31 @@ body {
     left: auto;
     right: 16px;
     transform: none;
-    bottom: calc(46svh + 18px);
+    bottom: 5%;
   }
 }
 
+@keyframes journeyTapRing {
+  0% { opacity: 0.55; transform: scale(1); }
+  70%, 100% { opacity: 0; transform: scale(1.12); }
+}
+@keyframes journeyHintFade {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.85; }
+}
+@keyframes journeyFadeIn {
+  from { opacity: 0; }
+}
+@keyframes journeySheetUp {
+  from { transform: translateY(100%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .journey-node {
+  .journey-node,
+  .journey-tap-hint,
+  .journey-monolith.is-tappable .journey-slab::after,
+  .journey-sheet-backdrop,
+  .journey-dossier-wrap.is-sheet {
     animation: none !important;
   }
 }

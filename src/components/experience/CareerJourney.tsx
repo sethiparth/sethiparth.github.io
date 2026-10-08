@@ -1,4 +1,13 @@
-import { Suspense, lazy, useEffect, useRef, useState, type MouseEvent } from 'react'
+import {
+  Suspense,
+  lazy,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent,
+  type MouseEvent,
+} from 'react'
 import {
   motion,
   useScroll,
@@ -7,6 +16,8 @@ import {
   AnimatePresence,
   type MotionValue,
 } from 'motion/react'
+import { createPortal } from 'react-dom'
+import { useLenis } from 'lenis/react'
 import { WAYPOINTS, type Waypoint } from './journey-data'
 
 const RobotTraveler = lazy(() => import('./RobotTraveler'))
@@ -27,6 +38,7 @@ const FRAME_CENTER = 37
 const FRAME_CENTER_COMPACT = 50
 
 const COMPACT_QUERY = '(max-width: 767px)'
+const SHEET_ID = 'journey-dossier-sheet'
 
 /* Live `compact` flag + viewport width. Width is only committed when it really
    changes, so iOS address-bar height resizes don't re-render the journey. */
@@ -127,11 +139,63 @@ export function CareerJourney() {
 
   const wp = WAYPOINTS[active]
 
+  // Phones: the dossier is a modal sheet the active tile opens. `sheetOpen` is
+  // false the moment the viewport leaves compact, which runs the effect cleanup.
+  const [open, setOpen] = useState(false)
+  const sheetOpen = open && compact
+  const sheetRef = useRef<HTMLDivElement>(null)
+  const closeBtnRef = useRef<HTMLButtonElement>(null)
+  const returnFocusRef = useRef<HTMLElement | null>(null)
+  const lenis = useLenis()
+
+  const openSheet = useCallback(() => {
+    returnFocusRef.current = document.activeElement as HTMLElement | null
+    setOpen(true)
+  }, [])
+
+  // Close through history when our entry is on top, so the back stack stays
+  // balanced; the popstate listener then flips the state.
+  const closeSheet = useCallback(() => {
+    if (window.history.state?.journeyDossier) window.history.back()
+    else setOpen(false)
+  }, [])
+
+  useEffect(() => {
+    if (!sheetOpen) return
+    const onPop = () => setOpen(false)
+    const onKey = (e: globalThis.KeyboardEvent) => {
+      if (e.key === 'Escape') closeSheet()
+    }
+    window.history.pushState({ journeyDossier: true }, '')
+    window.addEventListener('popstate', onPop)
+    window.addEventListener('keydown', onKey)
+
+    // Lock page scroll. Only <html> gets overflow:hidden: adding it to <body> too
+    // turns body into its own scroller, which breaks the sticky stage mid-journey.
+    // Lenis intercepts wheel/touch, so stop it as well.
+    const html = document.documentElement
+    const prevHtml = html.style.overflow
+    html.style.overflow = 'hidden'
+    lenis?.stop()
+    closeBtnRef.current?.focus({ preventScroll: true })
+
+    return () => {
+      window.removeEventListener('popstate', onPop)
+      window.removeEventListener('keydown', onKey)
+      html.style.overflow = prevHtml
+      lenis?.start()
+      // Unmount / compact flip while open: drop our history entry if it's still there.
+      if (window.history.state?.journeyDossier) window.history.back()
+      returnFocusRef.current?.focus({ preventScroll: true })
+    }
+  }, [sheetOpen, closeSheet, lenis])
+
   return (
     <section
       id="experience"
       ref={sectionRef}
       className={`journey-section${compact ? ' is-compact' : ''}`}
+      data-dossier-open={compact ? String(sheetOpen) : undefined}
       aria-label="Career journey"
     >
       {/* Anchor the nav's "Education" jump roughly where UF enters (index 3). */}
@@ -162,6 +226,9 @@ export function CareerJourney() {
               progress={scrollYProgress}
               spacing={spacing}
               frameCenter={frameCenter}
+              tappable={compact && i === active}
+              expanded={sheetOpen}
+              onOpen={openSheet}
             />
           ))}
         </motion.div>
@@ -176,11 +243,62 @@ export function CareerJourney() {
 
         {/* 6 — dossier: the arrival detail panel, crossfading per waypoint. The
             wrap widens for bullet-heavy roles so the 2-column list reads short. */}
-        <div className={`journey-dossier-wrap${!compact && wp.lines.length > 2 ? ' is-wide' : ''}`}>
-          <AnimatePresence mode="wait">
-            <Dossier key={wp.id} wp={wp} index={active} compact={compact} />
-          </AnimatePresence>
-        </div>
+        {compact ? (
+          // Portalled to <body>: the sticky stage is its own stacking context, so a
+          // fixed sheet inside it could never layer above the site nav.
+          createPortal(
+          <AnimatePresence>
+            {sheetOpen && (
+              <motion.div
+                key="backdrop"
+                className="journey-sheet-backdrop"
+                onClick={closeSheet}
+                aria-hidden="true"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.28, ease: 'easeOut' }}
+              />
+            )}
+            {sheetOpen && (
+              <motion.div
+                key="sheet"
+                id={SHEET_ID}
+                ref={sheetRef}
+                role="dialog"
+                aria-modal="true"
+                aria-label={`${wp.name} details`}
+                data-lenis-prevent
+                className="journey-dossier-wrap is-sheet"
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                exit={{ y: '100%' }}
+                transition={{ duration: 0.28, ease: 'easeOut' }}
+              >
+                <button
+                  ref={closeBtnRef}
+                  type="button"
+                  className="journey-sheet-close"
+                  aria-label="Close details"
+                  onClick={closeSheet}
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <AnimatePresence mode="wait">
+                  <Dossier key={wp.id} wp={wp} index={active} compact={compact} />
+                </AnimatePresence>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body,
+          )
+        ) : (
+          <div className={`journey-dossier-wrap${wp.lines.length > 2 ? ' is-wide' : ''}`}>
+            <AnimatePresence mode="wait">
+              <Dossier key={wp.id} wp={wp} index={active} compact={compact} />
+            </AnimatePresence>
+          </div>
+        )}
 
         {/* 7 — progress rail + chapter counter */}
         <ProgressRail progress={scrollYProgress} active={active} />
@@ -207,9 +325,21 @@ interface MonolithProps {
   progress: MotionValue<number>
   spacing: number
   frameCenter: number
+  tappable: boolean
+  expanded: boolean
+  onOpen: () => void
 }
 
-function Monolith({ wp, index, progress, spacing, frameCenter }: MonolithProps) {
+function Monolith({
+  wp,
+  index,
+  progress,
+  spacing,
+  frameCenter,
+  tappable,
+  expanded,
+  onOpen,
+}: MonolithProps) {
   const center = index / (N - 1)
   const step = 1 / (N - 1) // progress-distance to the adjacent waypoint
 
@@ -246,9 +376,28 @@ function Monolith({ wp, index, progress, spacing, frameCenter }: MonolithProps) 
   const y = useTransform(progress, yStops.inputs, yStops.outputs)
   const scale = useTransform(progress, sStops.inputs, sStops.outputs)
 
+  // Active tile on phones is a real button that opens the dossier sheet.
+  const tapProps = tappable
+    ? {
+        role: 'button',
+        tabIndex: 0,
+        'aria-label': `View details for ${wp.name}`,
+        'aria-expanded': expanded,
+        'aria-controls': SHEET_ID,
+        onClick: onOpen,
+        onKeyDown: (e: KeyboardEvent<HTMLElement>) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            onOpen()
+          }
+        },
+      }
+    : {}
+
   return (
     <motion.div
-      className="journey-monolith"
+      className={`journey-monolith${tappable ? ' is-tappable' : ''}`}
+      {...tapProps}
       style={{ left: `${index * spacing * 100 + frameCenter}vw`, x: '-50%', opacity, y, scale }}
     >
       {/* node where the monolith meets the trajectory line */}
@@ -268,6 +417,8 @@ function Monolith({ wp, index, progress, spacing, frameCenter }: MonolithProps) 
         <span className="journey-name">{wp.name}</span>
         <span className="journey-period label-mono">{wp.period}</span>
       </div>
+
+      {tappable && <span className="journey-tap-hint label-mono">Tap for details</span>}
     </motion.div>
   )
 }
